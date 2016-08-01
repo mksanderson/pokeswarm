@@ -1,0 +1,9 @@
+﻿&-main{
+	margin:{top:20px;};
+	
+	// <instance>
+	&:first-child{
+		margin:{top:0;};
+	}
+	// </instance>
+}

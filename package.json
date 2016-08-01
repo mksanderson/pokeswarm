@@ -1,0 +1,31 @@
+{
+  "license": "MIT",
+  "name": "crank",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/mksanderson/crank"
+  },
+  "devDependencies": {
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-bower": "latest",
+    "gulp-changed": "latest",
+    "gulp-concat": "^2.6.0",
+    "gulp-copy": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-plumber": "latest",
+    "gulp-pug": "latest",
+    "gulp-sass": "latest",
+    "gulp-sass-glob": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-svg-symbols": "latest",
+    "gulp-typescript": "latest",
+    "gulp-typings": "latest",
+    "jstransformer": "latest",
+    "markdown": "latest",
+    "require-dir": "latest"
+  },
+  "dependencies": {}
+}

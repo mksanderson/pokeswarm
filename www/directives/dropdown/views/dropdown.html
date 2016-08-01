@@ -1,0 +1,12 @@
+
+<div class="dropdown" off-click="Dropdown.state = false">
+  <div class="dropdown-action" data-ng-click="Dropdown.toggle()">
+    <div class="dropdown-action-label"><span class="dropdown-action-label__title" data-ng-transclude="title"></span></div>
+    <div class="dropdown-action-media">
+      <svg class="dropdown-action-media__object graphic {{Dropdown.object}}">
+        <use data-ng-href="{{'#' + Dropdown.object}}" xlink:href=""></use>
+      </svg>
+    </div>
+  </div>
+  <div class="dropdown-result" data-ng-show="Dropdown.state" data-ng-style="{'left':{{Dropdown.left}},'right':{{Dropdown.right}}}" data-ng-transclude="result"></div>
+</div>

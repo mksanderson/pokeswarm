@@ -1,0 +1,33 @@
+doctype html
+
+html(class="no-js",data-ng-controller="ApplicationController as Application",itemtype="http://schema.org/Article",itemscope,lang="en")
+	
+	head
+	
+		include /partials/head
+
+	body
+		
+		.application
+
+			header.application-header
+				
+				include /partials/header
+
+			//-@.header
+			
+			main.application-main
+
+				block main
+
+			//-@.main
+			
+			footer.application-footer
+
+				include /partials/footer
+
+			//-@.main
+
+		//-@.application
+		
+		include /partials/scripts

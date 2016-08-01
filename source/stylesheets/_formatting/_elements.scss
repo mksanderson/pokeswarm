@@ -1,0 +1,87 @@
+p{
+	font:{family:map-get($fonts,common);};
+}
+
+a{
+	color:inherit;text-decoration:none;
+	
+	// <children>
+	&:after{
+		content:'';display:none;
+	}
+	// </children>
+	
+	// <state>
+	&:focus,&:hover{
+		text-decoration:none;
+	}
+	// </state>
+}
+
+b{
+	color:inherit;font:{family:inherit;size:inherit;weight:bold;};
+	
+	// <children>
+	&:after{
+		content:'';display:none;
+	}
+	// </children>
+}
+
+em{
+	color:inherit;font:{family:inherit;size:inherit;};
+	
+	// <children>
+	&:after{
+		content:'';display:none;
+	}
+	// </children>
+}
+
+i{
+	color:inherit;font:{family:inherit;size:inherit;};
+	
+	// <children>
+	&:after{
+		content:'';display:none;
+	}
+	// </children>
+}
+
+strong{
+	color:inherit;font:{family:inherit;size:inherit;weight:bold;};
+	
+	// <children>
+	&:after{
+		content:'';display:none;
+	}
+	// </children>
+}
+
+h1,h2,h3,h4,h5,h6{
+	font:{family:map-get($fonts,heading);};margin:0;padding:0;
+}
+
+h1{
+	font:{size:em(42px);};
+}
+
+h2{
+	font:{size:em(36px);};
+}
+
+h3{
+	font:{size:em(30px);};
+}
+
+h4{
+	font:{size:em(26px);};
+}
+
+h5{
+	font:{size:em(24px);};
+}
+
+h6{
+	font:{size:em(22px);};
+}

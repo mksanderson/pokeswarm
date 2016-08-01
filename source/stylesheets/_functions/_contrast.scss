@@ -1,0 +1,8 @@
+@function contrast($color,$lighter,$darker,$ratio:50){
+	@if(lightness($color)>$ratio){
+		@return $lighter;
+	}
+	@else{
+		@return $darker;
+	}
+}

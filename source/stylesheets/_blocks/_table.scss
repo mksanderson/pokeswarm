@@ -1,0 +1,19 @@
+table,.table{
+	// <children>
+	tbody,.content{
+		// <children>
+		th,td{
+			padding:0;text-align:left;
+		}
+		// </children>
+	}
+
+	thead,.header{
+		// <children>
+		th{
+			padding:0;text-align:left;
+		}
+		// </children>
+	}
+	// </children>
+}

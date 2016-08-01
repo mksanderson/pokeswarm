@@ -1,0 +1,16 @@
+// Try to use a standard color pattern so it's easy to identify your colors.
+// Colors are used by utilities to create foreground and background classes
+// which can be seen in utilities/colors
+// This is where colors are added. Accessible by map-get syntax 
+// (map-get($colors,color-name))
+$colors:(
+	_black:#000,
+
+	_blue-cornflower:#4285f4,
+	_blue-indigo:#3f6ebb,
+
+	_white:#fff
+);
+
+$dark:map-get($colors,_black);
+$light:map-get($colors,_white);

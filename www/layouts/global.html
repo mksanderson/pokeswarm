@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="no-js" data-ng-controller="ApplicationController as Application" itemtype="http://schema.org/Article" itemscope lang="en">
+  <head>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <title>{{Application.name.title}}</title>
+    <!-- <meta>-->
+    <meta content="[Replace]" name="description">
+    <meta content="[Replace]" name="author">
+    <!-- </meta>-->
+    <!-- <browser>-->
+    <meta content="True" name="HandheldFriendly">
+    <meta content="320" name="MobileOptimized">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="no" name="user-scalable">
+    <meta content="on" http-equiv="cleartype">
+    <link href="/browser/touch.png" rel="shortcut icon">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="[Replace]" name="apple-mobile-web-app-title">
+    <meta content="[Replace]" name="application-name">
+    <!-- </browser>-->
+    <!-- <social>-->
+    <meta content="[Replace]" itemprop="name">
+    <meta content="[Replace]" itemprop="description">
+    <meta content="[Replace]" itemprop="image">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="@[Replace]" name="twitter:site">
+    <meta content="[Replace]" name="twitter:title">
+    <meta content="[Replace]" name="twitter:description">
+    <meta content="@[Replace]" name="twitter:creator">
+    <meta content="[Replace]" name="twitter:image:src">
+    <meta content="[Replace]" property="og:title">
+    <meta content="article" property="og:type">
+    <meta content="[Replace]" property="og:url">
+    <meta content="[Replace]" property="og:image">
+    <meta content="[Replace]" property="og:description">
+    <meta content="[Replace]" property="og:site_name">
+    <meta content="2013-09-17T05:59:00+01:00" property="article:published_time">
+    <meta content="2013-09-16T19:08:47+01:00" property="article:modified_time">
+    <meta content="[Replace]" property="article:section">
+    <meta content="[Replace]" property="article:tag">
+    <meta content="[Replace]" property="fb:admins">
+    <!-- </social>-->
+    <!-- <resources>-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700,700italic" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link data-ng-include="'/images/graphics/svg-symbols.svg'">
+    <!-- </resources>-->
+  </head>
+  <body>
+    <div class="application">
+      <header class="application-header">
+        <div class="application-header-logo">
+          <div class="application-header-logo-media">
+            <svg class="application-header-logo-media__object graphic gear" title="{{Application.name.title}}">
+              <use xlink:href="#gear"></use>
+            </svg>
+          </div>
+        </div>
+      </header>
+      <main class="application-main">
+      </main>
+      <footer class="application-footer"></footer>
+    </div>
+    <script defer src="/bower_components/dependencies.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=visualization&amp;key=AIzaSyBmrsSwvhfGt_NOUC6Ht2GCkiI3VIuXP1g"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script defer src="/bootstrap.js"></script>
+    <script defer src="/startup.js"></script>
+    <script defer src="/configuration/LocationProvider.js"></script>
+    <script defer src="/configuration/RouteProvider.js"></script>
+    <script defer src="/services/FirebaseService.js"></script>
+    <script defer src="/services/GeolocationService.js"></script>
+    <script defer src="/services/MapService.js"></script>
+    <script defer src="/services/PokemonService.js"></script>
+    <script defer src="/controllers/ApplicationController.js"></script>
+    <script defer src="/controllers/MapController.js"></script>
+    <script defer src="/directives/dropdown/controllers/DropdownController.js"></script>
+  </body>
+</html>

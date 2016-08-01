@@ -1,0 +1,59 @@
+&-sighting{
+	// <children>
+	&__input{
+		border:0;box-sizing:border-box;outline:none;
+
+		// <modifiers>
+		&.field{
+			background:none;color:$light;padding:8px 12px;min-width:180px;width:100%;
+
+			// <children>
+			&:-moz-placeholder{
+				color:$light;font:{weight:lighter;style:italic;};
+			}
+
+			&:-ms-input-placeholder{
+				color:$light;font:{weight:lighter;style:italic;};
+			}
+
+			&::-webkit-input-placeholder{
+				color:$light;font:{weight:lighter;style:italic;};
+			}
+			// </children>
+		}
+		// </modifiers>
+	}
+
+	&-footer{
+		display:flex;justify-content:flex-end;margin:{top:12px;}
+	}
+
+	&-option{
+		@include theme($colors,_blue-indigo);
+
+		align-items:center;display:flex;
+
+		// <children>
+		&-label{
+			display:none;
+		}
+		// </children>
+	}
+
+	&-options{
+		list-style:none;margin:0;padding:0;
+
+		// <children>
+		&-enclosure{
+			margin:{bottom:12px;};
+
+			// <instance>
+			&:last-child{
+				margin:{bottom:0;};
+			}
+			// </instance>
+		}
+		// </children>
+	}
+	// </children>
+}

@@ -1,0 +1,27 @@
+.map{
+	position:relative;
+
+	// <elements>
+	#map{
+		height:100vh;width:100%;
+
+		// <children>
+		.gm-style-iw{
+			color:$dark;font:{weight:bold;};
+		}
+		// </children>
+	}
+
+	&-tools{
+		background:{color:rgba(map-get($colors,_blue-cornflower),0.7)};
+		left:0;padding:12px 24px;position:fixed;right:0;top:0;z-index:1;
+
+		// <children>
+		&-actions{
+			align-items:center;display:flex;list-style:none;justify-content:space-between;
+			margin:0;padding:0;
+		}
+		// </children>
+	}
+	// </elements>
+}

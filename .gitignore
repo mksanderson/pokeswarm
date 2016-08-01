@@ -1,0 +1,23 @@
+# OS files
+.DS_STORE
+.DS_STORE?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+#
+
+# Node files
+bower_components
+node_modules
+_node_modules
+_SpecRunner.html
+#
+
+# Sass files
+.sass-cache
+#
+
+# VS Code files
+.vscode/
+#

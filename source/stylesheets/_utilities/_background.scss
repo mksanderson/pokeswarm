@@ -1,0 +1,19 @@
+// <summary>
+// Background and foreground helper classes that include contrast settings
+// to adjust any text within a background to be correctly swapped to either light
+// or dark variant to keep it readable.
+// </summary>
+&.background{
+	// <nodes>
+	&-color{
+		@each $color-name,$color-value in $colors{
+			// <nodes>
+			&-#{str-slice($color-name,2,str-length($color-name))}{
+				background:{color:$color-value;};
+				color:contrast($color-value,$dark,$light);
+			}
+			// </nodes>
+		}
+	}
+	// <nodes>
+}

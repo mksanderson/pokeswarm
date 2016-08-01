@@ -1,0 +1,101 @@
+
+<div class="map" data-ng-controller="MapController as Map">
+  <div class="map-tools">
+    <ul class="map-tools-actions">
+      <li class="maps-tools-actions-enclosure">
+        <dropdown left="0" object="search" right="initial">
+          <dropdown-title>Search</dropdown-title>
+          <dropdown-result>
+            <div class="search">
+              <div class="form-search">
+                <div class="form-search-option">
+                  <div class="form-search-option-media">
+                    <input class="form-search__input field" data-ng-model="Map.search" placeholder="Pokemon" type="search"/>
+                  </div>
+                  <!-- </input>-->
+                </div>
+                <!-- </option>-->
+                <div class="form-search-footer">
+                  <ul class="form-search-footer-list">
+                    <li class="form-search-footer-list-enclosure">
+                      <button class="button-action utility background-color-white" data-ng-click="Map.reset()">
+                        <div class="button-action-label"><span class="button-action-label__title">Reset</span></div>
+                        <!-- </label>-->
+                      </button>
+                      <!-- </button>-->
+                    </li>
+                    <!-- </enclosure>-->
+                    <li class="form-search-footer-list-enclosure">
+                      <button class="button-action utility background-color-white" data-ng-click="Map.filter(Map.search)">
+                        <div class="button-action-label"><span class="button-action-label__title">Search</span></div>
+                        <!-- </label>-->
+                      </button>
+                      <!-- </button>-->
+                    </li>
+                    <!-- </enclosure>-->
+                  </ul>
+                  <!-- </list>-->
+                </div>
+                <!-- </footer>-->
+              </div>
+              <!-- </form>-->
+            </div>
+            <!-- </search>-->
+          </dropdown-result>
+          <!-- </result>-->
+        </dropdown>
+        <!-- </dropdown>-->
+      </li>
+      <!-- </enclosure>-->
+      <li class="maps-tools-actions-enclosure">
+        <dropdown left="initial" object="add" right="0">
+          <dropdown-title>Add a sighting</dropdown-title>
+          <dropdown-result>
+            <div class="form-sighting">
+              <div class="form-sighting-main">
+                <ul class="form-sighting-options">
+                  <li class="form-sighting-options-enclosure">
+                    <div class="form-sighting-option">
+                      <div class="form-sighting-option-label">
+                        <label class="form-sighting-label__title">Pokemon</label>
+                      </div>
+                      <!-- </label>-->
+                      <div class="form-sighting-option-media">
+                        <input class="form-sighting__input field" data-ng-model="Map.name" placeholder="Pokemon" type="text"/>
+                      </div>
+                      <!-- </label>-->
+                    </div>
+                    <!-- </option>-->
+                  </li>
+                  <!-- </enclosure>-->
+                </ul>
+                <!-- </options>-->
+              </div>
+              <!-- </main>-->
+              <div class="form-sighting-footer">
+                <button class="button-action utility background-color-white" data-ng-click="Map.submit(Map.name)">
+                  <div class="button-action-label"><span class="button-action-label__title">Submit</span></div>
+                  <!-- </label>-->
+                </button>
+                <!-- </button>-->
+              </div>
+              <!-- </footer>-->
+            </div>
+            <!-- </sighting>-->
+          </dropdown-result>
+          <!-- </result>-->
+        </dropdown>
+        <!-- </dropdown>-->
+      </li>
+      <!-- </enclosure>-->
+    </ul>
+    <!-- </actions>-->
+  </div>
+  <!-- </tools>-->
+  <div class="map-view">
+    <div id="map"></div>
+    <!-- </map>-->
+  </div>
+  <!-- </view>-->
+</div>
+<!-- </map>-->

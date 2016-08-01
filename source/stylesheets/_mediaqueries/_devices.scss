@@ -1,0 +1,13 @@
+@each $key,$value in $screens{
+	@include breakpoint($key){
+		// <children>
+		.#{$key}-exclude{
+			display:none;
+		}
+		
+		.#{$key}-include{
+			display:block;visibility:visible;
+		}
+		// </children>
+	}	
+}

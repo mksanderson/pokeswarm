@@ -1,0 +1,152 @@
+.map(data-ng-controller="MapController as Map")
+
+	.map-tools
+			
+		ul.map-tools-actions
+
+			li.maps-tools-actions-enclosure
+
+				dropdown(left="0",object="search",right="initial")
+
+					dropdown-title
+						| Search
+
+					dropdown-result
+						.search
+
+							.form-search
+
+								.form-search-option
+
+									.form-search-option-media
+
+										input.form-search__input.field(data-ng-model="Map.search",placeholder="Pokemon",type="search")
+
+									// </input>
+
+								// </option>
+
+								.form-search-footer
+
+									ul.form-search-footer-list
+
+										li.form-search-footer-list-enclosure
+
+											button.button-action.utility.background-color-white(data-ng-click="Map.reset()")
+
+												.button-action-label
+
+													span.button-action-label__title
+														| Reset
+
+												// </label>
+
+											// </button>
+
+										// </enclosure>
+
+										li.form-search-footer-list-enclosure
+
+											button.button-action.utility.background-color-white(data-ng-click="Map.filter(Map.search)")
+
+												.button-action-label
+
+													span.button-action-label__title
+														| Search
+
+												// </label>
+
+											// </button>
+
+										// </enclosure>
+
+									// </list>
+
+								// </footer>
+
+							// </form>
+
+						// </search>
+
+					// </result>
+
+				// </dropdown>
+
+			// </enclosure>
+
+			li.maps-tools-actions-enclosure
+
+				dropdown(left="initial",object="add",right="0")
+					
+					dropdown-title
+						| Add a sighting
+
+					dropdown-result
+
+						.form-sighting
+
+							.form-sighting-main
+
+								ul.form-sighting-options
+
+									li.form-sighting-options-enclosure
+
+										.form-sighting-option
+
+											.form-sighting-option-label
+
+												label.form-sighting-label__title
+													| Pokemon
+
+											// </label>
+
+											.form-sighting-option-media
+
+												input.form-sighting__input.field(data-ng-model="Map.name",placeholder="Pokemon",type="text")
+
+											// </label>
+
+										// </option>
+
+									// </enclosure>
+
+								// </options>
+
+							// </main>
+
+							.form-sighting-footer
+
+								button.button-action.utility.background-color-white(data-ng-click="Map.submit(Map.name)")
+
+									.button-action-label
+
+										span.button-action-label__title
+											| Submit
+
+									// </label>
+
+								// </button>
+
+							// </footer>
+
+						// </sighting>
+
+					// </result>
+
+				// </dropdown>
+
+			// </enclosure>
+
+		// </actions>
+
+	// </tools>
+	
+	.map-view
+
+		#map
+
+		// </map>
+
+	// </view>
+
+// </map>

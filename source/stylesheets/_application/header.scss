@@ -1,0 +1,34 @@
+﻿&-header{
+	margin:{top:20px;};
+		
+	// <children>
+	&-logo{
+		// <children>
+		&__title{
+			
+		}
+		
+		&-media{
+			// <children>
+			&__object{
+				margin:{left:auto;right:auto;};-webkit-transition:transform 1s ease;
+				
+				// <states>
+				&:focus,&:hover{
+					transform:rotate(360deg);
+				}
+				// </states>
+			}
+			// </children>
+		}
+		// </children>
+		
+	}
+	// </children>
+	
+	// <instance>
+	&:first-child{
+		margin:{top:0;};
+	}
+	// </instance>
+}

@@ -1,0 +1,39 @@
+@mixin rich-text(){
+	a,strong,i,em{
+		// <children>
+		&:after{
+			display:none;
+		}
+		// </children>
+	}
+	
+	a{
+		text-decoration:underline;
+	}
+
+	ul,ol,dl{
+		list-style:{position:inside;};margin:{top:20px;};
+		
+		// <children>
+		li,dt,dd
+			{
+				font:{family:map-get($fonts,heading);};
+			}
+		// </children>
+		
+		// <instance>
+		&:first-child{margin:{top:0;};}
+		// </instance>
+	}
+
+	p{
+		margin:{bottom:0;top:20px;};
+		
+		// <instance>
+		&:first-child{margin:{top:0;};}
+		// </instance>
+	}
+	
+	h1,h2,h3,h4,h5,h6{margin:{bottom:10px;}}
+	// </children>
+}

@@ -1,0 +1,112 @@
+[
+	{
+		"id": "0",
+		"position": {
+			"coords": {
+				"latitude": -27.3414694,
+				"longitude": 153.0199130
+			}
+		},
+		"name": "Squirtle"
+	},
+	{
+		"id": "1",
+		"position": {
+			"coords": {
+				"latitude": -27.3414694,
+				"longitude": 153.0190118
+			}
+		},
+		"name": "Charmeleon"
+	},
+	{
+		"id": "2",
+		"position": {
+			"coords": {
+				"latitude": -30.019283,
+				"longitude": 153.09128221
+			}
+		},
+		"name": "Pikachu"
+	},
+	{
+		"id": "3",
+		"position": {
+			"coords": {
+				"latitude": -29.019283,
+				"longitude": 152.09128221
+			}
+		},
+		"name": "Abra"
+	},
+	{
+		"id": "4",
+		"position": {
+			"coords": {
+				"latitude": -31.019283,
+				"longitude": 152.09128221
+			}
+		},
+		"name": "Raichu"
+	},
+	{
+		"id": "5",
+		"position": {
+			"coords": {
+				"latitude": -27.4513998,
+				"longitude": 153.0441934
+			}
+		},
+		"name": "Pikachu"
+	},
+	{
+		"id": "6",
+		"position": {
+			"coords": {
+				"latitude": -27.4513998,
+				"longitude": 153.1441934
+			}
+		},
+		"name": "Charmander"
+	},
+	{
+		"id": "7",
+		"position": {
+			"coords": {
+				"latitude": -27.2513998,
+				"longitude": 153.0441934
+			}
+		},
+		"name": "Squirtle"
+	},
+	{
+		"id": "8",
+		"position": {
+			"coords": {
+				"latitude": -27.6513998,
+				"longitude": 153.0441934
+			}
+		},
+		"name": "Abra"
+	},
+	{
+		"id": "9",
+		"position": {
+			"coords": {
+				"latitude": -27.6513998,
+				"longitude": 153.0441937
+			}
+		},
+		"name": "Venusaur"
+	},
+	{
+		"id": "10",
+		"position": {
+			"coords": {
+				"latitude": -27.3420690,
+				"longitude": 153.0189130
+			}
+		},
+		"name": "Wartortle"
+	}
+]

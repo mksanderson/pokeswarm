@@ -1,0 +1,15 @@
+{
+  "license": "MIT",
+  "name": "crank",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/mksanderson/crank"
+  },
+  "dependencies": {
+    "angular": "1.5.8",
+    "normalize-css": "2.1.3",
+    "angular-route": "1.5.8",
+    "kds-google-maps-utility-library-v3": "*",
+    "angular-off-click": "1.0.5"
+  }
+}

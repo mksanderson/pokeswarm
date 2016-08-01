@@ -1,0 +1,88 @@
+@import '/bower_components/normalize-css/normalize.css';
+
+// Variables, sprite importing, base styles
+@import '_configuration/*/*.*';
+@import '_configuration/*.*';
+
+// Blocks that are designed to be extended, 
+// acting as base classes for other blocks
+@import '_placeholders/*.*';
+
+
+// Sass functions that power mixins
+@import '_functions/*.*';
+
+// Reusable patterns that power aspects of Crank like columns
+// breakpoints, inline images, keyframes, and low-high dpi sprites
+@import '_mixins/*.*';
+
+// Tools for nudging elements - additional marging, backgrounds, centering
+.utility{
+	@import '_utilities/*.*';
+}
+
+// Main application
+.application{
+	margin:{left:auto;right:auto;};
+
+	@import '_application/*.*';
+}
+
+// Reusable and versatile buttons
+.button{
+	align-items:center;appearance:none;background:transparent;
+	border:0;display:flex;padding:0;
+	
+	// <modifiers>
+	@import '_buttons/*.*';
+	// </modifiers>
+	
+	// <state>
+	&:focus &__title,&:hover &__title
+		{
+			text-decoration:underline;
+		}
+	// </state>
+}
+
+// Individual forms
+.form{
+	// <modifiers>
+	@import '_forms/*.*';
+	// </modifiers>
+}
+
+// Rich text settings, heading resets, typographical baseline
+@import '_typography/*.*';
+
+// Images, videos, iframes
+@import '_media/*.*';
+
+// SVG graphics
+.graphic{
+	display:block;text-indent:-9999px;
+	
+	// <modifiers>
+	@import '_graphics/*.*';
+	// </modifiers>
+}
+
+// Individual aspects of the web application, forms, buttons,
+// lists, tables
+@import '_blocks/*.*';
+
+// Components for modular functionality
+@import '../components/*/*.scss';
+
+// Components for modular functionality
+@import '../directives/*/*.scss';
+
+// Media queries can be included inline with the breakpoint mixin
+// or in here if you prefer to segregate your media queries
+@import '_mediaqueries/*.*';
+
+// Any adjustments required for specific browsers
+@import '_polyfills/*.*';
+
+// Any seperated keyframe animations, transitions that can be reused
+@import '_animations/*.*';

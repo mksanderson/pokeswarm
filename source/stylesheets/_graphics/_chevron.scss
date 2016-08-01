@@ -1,0 +1,13 @@
+&.chevron{
+	height:26px;width:32px;
+	
+	// <modifiers>
+	&.rotation{
+		// <modifiers>
+		&.up{
+			transform:rotate(180deg);
+		}
+		// </modifiers>
+	}
+	// </modifiers>
+}

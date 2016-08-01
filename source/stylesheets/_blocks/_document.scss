@@ -1,0 +1,5 @@
+﻿html{
+	@include theme($colors,_black);
+	
+	font:{family:map-get($fonts,common);};overflow-x:hidden;
+}

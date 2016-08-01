@@ -226,6 +226,18 @@ namespace Application {
 			})
 		}
 
+		/**
+		 * (description)
+		 */
+		removeGeoMarkers(): void{
+			for(var i = 0;i<this.geoMarkers.length;i++){
+				this.geoMarkers[i].setMap(null);
+			}
+			
+			for(var i = 0;i<this.geoCircles.length;i++){
+				this.geoCircles[i].setMap(null);
+			}
+		}
 		
 		/**
 		 * Reset markers

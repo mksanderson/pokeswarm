@@ -1,0 +1,12 @@
+&-logo{
+	@include theme($colors,_white);
+
+	align-items:center;border:1px solid $light;border-radius:50%;display:flex;
+	justify-content:center;height:32px;width:32px;
+
+	// <children>
+	&__title{
+		display:block;font:{size:rem(16px);};line-height:1em;
+	}
+	// </children>
+}

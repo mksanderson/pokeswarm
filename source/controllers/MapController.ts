@@ -10,8 +10,7 @@ namespace Application {
 		static $inject = [
 			'FirebaseService',
 			'GeolocationService',
-			'MapService',
-			'PokemonService'
+			'MapService'
 		];
 
 		public location: Position;
@@ -20,8 +19,8 @@ namespace Application {
 
 		constructor(
 			private FirebaseService: FirebaseService,
-			public GeolocationService: GeolocationService,
-			public MapService: MapService
+			private GeolocationService: GeolocationService,
+			private MapService: MapService
 		) {
 			GeolocationService.get().then((response) => {
 				MapService.createMap(document.getElementById('map'), response.coords.latitude, response.coords.longitude, 16);
@@ -61,6 +60,12 @@ namespace Application {
 			this.search = '';
 		}
 
+		updateLocation(): void {
+			this.GeolocationService.get().then((response) => {
+				this.MapService.removeGeoMarkers();
+				this.MapService.addGeoMarker(response);
+			});
+		}
 
 		/**
 		 * (description)
@@ -89,6 +94,10 @@ namespace Application {
 						}
 
 						this.MapService.addMarkers(markers);
+
+						alert(this.name + ' has been added to the map! Thank you!');
+
+						this.name = '';
 					});
 				});
 			})

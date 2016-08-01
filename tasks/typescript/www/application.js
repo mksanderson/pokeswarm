@@ -5,7 +5,9 @@ module.exports = function (gulp, plugins) {
 			])
 			.pipe(plugins.plumber())
 			.pipe(plugins.sourcemaps.init())
-				.pipe(plugins.typescript())
+				.pipe(plugins.typescript({
+					out:'application.js'
+				}))
 			.pipe(plugins.sourcemaps.write())
 			.pipe(gulp.dest('www/'))
 			.pipe(plugins.browserSync.stream());

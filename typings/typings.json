@@ -4,8 +4,5 @@
 		"google-maps": "registry:dt/google-maps#3.1.0+20151203174025",
 		"google.maps": "registry:dt/google.maps#3.20.0+20160626235650",
 		"jquery": "registry:dt/jquery#1.10.0+20160417213236"
-	},
-	"dependencies": {
-		"firebase": "registry:npm/firebase#3.0.5+20160723033700"
 	}
 }

@@ -115,6 +115,12 @@ var gulp = require('gulp'),
 		gulp.start('server');
 	});
 
+	// Command: gulp build
+	gulp.task('build', ['bower:www', 'typings:root', 'sass:www', 'copy:www', 'imagemin:www', 'pug:www', 'typescript:www'], function () {
+		gulp.start('svgSymbols:www');
+		gulp.start('concat:www');
+	});
+
 	// Command: gulp server
 	gulp.task('server', ['watch:source','watch:www'], function () {
 		gulp.start('watch:www');

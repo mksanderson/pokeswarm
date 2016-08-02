@@ -28,13 +28,15 @@ var gulp = require('gulp'),
 		'copy:www:configuration',
 		'copy:www:controllers',
 		'copy:www:dependencies',
-		'copy:www:directives']);
+		'copy:www:directives',
+		'copy:www:root']);
 	gulp.task('copy:www:api', require('./tasks/copy/www/api')(gulp, plugins));
 	gulp.task('copy:www:components', require('./tasks/copy/www/components')(gulp, plugins));
 	gulp.task('copy:www:configuration', require('./tasks/copy/www/configuration')(gulp, plugins));
 	gulp.task('copy:www:controllers', require('./tasks/copy/www/controllers')(gulp, plugins));
 	gulp.task('copy:www:directives', require('./tasks/copy/www/directives')(gulp, plugins));
 	gulp.task('copy:www:dependencies', require('./tasks/copy/www/dependencies')(gulp, plugins));
+	gulp.task('copy:www:root', require('./tasks/copy/www/root')(gulp, plugins));
 
 	// Pug
 	// Path: tasks/copy

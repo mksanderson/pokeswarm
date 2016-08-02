@@ -45,7 +45,10 @@ namespace Application {
 		addMarkers(markers: Array<Marker>): void {
 			for (var i = 0; i < markers.length; i++) {
 				this.marker = new google.maps.Marker({
-					icon: '/api/pokemon/icons/' + markers[i].name + '.png',
+					icon: {
+						scaledSize:new google.maps.Size(60, 60),
+						url:'/api/pokemon/icons/' + markers[i].name + '.ico',
+					},
 					position: new google.maps.LatLng(
 						markers[i].position.coords.latitude,
 						markers[i].position.coords.longitude

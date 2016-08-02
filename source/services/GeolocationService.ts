@@ -36,10 +36,6 @@ namespace Application {
 
 			return deferred.promise;
 		}
-
-		update(position: Position): void{
-			alert('test');
-		}
 	}
 
 	angular

@@ -78,6 +78,7 @@ namespace Application {
 		 */
 		addGeoMarker(position: Position): void {
 			this.geoMarker = new google.maps.Marker({
+				draggable: true,
 				icon: {
 					fillColor: '#039be5',
 					fillOpacity: 0.35,
@@ -96,21 +97,25 @@ namespace Application {
 
 			this.geoMarkers.push(this.geoMarker);
 
-			this.geoCircle = new google.maps.Circle({
-				center: new google.maps.LatLng(
-					position.coords.latitude,
-					position.coords.longitude
-				),
-				fillColor: '#039be5',
-				fillOpacity: 0.15,
-				map: this.instance,
-				radius: position.coords.accuracy * 3,
-				strokeColor: '#039be5',
-				strokeOpacity: 0.35,
-				strokeWeight: 2
-			});
+			this.geoMarker.addListener('dragend', () => {
+				this.getGeoPosition(this.geoMarker);
+			})
 
-			this.geoCircles.push(this.geoCircle);
+			// this.geoCircle = new google.maps.Circle({
+			// 	center: new google.maps.LatLng(
+			// 		position.coords.latitude,
+			// 		position.coords.longitude
+			// 	),
+			// 	fillColor: '#039be5',
+			// 	fillOpacity: 0.15,
+			// 	map: this.instance,
+			// 	radius: position.coords.accuracy * 3,
+			// 	strokeColor: '#039be5',
+			// 	strokeOpacity: 0.35,
+			// 	strokeWeight: 2
+			// });
+
+			// this.geoCircles.push(this.geoCircle);
 		}
 
 		/**
@@ -197,6 +202,23 @@ namespace Application {
 			}
 
 			this.heatmap.setMap(this.instance);
+		}
+
+		
+		/**
+		 * (description)
+		 * 
+		 * @returns {ng.IPromise<Position>} (description)
+		 */
+		getGeoPosition(marker?: google.maps.Marker): ng.IPromise<google.maps.LatLng> {
+			var deferred = this.QService.defer(),
+				result;
+
+			result = this.geoMarker.getPosition();
+
+			deferred.resolve(result);
+
+			return deferred.promise;
 		}
 
 		/**

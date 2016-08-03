@@ -96,7 +96,7 @@ namespace Application {
 							'latitude': position.lat(),
 							'longitude': position.lng()
 						},
-						'timestamp': Math.floor(Date.now() /1000)
+						'timestamp': Math.floor(Date.now())
 					},
 					'name': name
 				}).then((response) => {

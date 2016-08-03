@@ -87,16 +87,16 @@ namespace Application {
 		 * @param {Sighting} record (description)
 		 */
 		submit(name: string) {
-			this.GeolocationService.get().then((response) => {
+			this.MapService.getGeoPosition().then((response) => {
 				var position = response;
 
 				this.FirebaseService.push({
 					'position': {
 						'coords': {
-							'latitude': position.coords.latitude,
-							'longitude': position.coords.longitude
+							'latitude': position.lat(),
+							'longitude': position.lng()
 						},
-						'timestamp': position.timestamp
+						'timestamp': Math.floor(Date.now() /1000)
 					},
 					'name': name
 				}).then((response) => {

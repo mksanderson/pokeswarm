@@ -96,21 +96,23 @@ namespace Application {
 
 			this.geoMarkers.push(this.geoMarker);
 
-			this.geoCircle = new google.maps.Circle({
-				center: new google.maps.LatLng(
-					position.coords.latitude,
-					position.coords.longitude
-				),
-				fillColor: '#039be5',
-				fillOpacity: 0.15,
-				map: this.instance,
-				radius: position.coords.accuracy * 3,
-				strokeColor: '#039be5',
-				strokeOpacity: 0.35,
-				strokeWeight: 2
-			});
+			// this.geoCircle = new google.maps.Circle({
+			// 	center: new google.maps.LatLng(
+			// 		position.coords.latitude,
+			// 		position.coords.longitude
+			// 	),
+			// 	fillColor: '#039be5',
+			// 	fillOpacity: 0.15,
+			// 	map: this.instance,
+			// 	radius: position.coords.accuracy * 3,
+			// 	strokeColor: '#039be5',
+			// 	strokeOpacity: 0.35,
+			// 	strokeWeight: 2
+			// });
 
-			this.geoCircles.push(this.geoCircle);
+			// this.geoCircles.push(this.geoCircle);
+
+			this.instance.setCenter(this.geoMarker.getPosition());
 		}
 
 		/**

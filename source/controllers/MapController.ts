@@ -10,7 +10,8 @@ namespace Application {
 		static $inject = [
 			'FirebaseService',
 			'GeolocationService',
-			'MapService'
+			'MapService',
+			'$window'
 		];
 
 		public location: Position;
@@ -20,7 +21,8 @@ namespace Application {
 		constructor(
 			private FirebaseService: FirebaseService,
 			private GeolocationService: GeolocationService,
-			private MapService: MapService
+			private MapService: MapService,
+			private WindowService: ng.IWindowService
 		) {
 			GeolocationService.get().then((response) => {
 				MapService.createMap(document.getElementById('map'), response.coords.latitude, response.coords.longitude, 16);
@@ -52,6 +54,14 @@ namespace Application {
 			});
 		}
 
+		
+		/**
+		 * Reload the entire map to check for updates
+		 */
+		reload(): void{
+			this.WindowService.location.reload();
+		}
+
 		/**
 		 * Reset the map state
 		 */
@@ -60,7 +70,11 @@ namespace Application {
 			this.search = '';
 		}
 
-		updateLocation(): void {
+		
+		/**
+		 * Relocate the user
+		 */
+		relocate(): void {
 			this.GeolocationService.get().then((response) => {
 				this.MapService.removeGeoMarkers();
 				this.MapService.addGeoMarker(response);

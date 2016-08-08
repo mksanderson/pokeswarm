@@ -29,13 +29,21 @@
 	}
 
 	&-option{
-		@include theme($colors,_blue-indigo);
-
-		align-items:center;display:flex;
+		align-items:stretch;display:flex;flex-direction:column;
 
 		// <children>
 		&-label{
-			display:none;
+			// <children>
+			&__title{
+				display:block;font:{size:rem(16px);weight:bold;};
+			}
+			// </children>
+		}
+
+		&-media{
+			@include theme($colors,_blue-indigo);
+
+			margin:{top:8px;};
 		}
 		// </children>
 	}

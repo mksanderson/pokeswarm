@@ -1,6 +1,6 @@
 .dropdown(off-click="Dropdown.state = false")
 
-	.dropdown-action(data-ng-click="Dropdown.toggle()")
+	.dropdown-action(data-ng-class="{'active':Dropdown.state}",data-ng-click="Dropdown.toggle()")
 		
 		.dropdown-action-label
 

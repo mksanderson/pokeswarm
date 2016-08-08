@@ -1,7 +1,7 @@
 /// <summary>
 /// </summary>
 .dropdown{
-	position:relative;
+	display:block;
 
 	// <children>
 	&-action{
@@ -26,12 +26,19 @@
 			margin:{left:4px;};
 		}
 		// </children>
+
+		// <state>
+		&.active &-label__title{
+			font:{weight:bold;};
+		}
+		// </state>
 	}
 
 	&-result{
-		background:{color:rgba(map-get($colors,_blue-cornflower),0.7)};
-		margin:{top:12px;};padding:12px;position:absolute;
-		top:100%;z-index:1;
+		@include theme($colors,_blue-azure);
+		
+		left:0;margin:{top:12px;};padding:12px;position:absolute;
+		right:0;top:100%;z-index:1;
 	}
 	// </children>
 }

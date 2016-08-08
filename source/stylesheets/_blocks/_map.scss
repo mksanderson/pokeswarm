@@ -60,6 +60,8 @@
 	}
 
 	&-tools{
+		position:relative;
+		
 		// <children>
 		&-actions{
 			align-items:center;display:flex;list-style:none;justify-content:space-between;

@@ -1,11 +1,7 @@
 
 <div class="map" data-ng-controller="MapController as Map">
   <div class="map-state" data-ng-class="{'active':!Map.loaded}">
-    <div class="map-state-media">
-      <svg class="map-state-media__object graphic reload">
-        <use xlink:href="#reload"></use>
-      </svg>
-    </div>
+    <div class="map-state-media"><img class="map-state-media__object" alt="PokeSwarm" height="50" src="/images/brand/logo.png" width="50"/></div>
   </div>
   <div class="map-header" data-ng-class="{'active':Map.loaded}">
     <div class="map-tools">
@@ -55,13 +51,6 @@
           <!-- </dropdown>-->
         </li>
         <!-- </enclosure>-->
-        <li class="maps-tools-actions-enclosure">
-          <div class="application-logo">
-            <div class="application-logo-media"><img class="application-logo__object" alt="PokeSwarm" height="50" src="/images/brand/logo.png" width="50"/></div>
-            <!-- </media>-->
-          </div>
-          <!-- </logo>-->
-        </li>
         <li class="maps-tools-actions-enclosure">
           <dropdown left="initial" object="add" right="0">
             <dropdown-title>Add a sighting</dropdown-title>

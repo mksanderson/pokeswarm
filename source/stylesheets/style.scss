@@ -8,7 +8,6 @@
 // acting as base classes for other blocks
 @import '_placeholders/*.*';
 
-
 // Sass functions that power mixins
 @import '_functions/*.*';
 
@@ -20,6 +19,8 @@
 .utility{
 	@import '_utilities/*.*';
 }
+
+@import '_keyframes/*.*';
 
 // Main application
 .application{

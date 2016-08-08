@@ -1,6 +1,13 @@
 
 <div class="map" data-ng-controller="MapController as Map">
-  <div class="map-header">
+  <div class="map-state" data-ng-class="{'active':!Map.loaded}">
+    <div class="map-state-media">
+      <svg class="map-state-media__object graphic reload">
+        <use xlink:href="#reload"></use>
+      </svg>
+    </div>
+  </div>
+  <div class="map-header" data-ng-class="{'active':Map.loaded}">
     <div class="map-tools">
       <ul class="map-tools-actions">
         <li class="maps-tools-actions-enclosure">
@@ -102,12 +109,12 @@
     <!-- </tools>-->
   </div>
   <!-- </header>-->
-  <div class="map-view">
+  <div class="map-view" data-ng-class="{'active':Map.loaded}">
     <div id="map"></div>
     <!-- </map>-->
   </div>
   <!-- </view>-->
-  <div class="map-footer">
+  <div class="map-footer" data-ng-class="{'active':Map.loaded}">
     <div class="map-tools">
       <ul class="map-tools-actions">
         <li class="maps-tools-actions-enclosure">

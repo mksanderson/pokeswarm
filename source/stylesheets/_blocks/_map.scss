@@ -22,6 +22,27 @@
 		// </children>
 	}
 
+	&-state{
+		align-items:center;display:flex;justify-content:center;height:0;
+		transform:scale(0);transition:transform 0.5s ease, height 0s ease 0.5s;
+
+		// <children>
+		&-media{
+			// <children>
+			&__object{
+
+			}
+			// </children>
+		}
+		// </children>
+
+		// <state>
+		&.active{
+			height:100vh;transform:scale(1);
+		}
+		// </state>
+	}
+
 	&-tools{
 		// <children>
 		&-actions{
@@ -29,6 +50,16 @@
 			margin:0;padding:0;
 		}
 		// </children>
+	}
+
+	&-view{
+		opacity:0;transition:opacity 1s ease 0.5s;visibility:hidden;
+
+		// <state>
+		&.active{
+			opacity:1;transform:scale(1);visibility:visible;
+		}
+		// </state>
 	}
 	// </elements>
 }

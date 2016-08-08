@@ -14,6 +14,7 @@ namespace Application {
 			'$window'
 		];
 
+		public loaded: boolean;
 		public location: Position;
 		public name: string;
 		public search: string;
@@ -25,7 +26,9 @@ namespace Application {
 			private WindowService: ng.IWindowService
 		) {
 			GeolocationService.get().then((response) => {
-				MapService.createMap(document.getElementById('map'), response.coords.latitude, response.coords.longitude, 16);
+				MapService.createMap(document.getElementById('map'), response.coords.latitude, response.coords.longitude, 16).then((response) => {
+					this.loaded = response;
+				});
 				MapService.addGeoMarker(response);
 			}).catch((reason) => {
 				MapService.createMap(document.getElementById('map'), 27, 153, 2);

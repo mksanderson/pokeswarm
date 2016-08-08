@@ -46,8 +46,8 @@ namespace Application {
 			for (var i = 0; i < markers.length; i++) {
 				this.marker = new google.maps.Marker({
 					icon: {
-						scaledSize:new google.maps.Size(60, 60),
-						url:'/api/pokemon/icons/' + markers[i].name + '.ico',
+						scaledSize: new google.maps.Size(60, 60),
+						url: '/api/pokemon/icons/' + markers[i].name + '.ico',
 					},
 					position: new google.maps.LatLng(
 						markers[i].position.coords.latitude,
@@ -100,7 +100,7 @@ namespace Application {
 			this.geoMarker.addListener('dragend', () => {
 				this.getGeoPosition(this.geoMarker);
 			})
-			
+
 			// this.geoCircle = new google.maps.Circle({
 			// 	center: new google.maps.LatLng(
 			// 		position.coords.latitude,
@@ -147,7 +147,9 @@ namespace Application {
 		 * @param {number} lng (description)
 		 * @param {number} zoom (description)
 		 */
-		createMap(dom: Element, lat: number, lng: number, zoom: number): void {
+		createMap(dom: Element, lat: number, lng: number, zoom: number): ng.IPromise<boolean> {
+			var deferred = this.QService.defer();
+
 			this.dom = dom;
 
 			this.instance = new google.maps.Map(this.dom, {
@@ -156,6 +158,18 @@ namespace Application {
 				styles: [{ "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#444444" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#f2f2f2" }] }, { "featureType": "poi", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "saturation": -100 }, { "lightness": 45 }] }, { "featureType": "road.highway", "elementType": "all", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#46bcec" }, { "visibility": "on" }] }],
 				zoom: zoom
 			});
+
+			google.maps.event.addListener(this.instance, 'tilesloaded', () => {
+				var result;
+
+				google.maps.event.clearListeners(this.instance, 'tilesloaded');
+
+				result = true;
+
+				deferred.resolve(result);
+			});
+
+			return deferred.promise;
 		}
 
 		/**
@@ -165,7 +179,7 @@ namespace Application {
 		 */
 		filterMarkers(search?: string): ng.IPromise<string> {
 			var deferred = this.QService.defer();
-			
+
 			if (search) {
 				for (var i = 0; i < this.markers.length; i++) {
 					if (this.markers[i].getTitle().toLowerCase() === search.toLowerCase()) {
@@ -206,7 +220,7 @@ namespace Application {
 			this.heatmap.setMap(this.instance);
 		}
 
-		
+
 		/**
 		 * (description)
 		 * 
@@ -256,16 +270,16 @@ namespace Application {
 		/**
 		 * (description)
 		 */
-		removeGeoMarkers(): void{
-			for(var i = 0;i<this.geoMarkers.length;i++){
+		removeGeoMarkers(): void {
+			for (var i = 0; i < this.geoMarkers.length; i++) {
 				this.geoMarkers[i].setMap(null);
 			}
-			
-			for(var i = 0;i<this.geoCircles.length;i++){
+
+			for (var i = 0; i < this.geoCircles.length; i++) {
 				this.geoCircles[i].setMap(null);
 			}
 		}
-		
+
 		/**
 		 * Reset markers
 		 */

@@ -1,6 +1,13 @@
 .map(data-ng-controller="MapController as Map")
 
-	.map-header
+	.map-state(data-ng-class="{'active':!Map.loaded}")
+
+		.map-state-media
+
+			svg.map-state-media__object.graphic.reload
+				use(xlink:href="#reload")
+
+	.map-header(data-ng-class="{'active':Map.loaded}")
 
 		.map-tools
 			
@@ -157,7 +164,7 @@
 
 	// </header>
 	
-	.map-view
+	.map-view(data-ng-class="{'active':Map.loaded}")
 
 		#map
 
@@ -165,7 +172,7 @@
 
 	// </view>
 
-	.map-footer
+	.map-footer(data-ng-class="{'active':Map.loaded}")
 
 		.map-tools
 			

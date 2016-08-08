@@ -38,6 +38,7 @@ namespace Application {
 					}
 
 					MapService.addMarkers(markers);
+					MapService.addHeatmap();
 				})
 			});
 		}

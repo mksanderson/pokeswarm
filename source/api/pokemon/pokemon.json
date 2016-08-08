@@ -1,5 +1,5 @@
-{
-	"1": {
+[
+	{
 		"name": "Bulbasaur",
 		"attack": 49,
 		"defense": 49,
@@ -17,7 +17,7 @@
 		],
 		"probability": 3
 	},
-	"2": {
+	{
 		"name": "Ivysaur",
 		"attack": 62,
 		"defense": 63,
@@ -31,7 +31,7 @@
 		],
 		"curve": 1.3
 	},
-	"3": {
+	{
 		"name": "Venusaur",
 		"attack": 82,
 		"defense": 83,
@@ -43,7 +43,7 @@
 		],
 		"curve": 1.3
 	},
-	"4": {
+	{
 		"name": "Charmander",
 		"attack": 52,
 		"defense": 43,
@@ -62,7 +62,7 @@
 		],
 		"probability": 3
 	},
-	"5": {
+	{
 		"name": "Charmeleon",
 		"attack": 64,
 		"defense": 58,
@@ -77,7 +77,7 @@
 		],
 		"curve": 1.3
 	},
-	"6": {
+	{
 		"name": "Charizard",
 		"attack": 84,
 		"defense": 78,
@@ -90,7 +90,7 @@
 		],
 		"curve": 1.3
 	},
-	"7": {
+	{
 		"name": "Squirtle",
 		"attack": 48,
 		"defense": 65,
@@ -109,7 +109,7 @@
 		],
 		"probability": 3
 	},
-	"8": {
+	{
 		"name": "Wartortle",
 		"attack": 63,
 		"defense": 80,
@@ -124,7 +124,7 @@
 		],
 		"curve": 1.3
 	},
-	"9": {
+	{
 		"name": "Blastoise",
 		"attack": 83,
 		"defense": 100,
@@ -137,7 +137,7 @@
 		],
 		"curve": 1.3
 	},
-	"10": {
+	{
 		"name": "Caterpie",
 		"attack": 30,
 		"defense": 35,
@@ -154,7 +154,7 @@
 		],
 		"probability": 15
 	},
-	"12": {
+	{
 		"name": "Butterfree",
 		"attack": 45,
 		"defense": 50,
@@ -167,7 +167,7 @@
 		],
 		"curve": 1.6
 	},
-	"13": {
+	{
 		"name": "Weedle",
 		"attack": 35,
 		"defense": 30,
@@ -184,7 +184,7 @@
 		],
 		"probability": 15
 	},
-	"16": {
+	{
 		"name": "Pidgey",
 		"attack": 45,
 		"defense": 40,
@@ -202,7 +202,7 @@
 		],
 		"probability": 15
 	},
-	"17": {
+	{
 		"name": "Pidgeotto",
 		"attack": 60,
 		"defense": 55,
@@ -216,7 +216,7 @@
 		],
 		"curve": 1.3
 	},
-	"18": {
+	{
 		"name": "Pidgeot",
 		"attack": 80,
 		"defense": 75,
@@ -228,7 +228,7 @@
 		],
 		"curve": 1.3
 	},
-	"19": {
+	{
 		"name": "Rattata",
 		"attack": 56,
 		"defense": 35,
@@ -246,7 +246,7 @@
 		],
 		"probability": 20
 	},
-	"20": {
+	{
 		"name": "Raticate",
 		"attack": 81,
 		"defense": 60,
@@ -257,7 +257,7 @@
 		],
 		"curve": 1.6
 	},
-	"21": {
+	{
 		"name": "Spearow",
 		"attack": 60,
 		"defense": 30,
@@ -274,7 +274,7 @@
 		],
 		"probability": 10
 	},
-	"22": {
+	{
 		"name": "Fearow",
 		"attack": 90,
 		"defense": 65,
@@ -285,7 +285,7 @@
 		],
 		"curve": 1.6
 	},
-	"23": {
+	{
 		"name": "Ekans",
 		"attack": 60,
 		"defense": 44,
@@ -303,7 +303,7 @@
 		],
 		"probability": 15
 	},
-	"24": {
+	{
 		"name": "Arbok",
 		"attack": 85,
 		"defense": 69,
@@ -315,7 +315,7 @@
 		],
 		"curve": 1.6
 	},
-	"26": {
+	{
 		"name": "Raichu",
 		"attack": 90,
 		"defense": 55,
@@ -326,7 +326,7 @@
 		],
 		"curve": 1.6
 	},
-	"27": {
+	{
 		"name": "Sandshrew",
 		"attack": 75,
 		"defense": 85,
@@ -344,7 +344,7 @@
 		],
 		"probability": 10
 	},
-	"28": {
+	{
 		"name": "Sandslash",
 		"attack": 100,
 		"defense": 110,
@@ -357,7 +357,7 @@
 		],
 		"curve": 1.6
 	},
-	"29": {
+	{
 		"name": "Nidoran",
 		"attack": 47,
 		"defense": 52,
@@ -374,7 +374,7 @@
 		],
 		"probability": 15
 	},
-	"31": {
+	{
 		"name": "Nidoqueen",
 		"attack": 82,
 		"defense": 87,
@@ -387,7 +387,7 @@
 		],
 		"curve": 1.3
 	},
-	"32": {
+	{
 		"name": "Nidoran",
 		"attack": 57,
 		"defense": 40,
@@ -404,7 +404,7 @@
 		],
 		"probability": 15
 	},
-	"34": {
+	{
 		"name": "Nidoking",
 		"attack": 92,
 		"defense": 77,
@@ -416,7 +416,7 @@
 		],
 		"curve": 1.3
 	},
-	"38": {
+	{
 		"name": "Ninetales",
 		"attack": 76,
 		"defense": 75,
@@ -426,7 +426,7 @@
 		],
 		"curve": 1.6
 	},
-	"41": {
+	{
 		"name": "Zubat",
 		"attack": 45,
 		"defense": 35,
@@ -445,7 +445,7 @@
 		],
 		"probability": 15
 	},
-	"42": {
+	{
 		"name": "Golbat",
 		"attack": 80,
 		"defense": 70,
@@ -458,7 +458,7 @@
 		],
 		"curve": 1.6
 	},
-	"46": {
+	{
 		"name": "Paras",
 		"attack": 70,
 		"defense": 55,
@@ -475,7 +475,7 @@
 		],
 		"probability": 15
 	},
-	"47": {
+	{
 		"name": "Parasect",
 		"attack": 95,
 		"defense": 80,
@@ -486,7 +486,7 @@
 		],
 		"curve": 1.6
 	},
-	"48": {
+	{
 		"name": "Venonat",
 		"attack": 55,
 		"defense": 50,
@@ -504,7 +504,7 @@
 		],
 		"probability": 8
 	},
-	"49": {
+	{
 		"name": "Venomoth",
 		"attack": 65,
 		"defense": 60,
@@ -517,7 +517,7 @@
 		],
 		"curve": 1.6
 	},
-	"50": {
+	{
 		"name": "Diglett",
 		"attack": 55,
 		"defense": 25,
@@ -534,7 +534,7 @@
 		],
 		"probability": 15
 	},
-	"51": {
+	{
 		"name": "Dugtrio",
 		"attack": 80,
 		"defense": 50,
@@ -546,7 +546,7 @@
 		],
 		"curve": 1.6
 	},
-	"52": {
+	{
 		"name": "Meowth",
 		"attack": 45,
 		"defense": 35,
@@ -564,7 +564,7 @@
 		],
 		"probability": 10
 	},
-	"53": {
+	{
 		"name": "Persian",
 		"attack": 70,
 		"defense": 60,
@@ -576,7 +576,7 @@
 		],
 		"curve": 1.6
 	},
-	"54": {
+	{
 		"name": "Psyduck",
 		"attack": 52,
 		"defense": 48,
@@ -594,7 +594,7 @@
 		],
 		"probability": 15
 	},
-	"55": {
+	{
 		"name": "Golduck",
 		"attack": 82,
 		"defense": 78,
@@ -606,7 +606,7 @@
 		],
 		"curve": 1.6
 	},
-	"56": {
+	{
 		"name": "Mankey",
 		"attack": 80,
 		"defense": 35,
@@ -625,7 +625,7 @@
 		],
 		"probability": 8
 	},
-	"57": {
+	{
 		"name": "Primeape",
 		"attack": 105,
 		"defense": 60,
@@ -638,7 +638,7 @@
 		],
 		"curve": 1.6
 	},
-	"59": {
+	{
 		"name": "Arcanine",
 		"attack": 110,
 		"defense": 80,
@@ -649,7 +649,7 @@
 		],
 		"curve": 1
 	},
-	"60": {
+	{
 		"name": "Poliwag",
 		"attack": 50,
 		"defense": 40,
@@ -667,7 +667,7 @@
 		],
 		"probability": 6
 	},
-	"62": {
+	{
 		"name": "Poliwrath",
 		"attack": 85,
 		"defense": 95,
@@ -677,7 +677,7 @@
 		],
 		"curve": 1.3
 	},
-	"65": {
+	{
 		"name": "Alakazam",
 		"attack": 50,
 		"defense": 45,
@@ -689,7 +689,7 @@
 		],
 		"curve": 1.3
 	},
-	"66": {
+	{
 		"name": "Machop",
 		"attack": 80,
 		"defense": 50,
@@ -707,7 +707,7 @@
 		],
 		"probability": 12
 	},
-	"68": {
+	{
 		"name": "Machamp",
 		"attack": 130,
 		"defense": 80,
@@ -720,7 +720,7 @@
 		],
 		"curve": 1.3
 	},
-	"69": {
+	{
 		"name": "Bellsprout",
 		"attack": 75,
 		"defense": 35,
@@ -737,7 +737,7 @@
 		],
 		"probability": 15
 	},
-	"71": {
+	{
 		"name": "Victreebel",
 		"attack": 105,
 		"defense": 65,
@@ -748,7 +748,7 @@
 		],
 		"curve": 1.3
 	},
-	"72": {
+	{
 		"name": "Tentacool",
 		"attack": 40,
 		"defense": 35,
@@ -768,7 +768,7 @@
 		],
 		"probability": 10
 	},
-	"73": {
+	{
 		"name": "Tentacruel",
 		"attack": 70,
 		"defense": 65,
@@ -781,7 +781,7 @@
 		],
 		"curve": 1
 	},
-	"74": {
+	{
 		"name": "Geodude",
 		"attack": 80,
 		"defense": 100,
@@ -799,7 +799,7 @@
 		],
 		"probability": 15
 	},
-	"76": {
+	{
 		"name": "Golem",
 		"attack": 110,
 		"defense": 130,
@@ -811,7 +811,7 @@
 		],
 		"curve": 1.3
 	},
-	"77": {
+	{
 		"name": "Ponyta",
 		"attack": 85,
 		"defense": 55,
@@ -829,7 +829,7 @@
 		],
 		"probability": 6
 	},
-	"78": {
+	{
 		"name": "Rapidash",
 		"attack": 100,
 		"defense": 70,
@@ -841,7 +841,7 @@
 		],
 		"curve": 1.6
 	},
-	"79": {
+	{
 		"name": "Slowpoke",
 		"attack": 65,
 		"defense": 65,
@@ -861,7 +861,7 @@
 		],
 		"probability": 5
 	},
-	"80": {
+	{
 		"name": "Slowbro",
 		"attack": 75,
 		"defense": 110,
@@ -874,7 +874,7 @@
 		],
 		"curve": 1.6
 	},
-	"81": {
+	{
 		"name": "Magnemite",
 		"attack": 35,
 		"defense": 70,
@@ -893,7 +893,7 @@
 		],
 		"probability": 8
 	},
-	"82": {
+	{
 		"name": "Magneton",
 		"attack": 60,
 		"defense": 95,
@@ -906,7 +906,7 @@
 		],
 		"curve": 1.6
 	},
-	"83": {
+	{
 		"name": "Farfetch'd",
 		"attack": 65,
 		"defense": 55,
@@ -922,7 +922,7 @@
 		],
 		"probability": 8
 	},
-	"84": {
+	{
 		"name": "Doduo",
 		"attack": 85,
 		"defense": 45,
@@ -939,7 +939,7 @@
 		],
 		"probability": 8
 	},
-	"85": {
+	{
 		"name": "Dodrio",
 		"attack": 110,
 		"defense": 70,
@@ -950,7 +950,7 @@
 		],
 		"curve": 1.6
 	},
-	"86": {
+	{
 		"name": "Seel",
 		"attack": 45,
 		"defense": 55,
@@ -969,7 +969,7 @@
 		],
 		"probability": 4
 	},
-	"87": {
+	{
 		"name": "Dewgong",
 		"attack": 70,
 		"defense": 80,
@@ -982,7 +982,7 @@
 		],
 		"curve": 1.6
 	},
-	"88": {
+	{
 		"name": "Grimer",
 		"attack": 80,
 		"defense": 50,
@@ -1000,7 +1000,7 @@
 		],
 		"probability": 10
 	},
-	"89": {
+	{
 		"name": "Muk",
 		"attack": 105,
 		"defense": 75,
@@ -1012,7 +1012,7 @@
 		],
 		"curve": 1.6
 	},
-	"91": {
+	{
 		"name": "Cloyster",
 		"attack": 95,
 		"defense": 180,
@@ -1022,7 +1022,7 @@
 		],
 		"curve": 1
 	},
-	"92": {
+	{
 		"name": "Gastly",
 		"attack": 35,
 		"defense": 30,
@@ -1040,7 +1040,7 @@
 		],
 		"probability": 10
 	},
-	"94": {
+	{
 		"name": "Gengar",
 		"attack": 65,
 		"defense": 60,
@@ -1053,7 +1053,7 @@
 		],
 		"curve": 1.3
 	},
-	"95": {
+	{
 		"name": "Onix",
 		"attack": 45,
 		"defense": 160,
@@ -1071,7 +1071,7 @@
 		],
 		"probability": 8
 	},
-	"96": {
+	{
 		"name": "Drowzee",
 		"attack": 48,
 		"defense": 45,
@@ -1090,7 +1090,7 @@
 		],
 		"probability": 8
 	},
-	"97": {
+	{
 		"name": "Hypno",
 		"attack": 73,
 		"defense": 70,
@@ -1103,7 +1103,7 @@
 		],
 		"curve": 1.6
 	},
-	"98": {
+	{
 		"name": "Krabby",
 		"attack": 105,
 		"defense": 90,
@@ -1123,7 +1123,7 @@
 		],
 		"probability": 6
 	},
-	"99": {
+	{
 		"name": "Kingler",
 		"attack": 130,
 		"defense": 115,
@@ -1136,7 +1136,7 @@
 		],
 		"curve": 1.6
 	},
-	"100": {
+	{
 		"name": "Voltorb",
 		"attack": 30,
 		"defense": 50,
@@ -1154,7 +1154,7 @@
 		],
 		"probability": 6
 	},
-	"101": {
+	{
 		"name": "Electrode",
 		"attack": 50,
 		"defense": 70,
@@ -1166,7 +1166,7 @@
 		],
 		"curve": 1.6
 	},
-	"103": {
+	{
 		"name": "Exeggutor",
 		"attack": 95,
 		"defense": 85,
@@ -1178,7 +1178,7 @@
 		],
 		"curve": 1
 	},
-	"104": {
+	{
 		"name": "Cubone",
 		"attack": 50,
 		"defense": 95,
@@ -1196,7 +1196,7 @@
 		],
 		"probability": 5
 	},
-	"105": {
+	{
 		"name": "Marowak",
 		"attack": 80,
 		"defense": 110,
@@ -1207,7 +1207,7 @@
 		],
 		"curve": 1.6
 	},
-	"106": {
+	{
 		"name": "Hitmonlee",
 		"attack": 120,
 		"defense": 53,
@@ -1224,7 +1224,7 @@
 		],
 		"probability": 4
 	},
-	"107": {
+	{
 		"name": "Hitmonchan",
 		"attack": 105,
 		"defense": 79,
@@ -1237,7 +1237,7 @@
 		],
 		"curve": 1.6
 	},
-	"108": {
+	{
 		"name": "Lickitung",
 		"attack": 55,
 		"defense": 75,
@@ -1254,7 +1254,7 @@
 		],
 		"probability": 10
 	},
-	"109": {
+	{
 		"name": "Koffing",
 		"attack": 65,
 		"defense": 95,
@@ -1273,7 +1273,7 @@
 		],
 		"probability": 6
 	},
-	"110": {
+	{
 		"name": "Weezing",
 		"attack": 90,
 		"defense": 120,
@@ -1285,7 +1285,7 @@
 		],
 		"curve": 1.6
 	},
-	"111": {
+	{
 		"name": "Rhyhorn",
 		"attack": 85,
 		"defense": 95,
@@ -1303,7 +1303,7 @@
 		],
 		"probability": 4
 	},
-	"112": {
+	{
 		"name": "Rhydon",
 		"attack": 130,
 		"defense": 120,
@@ -1316,7 +1316,7 @@
 		],
 		"curve": 1
 	},
-	"113": {
+	{
 		"name": "Chansey",
 		"attack": 5,
 		"defense": 5,
@@ -1332,7 +1332,7 @@
 		],
 		"probability": 4
 	},
-	"114": {
+	{
 		"name": "Tangela",
 		"attack": 55,
 		"defense": 115,
@@ -1349,7 +1349,7 @@
 		],
 		"probability": 4
 	},
-	"115": {
+	{
 		"name": "Kangaskhan",
 		"attack": 95,
 		"defense": 80,
@@ -1366,7 +1366,7 @@
 		],
 		"probability": 4
 	},
-	"116": {
+	{
 		"name": "Horsea",
 		"attack": 40,
 		"defense": 70,
@@ -1385,7 +1385,7 @@
 		],
 		"probability": 10
 	},
-	"117": {
+	{
 		"name": "Seadra",
 		"attack": 65,
 		"defense": 95,
@@ -1398,7 +1398,7 @@
 		],
 		"curve": 1.6
 	},
-	"118": {
+	{
 		"name": "Goldeen",
 		"attack": 67,
 		"defense": 60,
@@ -1416,7 +1416,7 @@
 		],
 		"probability": 12
 	},
-	"119": {
+	{
 		"name": "Seaking",
 		"attack": 92,
 		"defense": 65,
@@ -1429,7 +1429,7 @@
 		],
 		"curve": 1.6
 	},
-	"121": {
+	{
 		"name": "Starmie",
 		"attack": 75,
 		"defense": 85,
@@ -1440,7 +1440,7 @@
 		],
 		"curve": 1
 	},
-	"122": {
+	{
 		"name": "Mr. mime",
 		"attack": 45,
 		"defense": 65,
@@ -1458,7 +1458,7 @@
 		],
 		"probability": 4
 	},
-	"123": {
+	{
 		"name": "Scyther",
 		"attack": 110,
 		"defense": 80,
@@ -1474,7 +1474,7 @@
 		],
 		"probability": 4
 	},
-	"124": {
+	{
 		"name": "Jynx",
 		"attack": 50,
 		"defense": 35,
@@ -1492,7 +1492,7 @@
 		],
 		"probability": 4
 	},
-	"125": {
+	{
 		"name": "Electabuzz",
 		"attack": 83,
 		"defense": 57,
@@ -1510,7 +1510,7 @@
 		],
 		"probability": 4
 	},
-	"126": {
+	{
 		"name": "Magmar",
 		"attack": 95,
 		"defense": 57,
@@ -1528,7 +1528,7 @@
 		],
 		"probability": 4
 	},
-	"127": {
+	{
 		"name": "Pinsir",
 		"attack": 125,
 		"defense": 100,
@@ -1543,7 +1543,7 @@
 		],
 		"probability": 4
 	},
-	"128": {
+	{
 		"name": "Tauros",
 		"attack": 100,
 		"defense": 95,
@@ -1559,7 +1559,7 @@
 		],
 		"probability": 4
 	},
-	"129": {
+	{
 		"name": "Magikarp",
 		"attack": 10,
 		"defense": 55,
@@ -1576,7 +1576,7 @@
 		],
 		"probability": 15
 	},
-	"130": {
+	{
 		"name": "Gyarados",
 		"attack": 125,
 		"defense": 79,
@@ -1588,7 +1588,7 @@
 		],
 		"curve": 1
 	},
-	"131": {
+	{
 		"name": "Lapras",
 		"attack": 85,
 		"defense": 80,
@@ -1606,7 +1606,7 @@
 		],
 		"probability": 4
 	},
-	"133": {
+	{
 		"name": "Eevee",
 		"attack": 55,
 		"defense": 50,
@@ -1622,13 +1622,13 @@
 		],
 		"probability": 8
 	},
-	"135": {
-		,
+	{
 		"levels": [
 			5,
 			15
 		],
-		"probability": 4"name": "Jolteon",
+		"probability": 4,
+		"name": "Jolteon",
 		"attack": 65,
 		"defense": 60,
 		"type": "electric",
@@ -1639,7 +1639,7 @@
 		],
 		"curve": 1.6
 	},
-	"136": {
+	{
 		"name": "Flareon",
 		"attack": 130,
 		"defense": 60,
@@ -1652,7 +1652,7 @@
 		],
 		"curve": 1.6
 	},
-	"137": {
+	{
 		"name": "Porygon",
 		"attack": 60,
 		"defense": 70,
@@ -1669,7 +1669,7 @@
 		],
 		"probability": 4
 	},
-	"138": {
+	{
 		"name": "Omanyte",
 		"attack": 40,
 		"defense": 100,
@@ -1684,7 +1684,7 @@
 		],
 		"curve": 1.6
 	},
-	"139": {
+	{
 		"name": "Omastar",
 		"attack": 60,
 		"defense": 125,
@@ -1697,7 +1697,7 @@
 		],
 		"curve": 1.6
 	},
-	"140": {
+	{
 		"name": "Kabuto",
 		"attack": 80,
 		"defense": 90,
@@ -1710,7 +1710,7 @@
 		],
 		"curve": 1.6
 	},
-	"141": {
+	{
 		"name": "Kabutops",
 		"attack": 115,
 		"defense": 105,
@@ -1723,7 +1723,7 @@
 		],
 		"curve": 1.6
 	},
-	"142": {
+	{
 		"name": "Aerodactyl",
 		"attack": 105,
 		"defense": 65,
@@ -1735,7 +1735,7 @@
 		],
 		"curve": 1
 	},
-	"143": {
+	{
 		"name": "Snorlax",
 		"attack": 110,
 		"defense": 65,
@@ -1753,7 +1753,7 @@
 		],
 		"probability": 2
 	},
-	"144": {
+	{
 		"name": "Articuno",
 		"attack": 85,
 		"defense": 100,
@@ -1771,7 +1771,7 @@
 		],
 		"probability": 1
 	},
-	"145": {
+	{
 		"name": "Zapdos",
 		"attack": 90,
 		"defense": 85,
@@ -1789,7 +1789,7 @@
 		],
 		"probability": 1
 	},
-	"146": {
+	{
 		"name": "Moltres",
 		"attack": 100,
 		"defense": 90,
@@ -1807,7 +1807,7 @@
 		],
 		"probability": 1
 	},
-	"147": {
+	{
 		"name": "Dratini",
 		"attack": 64,
 		"defense": 45,
@@ -1825,7 +1825,7 @@
 		],
 		"probability": 6
 	},
-	"148": {
+	{
 		"name": "Dragonair",
 		"attack": 84,
 		"defense": 65,
@@ -1838,7 +1838,7 @@
 		],
 		"curve": 1
 	},
-	"149": {
+	{
 		"name": "Dragonite",
 		"attack": 134,
 		"defense": 95,
@@ -1850,7 +1850,7 @@
 		],
 		"curve": 1
 	},
-	"150": {
+	{
 		"name": "Mewtwo",
 		"attack": 110,
 		"defense": 90,
@@ -1867,7 +1867,7 @@
 		],
 		"probability": 1
 	},
-	"151": {
+	{
 		"name": "Mew",
 		"attack": 100,
 		"defense": 100,
@@ -1883,6 +1883,6 @@
 			50,
 			50
 		],
-		"probability": .3
+		"probability": 0.3
 	}
-}
+]

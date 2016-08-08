@@ -103,14 +103,14 @@
 
 												.form-sighting-option-label
 
-													label.form-sighting-label__title
+													label.form-sighting-label__title(for="sighting-name")
 														| Name of the sighted Pokemon
 
 												// </label>
 
 												.form-sighting-option-media
 
-													input.form-sighting__input.field(data-ng-model="Map.name",placeholder="Pokemon name...",type="text")
+													input.form-sighting__input.field#sighting-name(data-ng-model="Map.name",placeholder="Pokemon name...",type="text")
 
 												// </label>
 

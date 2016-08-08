@@ -7,7 +7,15 @@
 	}
 
 	&-media{
-		margin:{left:9px;};
+		// <instance>
+		&:first-child{
+			margin:{right:9px;};
+		}
+
+		&:last-child{
+			margin:{left:9px;};
+		}
+		// </instance>
 	}
 	// </children>
 }

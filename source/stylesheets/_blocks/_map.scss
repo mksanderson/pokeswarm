@@ -3,13 +3,29 @@
 
 	// <elements>
 	&-footer{
-		background:{color:rgba(map-get($colors,_blue-cornflower),0.35)};
-		bottom:0;left:0;padding:12px 24px;position:fixed;right:0;z-index:1;
+		@include theme($colors,_blue-cornflower);
+
+		bottom:-100%;left:0;opacity:0;padding:12px 24px;position:fixed;right:0;
+		transition:bottom 1s ease,opacity 1s ease 0.5s;z-index:1;
+
+		// <state>
+		&.active{
+			bottom:0%;opacity:1;
+		}
+		// </state>
 	}
 
 	&-header{
-		background:{color:rgba(map-get($colors,_blue-cornflower),0.7)};
-		left:0;padding:12px 24px;position:fixed;right:0;top:0;z-index:1;
+		@include theme($colors,_blue-cornflower);
+		
+		left:0;padding:12px 24px;opacity:0;position:fixed;right:0;
+		transition:opacity 1s ease 0.5s,top 1s ease;top:-100%;z-index:1;
+
+		// <state>
+		&.active{
+			opacity:1;top:0%;
+		}
+		// </state>
 	}
 
 	#map{

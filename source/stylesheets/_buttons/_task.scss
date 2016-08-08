@@ -4,9 +4,11 @@
 	
 	// <children>
 	&-label{
-		@include breakpoint(small){
-			display:none;
+		// <children>
+		&__title{
+			display:block;font:{size:rem(15px);};line-height:1em;
 		}
+		// </children>
 	}
 	
 	&-media{

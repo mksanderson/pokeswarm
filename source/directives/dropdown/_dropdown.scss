@@ -11,13 +11,7 @@
 		&-label{
 			// <children>
 			&__title{
-				display:block;font:{size:rem(18px);weight:normal;};
-
-				// <breakpoints>
-				@include breakpoint(small){
-					display:none;
-				}
-				// </breakpoints>
+				display:block;font:{size:rem(15px);};line-height:1em;
 			}
 			// </children>
 		}

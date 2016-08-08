@@ -3,7 +3,11 @@
 	
 	// <children>
 	&-label{
-
+		// <children>
+		&__title{
+			display:block;font:{size:rem(15px);};line-height:1em;
+		}
+		// </children>
 	}
 
 	&-media{

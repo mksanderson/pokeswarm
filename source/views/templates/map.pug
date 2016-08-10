@@ -8,146 +8,15 @@
 
 	.map-header(data-ng-class="{'active':Map.loaded}")
 
-		.map-tools
-			
-			ul.map-tools-actions
+		.map-header-brand
 
-				li.maps-tools-actions-enclosure
+			.map-header-brand-media
 
-					dropdown(left="0",object="search",right="initial")
+				img.map-header-brand-media__object(alt="PokeSwarm",src="/images/brand/logo.png")
 
-						dropdown-title
-							| Search
+			// </brand>
 
-						dropdown-result
-							.search
-
-								.form-search
-
-									.form-search-option
-
-										.form-search-option-media
-
-											input.form-search__input.field(data-ng-model="Map.search",placeholder="Pokemon",type="search")
-
-										// </input>
-
-									// </option>
-
-									.form-search-footer
-
-										ul.form-search-footer-list
-
-											li.form-search-footer-list-enclosure
-
-												button.button-action.utility.background-color-white(data-ng-click="Map.reset()")
-
-													.button-action-label
-
-														span.button-action-label__title
-															| Reset
-
-													// </label>
-
-												// </button>
-
-											// </enclosure>
-
-											li.form-search-footer-list-enclosure
-
-												button.button-action.utility.background-color-white(data-ng-click="Map.filter(Map.search)")
-
-													.button-action-label
-
-														span.button-action-label__title
-															| Search
-
-													// </label>
-
-												// </button>
-
-											// </enclosure>
-
-										// </list>
-
-									// </footer>
-
-								// </form>
-
-							// </search>
-
-						// </result>
-
-					// </dropdown>
-
-				// </enclosure>
-
-				li.maps-tools-actions-enclosure
-
-					dropdown(left="initial",object="add",right="0")
-						
-						dropdown-title
-							| Add a sighting
-
-						dropdown-result
-
-							.form-sighting
-
-								.form-sighting-main
-
-									ul.form-sighting-options
-
-										li.form-sighting-options-enclosure
-
-											.form-sighting-option
-
-												.form-sighting-option-label
-
-													label.form-sighting-label__title(for="sighting-name")
-														| Name of the sighted Pokemon
-
-												// </label>
-
-												.form-sighting-option-media
-
-													input.form-sighting__input.field#sighting-name(data-ng-model="Map.name",placeholder="Pokemon name...",type="text")
-
-												// </label>
-
-											// </option>
-
-										// </enclosure>
-
-									// </options>
-
-								// </main>
-
-								.form-sighting-footer
-
-									button.button-action.utility.background-color-white(data-ng-click="Map.submit(Map.name)")
-
-										.button-action-label
-
-											span.button-action-label__title
-												| Submit
-
-										// </label>
-
-									// </button>
-
-								// </footer>
-
-							// </sighting>
-
-						// </result>
-
-					// </dropdown>
-
-				// </enclosure>
-
-			// </actions>
-
-		// </tools>
+		// </brand>
 
 	// </header>
 	
@@ -176,27 +45,19 @@
 
 						// </media>
 
-						.button-task-label
-
-							span.button-task-label__title
-								| Reload
-
-						// </label>
-
 					// </task>
+
+				// </enclosure>
+
+				li.maps-tools-actions-enclosure
+
+					sightings
 
 				// </enclosure>
 
 				li.maps-tools-actions-enclosure
 					
 					.button-task(data-ng-click="Map.relocate()")
-
-						.button-task-label
-
-							span.button-task-label__title
-								| Update location
-
-						// </label>
 
 						.button-task-media
 

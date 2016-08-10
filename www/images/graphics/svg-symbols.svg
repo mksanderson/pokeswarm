@@ -5,11 +5,14 @@
     <symbol id="chevron" viewBox="0 0 24 14.83">
       <title>chevron</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M2.83,0,12,9.17,21.17,0,24,2.83l-12,12L0,2.83Z"/></g></g>
     </symbol>
+    <symbol id="close" viewBox="0 0 48 48">
+      <path d="M38 12.83l-2.83-2.83-11.17 11.17-11.17-11.17-2.83 2.83 11.17 11.17-11.17 11.17 2.83 2.83 11.17-11.17 11.17 11.17 2.83-2.83-11.17-11.17z"/><path d="M0 0h48v48h-48z" fill="none"/>
+    </symbol>
     <symbol id="pin-point" viewBox="0 0 44 44">
       <title>pin-point_1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M22,14a8,8,0,1,0,8,8A8,8,0,0,0,22,14Zm17.88,6A18,18,0,0,0,24,4.12V0H20V4.12A18,18,0,0,0,4.12,20H0v4H4.12A18,18,0,0,0,20,39.88V44h4V39.88A18,18,0,0,0,39.88,24H44V20ZM22,36A14,14,0,1,1,36,22,14,14,0,0,1,22,36Z"/></g></g>
     </symbol>
-    <symbol id="reload" viewBox="0 0 24 22">
-      <title>reload</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="Layer_2-2" data-name="Layer 2"><g id="Layer_1-2-2" data-name="Layer 1-2"><g id="miu"><g id="Artboard-1"><path id="editor-redo-arrow-reload-glyph" d="M21.9,9.5A11,11,0,1,0,10.65,22h0V20A9,9,0,1,1,19.88,9.5H18L21,13l3-3.5Z"/></g></g></g></g></g></g>
+    <symbol id="reload" viewBox="0 0 32 32">
+      <g transform="translate(576 336)"><path d="M-559.511-333c-4.019,0-7.795,1.881-10.237,4.998l-3.736-2.16l-0.008,12.364l10.712-6.176l-3.442-1.992   c1.69-1.895,4.125-3.034,6.714-3.034c4.963,0,9.001,4.036,9.001,9c0,4.963-4.038,9-9.001,9v4c7.169,0,13.001-5.832,13.001-13   S-552.341-333-559.511-333L-559.511-333z"/></g>
     </symbol>
     <symbol id="search" viewBox="0 0 39.04 39.04">
       <title>search</title><g id="Layer_2" data-name="Layer 2"><g id="Icons"><path d="M39,35.51,28.93,25.4a16,16,0,1,0-3.53,3.53L35.51,39ZM16,27A11,11,0,1,1,27,16,11,11,0,0,1,16,27Z"/></g></g>

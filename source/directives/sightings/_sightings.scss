@@ -1,0 +1,40 @@
+.sightings{
+	// <children>
+	&-action{
+		cursor:pointer;
+		
+		// <children>
+		&-media{
+			// <children>
+			&__object{
+
+			}
+		// </children>
+		}
+		// </children>
+	}
+
+	&-result{
+		@include theme($colors,_grey-gallery);
+		
+		bottom:0;left:0;opacity:0;padding:24px 12px;position:fixed;
+		right:0;top:-100%;transform:scale(0);transition:opacity 0.5s ease,top 0s ease 0.5s,transform 0s ease 0.5s;
+
+		// <children>
+		&-close{
+			align-self:flex-end;cursor:pointer;
+		}
+
+		&-view{
+			display:flex;flex-direction:column;
+		}
+		// </children>
+
+		// <state>
+		&.active{
+			opacity:1;top:0;transform:scale(1);transition:opacity 0.5s ease;
+		}
+		// </state>
+	}
+	// </children>
+}

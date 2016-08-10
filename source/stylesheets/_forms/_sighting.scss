@@ -5,19 +5,19 @@
 
 		// <modifiers>
 		&.field{
-			background:none;color:$light;padding:8px 12px;min-width:180px;width:100%;
+			background:none;padding:8px 12px;min-width:180px;width:100%;
 
 			// <children>
 			&:-moz-placeholder{
-				color:$light;font:{weight:lighter;style:italic;};
+				color:$dark;font:{weight:lighter;style:italic;};
 			}
 
 			&:-ms-input-placeholder{
-				color:$light;font:{weight:lighter;style:italic;};
+				color:$dark;font:{weight:lighter;style:italic;};
 			}
 
 			&::-webkit-input-placeholder{
-				color:$light;font:{weight:lighter;style:italic;};
+				color:$dark;font:{weight:lighter;style:italic;};
 			}
 			// </children>
 		}
@@ -26,6 +26,22 @@
 
 	&-footer{
 		display:flex;justify-content:flex-end;margin:{top:12px;}
+	}
+
+	&-header{
+		// <children>
+		&-label{
+			// <children>
+			&__title{
+				display:block;font:{size:rem(22px);weight:bold;};line-height:1em;
+			}
+			// </children>
+		}
+		// </children>
+	}
+
+	&-main{
+		margin:{top:24px;};
 	}
 
 	&-option{
@@ -41,11 +57,17 @@
 		}
 
 		&-media{
-			@include theme($colors,_blue-indigo);
-
-			margin:{top:8px;};
+			@include theme($colors,_white);
+			
+			border:1px solid map-get($colors,_grey-gallery);margin:{top:8px;};
 		}
 		// </children>
+
+		// <state>
+		&.error &-label__title{
+			color:red;
+		}
+		// </state>
 	}
 
 	&-options{

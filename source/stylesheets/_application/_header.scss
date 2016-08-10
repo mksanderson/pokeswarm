@@ -11,7 +11,7 @@
 		&-media{
 			// <children>
 			&__object{
-				margin:{left:auto;right:auto;};-webkit-transition:transform 1s ease;
+				margin:{left:auto;right:auto;};transition:transform 1s ease;
 				
 				// <states>
 				&:focus,&:hover{

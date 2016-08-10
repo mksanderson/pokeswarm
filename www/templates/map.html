@@ -4,98 +4,11 @@
     <div class="map-state-media"><img class="map-state-media__object" alt="PokeSwarm" height="50" src="/images/brand/logo.png" width="50"/></div>
   </div>
   <div class="map-header" data-ng-class="{'active':Map.loaded}">
-    <div class="map-tools">
-      <ul class="map-tools-actions">
-        <li class="maps-tools-actions-enclosure">
-          <dropdown left="0" object="search" right="initial">
-            <dropdown-title>Search</dropdown-title>
-            <dropdown-result>
-              <div class="search">
-                <div class="form-search">
-                  <div class="form-search-option">
-                    <div class="form-search-option-media">
-                      <input class="form-search__input field" data-ng-model="Map.search" placeholder="Pokemon" type="search"/>
-                    </div>
-                    <!-- </input>-->
-                  </div>
-                  <!-- </option>-->
-                  <div class="form-search-footer">
-                    <ul class="form-search-footer-list">
-                      <li class="form-search-footer-list-enclosure">
-                        <button class="button-action utility background-color-white" data-ng-click="Map.reset()">
-                          <div class="button-action-label"><span class="button-action-label__title">Reset</span></div>
-                          <!-- </label>-->
-                        </button>
-                        <!-- </button>-->
-                      </li>
-                      <!-- </enclosure>-->
-                      <li class="form-search-footer-list-enclosure">
-                        <button class="button-action utility background-color-white" data-ng-click="Map.filter(Map.search)">
-                          <div class="button-action-label"><span class="button-action-label__title">Search</span></div>
-                          <!-- </label>-->
-                        </button>
-                        <!-- </button>-->
-                      </li>
-                      <!-- </enclosure>-->
-                    </ul>
-                    <!-- </list>-->
-                  </div>
-                  <!-- </footer>-->
-                </div>
-                <!-- </form>-->
-              </div>
-              <!-- </search>-->
-            </dropdown-result>
-            <!-- </result>-->
-          </dropdown>
-          <!-- </dropdown>-->
-        </li>
-        <!-- </enclosure>-->
-        <li class="maps-tools-actions-enclosure">
-          <dropdown left="initial" object="add" right="0">
-            <dropdown-title>Add a sighting</dropdown-title>
-            <dropdown-result>
-              <div class="form-sighting">
-                <div class="form-sighting-main">
-                  <ul class="form-sighting-options">
-                    <li class="form-sighting-options-enclosure">
-                      <div class="form-sighting-option">
-                        <div class="form-sighting-option-label">
-                          <label class="form-sighting-label__title" for="sighting-name">Name of the sighted Pokemon</label>
-                        </div>
-                        <!-- </label>-->
-                        <div class="form-sighting-option-media">
-                          <input class="form-sighting__input field" id="sighting-name" data-ng-model="Map.name" placeholder="Pokemon name..." type="text"/>
-                        </div>
-                        <!-- </label>-->
-                      </div>
-                      <!-- </option>-->
-                    </li>
-                    <!-- </enclosure>-->
-                  </ul>
-                  <!-- </options>-->
-                </div>
-                <!-- </main>-->
-                <div class="form-sighting-footer">
-                  <button class="button-action utility background-color-white" data-ng-click="Map.submit(Map.name)">
-                    <div class="button-action-label"><span class="button-action-label__title">Submit</span></div>
-                    <!-- </label>-->
-                  </button>
-                  <!-- </button>-->
-                </div>
-                <!-- </footer>-->
-              </div>
-              <!-- </sighting>-->
-            </dropdown-result>
-            <!-- </result>-->
-          </dropdown>
-          <!-- </dropdown>-->
-        </li>
-        <!-- </enclosure>-->
-      </ul>
-      <!-- </actions>-->
+    <div class="map-header-brand">
+      <div class="map-header-brand-media"><img class="map-header-brand-media__object" alt="PokeSwarm" src="/images/brand/logo.png"/></div>
+      <!-- </brand>-->
     </div>
-    <!-- </tools>-->
+    <!-- </brand>-->
   </div>
   <!-- </header>-->
   <div class="map-view" data-ng-class="{'active':Map.loaded}">
@@ -114,16 +27,16 @@
               </svg>
             </div>
             <!-- </media>-->
-            <div class="button-task-label"><span class="button-task-label__title">Reload</span></div>
-            <!-- </label>-->
           </div>
           <!-- </task>-->
         </li>
         <!-- </enclosure>-->
         <li class="maps-tools-actions-enclosure">
+          <sightings></sightings>
+        </li>
+        <!-- </enclosure>-->
+        <li class="maps-tools-actions-enclosure">
           <div class="button-task" data-ng-click="Map.relocate()">
-            <div class="button-task-label"><span class="button-task-label__title">Update location</span></div>
-            <!-- </label>-->
             <div class="button-task-media">
               <svg class="button-task-media__object graphic pin-point">
                 <use xlink:href="#pin-point"></use>

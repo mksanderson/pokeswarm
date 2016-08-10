@@ -3,7 +3,7 @@
 
 	// <elements>
 	&-footer{
-		@include theme($colors,_blue-cornflower);
+		@include theme($colors,_blue-madison);
 
 		bottom:-100%;left:0;opacity:0;padding:12px 24px;position:fixed;right:0;
 		transition:bottom 1s ease,opacity 1s ease 0.5s;z-index:1;
@@ -16,14 +16,29 @@
 	}
 
 	&-header{
-		@include theme($colors,_blue-cornflower);
-		
-		left:0;padding:12px 24px;opacity:0;position:fixed;right:0;
-		transition:opacity 1s ease 0.5s,top 1s ease;top:-100%;z-index:1;
+		left:50%;opacity:0;pointer-events:none;
+		position:fixed;right:50%;transition:opacity 1s ease 0.5s,top 1s ease;
+		top:-100%;z-index:1;
+
+		// <children>
+		&-brand{
+			align-items:center;display:flex;flex-grow:1;justify-content:center;
+
+			// <children>
+			&-media{
+				// <children>
+				&__object{
+					height:50px;width:50px;
+				}
+				// </children>
+			}
+			// </children>
+		}
+		// </children>
 
 		// <state>
 		&.active{
-			opacity:1;top:0%;
+			opacity:1;top:12px;
 		}
 		// </state>
 	}

@@ -14,8 +14,10 @@ namespace Application {
 			'$window'
 		];
 
+		public error: string;
 		public loaded: boolean;
 		public location: Position;
+		public message: string;
 		public name: string;
 		public search: string;
 
@@ -58,11 +60,11 @@ namespace Application {
 			});
 		}
 
-		
+
 		/**
 		 * Reload the entire map to check for updates
 		 */
-		reload(): void{
+		reload(): void {
 			this.WindowService.location.reload();
 		}
 
@@ -74,7 +76,7 @@ namespace Application {
 			this.search = '';
 		}
 
-		
+
 		/**
 		 * Relocate the user
 		 */
@@ -83,42 +85,6 @@ namespace Application {
 				this.MapService.removeGeoMarkers();
 				this.MapService.addGeoMarker(response);
 			});
-		}
-
-		/**
-		 * (description)
-		 * 
-		 * @param {Sighting} record (description)
-		 */
-		submit(name: string) {
-			this.MapService.getGeoPosition().then((response) => {
-				var position = response;
-
-				this.FirebaseService.push({
-					'position': {
-						'coords': {
-							'latitude': position.lat(),
-							'longitude': position.lng()
-						},
-						'timestamp': Math.floor(Date.now())
-					},
-					'name': name
-				}).then((response) => {
-					this.FirebaseService.get('/').then((response) => {
-						var markers = [];
-
-						for (var i = 0; i < response.length; i++) {
-							markers.push(response[i].val());
-						}
-
-						this.MapService.addMarkers(markers);
-
-						alert(this.name + ' has been added to the map! Thank you!');
-
-						this.name = '';
-					});
-				});
-			})
 		}
 	}
 

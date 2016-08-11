@@ -1,0 +1,52 @@
+.navigator
+					
+	ul.navigator-set
+
+		li.navigator-set-enclosure
+
+			a.navigator-action(data-ng-class="{'active':Application.currentRoute('/form')}",data-ng-href="/#/form")
+
+				.navigator-action-media
+
+					svg.navigator-action-media__object.graphic.add
+						use(xlink:href="#add")
+
+				// </media>
+
+			// </action>
+
+		// </enclosure>
+		
+		li.navigator-set-enclosure
+
+			a.navigator-action(data-ng-class="{'active':Application.currentRoute('/map')}",data-ng-href="/#/map")
+
+				.navigator-action-media
+
+					svg.navigator-action-media__object.graphic.pin
+						use(xlink:href="#pin")
+
+				// </media>
+
+			// </action>
+
+		// </enclosure>
+
+		li.navigator-set-enclosure
+			
+			a.navigator-action(data-ng-class="{'active':Application.currentRoute('/page')}",data-ng-href="/#/page")
+
+				.navigator-action-media
+
+					svg.navigator-action-media__object.graphic.chevron
+						use(xlink:href="#chevron")
+
+				// </media>
+
+			// </action>
+
+		// </enclosure>
+	
+	// </set>
+
+// </navigator>

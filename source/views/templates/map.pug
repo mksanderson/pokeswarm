@@ -1,79 +1,49 @@
-.map(data-ng-controller="MapController as Map")
-
-	.map-state(data-ng-class="{'active':!Map.loaded}")
-
-		.map-state-media
-
-			img.map-state-media__object(alt="PokeSwarm",height="50",src="/images/brand/logo.png",width="50")
-
-	.map-header(data-ng-class="{'active':Map.loaded}")
-
-		.map-header-brand
-
-			.map-header-brand-media
-
-				img.map-header-brand-media__object(alt="PokeSwarm",src="/images/brand/logo.png")
-
-			// </brand>
-
-		// </brand>
-
-	// </header>
+.map
 	
-	.map-view(data-ng-class="{'active':Map.loaded}")
+	.map-view
 
 		#map
 
 		// </map>
 
-	// </view>
+		.map-controls
 
-	.map-footer(data-ng-class="{'active':Map.loaded}")
+			ul.map-controls-set
 
-		.map-tools
-			
-			ul.map-tools-actions
+				li.map-controls-set-enclosure
 
-				li.maps-tools-actions-enclosure
+					.button-action.utility.background-color-black(data-ng-click="Map.relocate()")
 
-					.button-task(data-ng-click="Map.reload()")
+						.button-task-action
 
-						.button-task-media
-
-							svg.button-task-media__object.graphic.reload
-								use(xlink:href="#reload")
-
-						// </media>
-
-					// </task>
-
-				// </enclosure>
-
-				li.maps-tools-actions-enclosure
-
-					sightings
-
-				// </enclosure>
-
-				li.maps-tools-actions-enclosure
-					
-					.button-task(data-ng-click="Map.relocate()")
-
-						.button-task-media
-
-							svg.button-task-media__object.graphic.pin-point
+							svg.button-action-media__object.graphic.pin-point
 								use(xlink:href="#pin-point")
 
 						// </media>
 
-					// </task>
-				
+					// </action>
+
 				// </enclosure>
 
-			// </actions>
+				li.map-controls-set-enclosure
 
-		// </tools>
+					.button-action.utility.background-color-black(data-ng-click="Application.reload()")
 
-	// </footer>
+						.button-task-action
+
+							svg.button-action-media__object.graphic.reload
+								use(xlink:href="#reload")
+
+						// </media>
+
+					// </action>
+
+				// </enclosure>
+
+			// </set>
+
+		// </controls>
+		
+	// </view>
 
 // </map>

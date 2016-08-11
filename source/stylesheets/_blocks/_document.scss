@@ -1,5 +1,5 @@
 ﻿html{
-	@include theme($colors,_grey-gallery);
+	@include theme($colors,_black-mineshaft);
 	
 	font:{family:map-get($fonts,common);};overflow-x:hidden;
 }

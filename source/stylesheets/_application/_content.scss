@@ -1,0 +1,21 @@
+&-content{
+	// <children>
+	&-header{
+		// <children>
+		&-label{
+			// <children>
+			&__title{
+				margin:0;
+			}
+			// </children>
+		}
+		// </children>
+	}
+
+	&-main{
+		@include rich-text;
+
+		margin:{top:12px;};
+	}
+	// </children>
+}

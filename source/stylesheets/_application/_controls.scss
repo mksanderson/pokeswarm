@@ -1,0 +1,22 @@
+&-controls{
+	bottom:50px;left:0;padding:12px 24px;position:fixed;right:0;
+
+	// <children>
+	&-set{
+		align-items:center;display:flex;justify-content:flex-end;
+		list-style:none;margin:0;padding:0;
+
+		// <children>
+		&-enclosure{
+			margin:{right:12px;};
+
+			// <instance>
+			&:last-child{
+				margin:{right:0;};
+			}
+			// </instance>
+		}
+		// </children>
+	}
+	// </children>
+}

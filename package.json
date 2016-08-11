@@ -24,6 +24,7 @@
     "gulp-typescript": "latest",
     "gulp-typings": "latest",
     "jstransformer": "latest",
+    "jstransformer-markdown": "latest",
     "markdown": "latest",
     "require-dir": "latest"
   },

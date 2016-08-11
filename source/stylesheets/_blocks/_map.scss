@@ -1,46 +1,28 @@
 .map{
 	position:relative;
 
-	// <elements>
-	&-footer{
-		@include theme($colors,_blue-madison);
-
-		bottom:-100%;left:0;opacity:0;padding:12px 24px;position:fixed;right:0;
-		transition:bottom 1s ease,opacity 1s ease 0.5s;z-index:1;
-
-		// <state>
-		&.active{
-			bottom:0%;opacity:1;
-		}
-		// </state>
-	}
-
-	&-header{
-		left:50%;opacity:0;pointer-events:none;
-		position:fixed;right:50%;transition:opacity 1s ease 0.5s,top 1s ease;
-		top:-100%;z-index:1;
+	// <children>
+	&-controls{
+		bottom:50px;left:0;padding:12px 24px;position:fixed;right:0;
 
 		// <children>
-		&-brand{
-			align-items:center;display:flex;flex-grow:1;justify-content:center;
+		&-set{
+			align-items:center;display:flex;justify-content:flex-end;
+			list-style:none;margin:0;padding:0;
 
 			// <children>
-			&-media{
-				// <children>
-				&__object{
-					height:50px;width:50px;
+			&-enclosure{
+				margin:{right:12px;};
+
+				// <instance>
+				&:last-child{
+					margin:{right:0;};
 				}
-				// </children>
+				// </instance>
 			}
 			// </children>
 		}
 		// </children>
-
-		// <state>
-		&.active{
-			opacity:1;top:12px;
-		}
-		// </state>
 	}
 
 	#map{
@@ -51,27 +33,6 @@
 			color:$dark;font:{weight:bold;};
 		}
 		// </children>
-	}
-
-	&-state{
-		align-items:center;display:flex;justify-content:center;height:0;
-		transform:scale(0);transition:transform 0.5s ease, height 0s ease 0.5s;
-
-		// <children>
-		&-media{
-			// <children>
-			&__object{
-				animation:rotate infinite 3s;
-			}
-			// </children>
-		}
-		// </children>
-
-		// <state>
-		&.active{
-			height:100vh;transform:scale(1);
-		}
-		// </state>
 	}
 
 	&-tools{
@@ -86,13 +47,7 @@
 	}
 
 	&-view{
-		opacity:0;transition:opacity 1s ease 0.5s;visibility:hidden;
-
-		// <state>
-		&.active{
-			opacity:1;transform:scale(1);visibility:visible;
-		}
-		// </state>
+		
 	}
-	// </elements>
+	// </children>
 }

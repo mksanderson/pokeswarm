@@ -10,10 +10,22 @@ html(class="no-js",data-ng-controller="ApplicationController as Application",ite
 		
 		.application
 			
+			.application-header
+
+				include /partials/header
+
+			// </header>
+
 			main.application-main(data-ng-view)
-				| Loading
+
 			// </main>
 
+			.application-footer
+
+				include /partials/footer
+
+			// </footer>
+			
 		// </application>
 		
 		include /partials/scripts

@@ -1,34 +1,24 @@
 ﻿&-header{
-	margin:{top:20px;};
-		
+	left:0;padding:12px 24px;position:absolute;right:0;top:0;z-index:1;
+
 	// <children>
-	&-logo{
+	&-brand{
+		align-items:center;display:flex;flex-grow:1;justify-content:center;
+
 		// <children>
-		&__title{
-			
-		}
-		
 		&-media{
 			// <children>
 			&__object{
-				margin:{left:auto;right:auto;};transition:transform 1s ease;
-				
-				// <states>
-				&:focus,&:hover{
-					transform:rotate(360deg);
-				}
-				// </states>
+				height:50px;width:50px;
 			}
 			// </children>
 		}
 		// </children>
-		
+	}
+
+	&-set{
+		align-items:center;display:flex;justify-content:space-between;
+		list-style:none;margin:0;padding:0;
 	}
 	// </children>
-	
-	// <instance>
-	&:first-child{
-		margin:{top:0;};
-	}
-	// </instance>
 }

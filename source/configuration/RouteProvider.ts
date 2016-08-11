@@ -4,9 +4,22 @@ namespace Application {
 			public RouteProvider: ng.route.IRouteProvider
 		){
 			RouteProvider
-				.when('/', {
+				.when('/page', {
+					controller:'PageController',
+					controllerAs: 'Page',
+					templateUrl:'/templates/page.html'
+				})
+				.when('/form', {
+					controller:'FormController',
+					controllerAs: 'Form',
+					templateUrl:'/templates/form.html'
+				})
+				.when('/map', {
+					controller:'MapController',
+					controllerAs: 'Map',
 					templateUrl:'/templates/map.html'
 				})
+			.otherwise('/map')
 		}
 	}
 	

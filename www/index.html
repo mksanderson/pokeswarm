@@ -71,8 +71,55 @@
   </head>
   <body>
     <div class="application">
-      <main class="application-main" data-ng-view>Loading</main>
+      <div class="application-header">
+        <div class="application-header-brand">
+          <div class="application-header-brand-media"><img class="application-header-brand-media__object" alt="PokeSwarm" src="/images/brand/logo.png"></div>
+          <!-- </media>-->
+        </div>
+        <!-- </brand>-->
+      </div>
+      <!-- </header>-->
+      <main class="application-main" data-ng-view></main>
       <!-- </main>-->
+      <div class="application-footer">
+        <div class="navigator">
+          <ul class="navigator-set">
+            <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/form')}" data-ng-href="/#/form">
+                <div class="navigator-action-media">
+                  <svg class="navigator-action-media__object graphic add">
+                    <use xlink:href="#add"></use>
+                  </svg>
+                </div>
+                <!-- </media>--></a>
+              <!-- </action>-->
+            </li>
+            <!-- </enclosure>-->
+            <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/map')}" data-ng-href="/#/map">
+                <div class="navigator-action-media">
+                  <svg class="navigator-action-media__object graphic pin">
+                    <use xlink:href="#pin"></use>
+                  </svg>
+                </div>
+                <!-- </media>--></a>
+              <!-- </action>-->
+            </li>
+            <!-- </enclosure>-->
+            <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/page')}" data-ng-href="/#/page">
+                <div class="navigator-action-media">
+                  <svg class="navigator-action-media__object graphic chevron">
+                    <use xlink:href="#chevron"></use>
+                  </svg>
+                </div>
+                <!-- </media>--></a>
+              <!-- </action>-->
+            </li>
+            <!-- </enclosure>-->
+          </ul>
+          <!-- </set>-->
+        </div>
+        <!-- </navigator>-->
+      </div>
+      <!-- </footer>-->
     </div>
     <!-- </application>-->
     <script defer src="/bower_components/dependencies.js"></script>

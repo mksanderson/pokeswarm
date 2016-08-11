@@ -14,12 +14,9 @@ namespace Application {
 			'$window'
 		];
 
-		public error: string;
 		public loaded: boolean;
 		public location: Position;
 		public message: string;
-		public name: string;
-		public search: string;
 
 		constructor(
 			private FirebaseService: FirebaseService,
@@ -48,7 +45,6 @@ namespace Application {
 			});
 		}
 
-
 		/**
 		 * Filter the map items based on the search model
 		 * 
@@ -59,23 +55,6 @@ namespace Application {
 				this.MapService.filterHeatMap();
 			});
 		}
-
-
-		/**
-		 * Reload the entire map to check for updates
-		 */
-		reload(): void {
-			this.WindowService.location.reload();
-		}
-
-		/**
-		 * Reset the map state
-		 */
-		reset() {
-			this.MapService.reset();
-			this.search = '';
-		}
-
 
 		/**
 		 * Relocate the user

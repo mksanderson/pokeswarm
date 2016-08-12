@@ -2,59 +2,100 @@
 
 	.application-view
 
-		form.form-sighting(data-ng-submit="Form.submit(Form.name);")
+		.application-view-header
 
-			.form-sighting-header
+			.application-brand
 
-				.form-sighting-header-label
+				.application-brand-media
 
-					.form-sighting-header-label__title
-						| Add a Pokemon sighting
+					img.application-brand-media__object(alt="PokeSwarm",src="/images/brand/logo.png")
 
-			.form-sighting-main
+				// </media>
 
-				ul.form-sighting-options
+			// </brand>
 
-					li.form-sighting-options-enclosure
+		// </header>
 
-						.form-sighting-option(data-ng-class="{'error':Form.error}")
+		.application-view-main
+
+			form.form-sighting(data-ng-submit="Form.submit(Form.name);")
+
+				.form-sighting-header
+
+					.form-sighting-header-label
+
+						.form-sighting-header-label__title
+							| Add a Pokemon sighting
+
+				.form-sighting-main
+
+					ul.form-sighting-options
+
+						li.form-sighting-options-enclosure
+
+							.form-sighting-option(data-ng-class="{'error':Form.error}")
+								
+								.form-sighting-option-label
+
+									label.form-sighting-option-label__title(for="sighting-name")
+										| Pokemon
+									
+									span.form-sighting-option-label__description
+										| The name of the sighted Pokemon
+
+								// </label>
+
+								.form-sighting-option-media
+
+									input.form-sighting__input.field#sighting-name(data-ng-focus="Form.error = ''",data-ng-model="Form.name",placeholder="Pokemon name...",type="text")
+
+						li.form-sighting-options-enclosure
+
+							.form-sighting-option
+
+								.form-sighting-option-label
+
+									label.form-sighting-option-label__title(for="sighting-location")
+										| Location
+									
+									span.form-sighting-option-label__description
+										| Drag the marker to where you saw the Pokemon
+
+								// </label>
+
+								.form-sighting-option-media
+
+									.form-sighting__input.map#location
 							
-							.form-sighting-option-label
-
-								label.form-sighting-option-label__title(for="sighting-name")
-									| Pokemon
-								
-								span.form-sighting-option-label__description
-									| The name of the sighted Pokemon
-
-							// </label>
-
-							.form-sighting-option-media
-
-								input.form-sighting__input.field#sighting-name(data-ng-focus="Form.error = ''",data-ng-model="Form.name",placeholder="Pokemon name...",type="text")
-
-					li.form-sighting-options-enclosure
-
-						.form-sighting-option
-
-							.form-sighting-option-label
-
-								label.form-sighting-option-label__title(for="sighting-location")
-									| Location
-								
-								span.form-sighting-option-label__description
-									| Drag the marker to where you saw the Pokemon
-
-							// </label>
-
-							.form-sighting-option-media
-
-								.form-sighting__input.map#location
+							// </option>
+						
+						// </option>
+					
+					// </options>
+				
+				// </main>
 			
+			// </form>
+				
 			.application-controls
 
 				ul.application-controls-set
 
+					li.application-controls-set-enclosure
+
+						.button-action.utility.background-color-black(data-ng-click="Form.relocate()")
+
+							.button-action-media
+
+								svg.button-action-media__object.graphic.pin-point
+									use(xlink:href="#pin-point")
+
+							// </media>
+
+						// </action>
+
+					// </enclosure>
+					
 					li.application-controls-set-enclosure
 
 						button.button-action.utility.background-color-black
@@ -73,3 +114,9 @@
 				// </set>
 
 			// </controls>
+		
+		</main>
+	
+	// </view>
+
+// </extent>

@@ -29,6 +29,16 @@ namespace Application {
 		}
 
 		/**
+		 * Relocate the user
+		 */
+		relocate(): void {
+			this.GeolocationService.get().then((response) => {
+				this.MapService.removeGeoMarkers();
+				this.MapService.addGeoMarker(response);
+			});
+		}
+
+		/**
 		 * (description)
 		 * 
 		 * @param {Sighting} record (description)

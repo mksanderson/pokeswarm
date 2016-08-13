@@ -1,33 +1,14 @@
 .map{
-	position:relative;
-
-	&-header{
-		left:0;pointer-events:none;position:absolute;right:0;top:24px;z-index:1;
-	}
+	position:relative;z-index:0;
 
 	#map{
-		height:100vh;width:100%;
+		height:100vh;margin-top:-48px;width:100%;
 
 		// <children>
 		.gm-style-iw{
 			color:$dark;font:{weight:bold;};
 		}
 		// </children>
-	}
-
-	&-tools{
-		position:relative;
-		
-		// <children>
-		&-actions{
-			align-items:center;display:flex;list-style:none;justify-content:space-between;
-			margin:0;padding:0;
-		}
-		// </children>
-	}
-
-	&-view{
-		
 	}
 	// </children>
 }

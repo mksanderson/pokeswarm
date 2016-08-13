@@ -1,0 +1,23 @@
+.brand{
+	align-items:center;display:flex;
+
+	// <children>
+	&-label{
+		margin:{left:12px;};
+
+		// <children>
+		&__title{
+			font:{size:rem(22px);weight:normal;};line-height:1em;margin:0;
+		}
+		// </children>
+	}
+
+	&-media{
+		// <children>
+		&__object{
+			height:28px;width:28px;
+		}
+		// </children>
+	}
+	// </children>
+}

@@ -74,11 +74,12 @@ namespace Application {
 		 * Add a marker for users current position.
 		 * Depends on the GeolocationService
 		 * 
+		 * @param {boolean} draggable (description)
 		 * @param {Marker} marker (description)
 		 */
-		addGeoMarker(position: Position): void {
+		addGeoMarker(draggable: boolean, position: Position): void {
 			this.geoMarker = new google.maps.Marker({
-				draggable: true,
+				draggable: draggable,
 				icon: {
 					fillColor: '#039be5',
 					fillOpacity: 0.35,
@@ -97,9 +98,11 @@ namespace Application {
 
 			this.geoMarkers.push(this.geoMarker);
 
-			this.geoMarker.addListener('dragend', () => {
-				this.getGeoPosition(this.geoMarker);
-			})
+			if(draggable){
+				this.geoMarker.addListener('dragend', () => {
+					this.getGeoPosition(this.geoMarker);
+				})
+			}
 
 			// this.geoCircle = new google.maps.Circle({
 			// 	center: new google.maps.LatLng(

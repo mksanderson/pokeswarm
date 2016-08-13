@@ -1,84 +1,73 @@
 
 <div class="utility extent">
-  <div class="application-view">
-    <div class="application-view-header">
-      <div class="application-brand">
-        <div class="application-brand-media"><img class="application-brand-media__object" alt="PokeSwarm" src="/images/brand/logo.png"/></div>
-        <!-- </media>-->
-      </div>
-      <!-- </brand>-->
-    </div>
-    <!-- </header>-->
-    <div class="application-view-main">
-      <form class="form-sighting" data-ng-submit="Form.submit(Form.name);">
-        <div class="form-sighting-header">
-          <div class="form-sighting-header-label">
-            <div class="form-sighting-header-label__title">Add a Pokemon sighting</div>
-          </div>
-        </div>
-        <div class="form-sighting-main">
-          <ul class="form-sighting-options">
-            <li class="form-sighting-options-enclosure">
-              <div class="form-sighting-option" data-ng-class="{'error':Form.error}">
-                <div class="form-sighting-option-label">
-                  <label class="form-sighting-option-label__title" for="sighting-name">Pokemon</label><span class="form-sighting-option-label__description">The name of the sighted Pokemon</span>
-                </div>
-                <!-- </label>-->
-                <div class="form-sighting-option-media">
-                  <input class="form-sighting__input field" id="sighting-name" data-ng-focus="Form.error = ''" data-ng-model="Form.name" placeholder="Pokemon name..." type="text"/>
-                </div>
+  <div class="application-main-view">
+    <form class="form-sighting" data-ng-submit="Form.submit(Form.name);">
+      <div class="form-sighting-main">
+        <ul class="form-sighting-options">
+          <li class="form-sighting-options-enclosure">
+            <div class="form-sighting-option" data-ng-class="{'error':Form.error}">
+              <div class="form-sighting-option-label">
+                <label class="form-sighting-option-label__title" for="sighting-name">Pokemon</label><span class="form-sighting-option-label__description">The name of the sighted Pokemon</span>
               </div>
-            </li>
-            <li class="form-sighting-options-enclosure">
-              <div class="form-sighting-option">
-                <div class="form-sighting-option-label">
-                  <label class="form-sighting-option-label__title" for="sighting-location">Location</label><span class="form-sighting-option-label__description">Drag the marker to where you saw the Pokemon</span>
-                </div>
-                <!-- </label>-->
-                <div class="form-sighting-option-media">
-                  <div class="form-sighting__input map" id="location"></div>
-                </div>
-              </div>
-              <!-- </option>-->
-            </li>
-            <!-- </option>-->
-          </ul>
-          <!-- </options>-->
-        </div>
-        <!-- </main>-->
-      </form>
-      <!-- </form>-->
-      <div class="application-controls">
-        <ul class="application-controls-set">
-          <li class="application-controls-set-enclosure">
-            <div class="button-action utility background-color-black" data-ng-click="Form.relocate()">
-              <div class="button-action-media">
-                <svg class="button-action-media__object graphic pin-point">
-                  <use xlink:href="#pin-point"></use>
-                </svg>
+              <!-- </label>-->
+              <div class="form-sighting-option-media">
+                <input class="form-sighting__input field" id="sighting-name" data-ng-focus="Form.error = ''" data-ng-model="Form.name" placeholder="Pokemon name..." type="text"/>
               </div>
               <!-- </media>-->
             </div>
-            <!-- </action>-->
+            <!-- </option>-->
           </li>
           <!-- </enclosure>-->
-          <li class="application-controls-set-enclosure">
-            <button class="button-action utility background-color-black" data-ng-click="Form.submit(Form.name);">
-              <div class="button-action-media">
-                <svg class="button-action-media__object graphic pin-point">
-                  <use xlink:href="#save"></use>
-                </svg>
+          <li class="form-sighting-options-enclosure">
+            <div class="form-sighting-option">
+              <div class="form-sighting-option-label">
+                <label class="form-sighting-option-label__title" for="sighting-location">Location</label><span class="form-sighting-option-label__description">Drag the marker to where you saw the Pokemon</span>
+              </div>
+              <!-- </label>-->
+              <div class="form-sighting-option-media">
+                <div class="form-sighting__input map" id="location"></div>
               </div>
               <!-- </media>-->
-            </button>
-            <!-- </action>-->
+            </div>
+            <!-- </option>-->
           </li>
-          <!-- </enclosure>-->
+          <!-- </option>-->
         </ul>
-        <!-- </set>-->
+        <!-- </options>-->
       </div>
-      <!-- </controls>-->
-    </div></main>
+      <!-- </main>-->
+    </form>
+    <!-- </form>-->
+    <div class="application-controls">
+      <ul class="application-controls-set">
+        <li class="application-controls-set-enclosure">
+          <div class="button-action utility background-color-black" data-ng-click="Form.relocate()">
+            <div class="button-action-media">
+              <svg class="button-action-media__object graphic pin-point">
+                <use xlink:href="#pin-point"></use>
+              </svg>
+            </div>
+            <!-- </media>-->
+          </div>
+          <!-- </action>-->
+        </li>
+        <!-- </enclosure>-->
+        <li class="application-controls-set-enclosure">
+          <button class="button-action utility background-color-black" data-ng-click="Form.submit(Form.name);">
+            <div class="button-action-media">
+              <svg class="button-action-media__object graphic pin-point">
+                <use xlink:href="#save"></use>
+              </svg>
+            </div>
+            <!-- </media>-->
+          </button>
+          <!-- </action>-->
+        </li>
+        <!-- </enclosure>-->
+      </ul>
+      <!-- </set>-->
+    </div>
+    <!-- </controls>-->
   </div>
   <!-- </view>-->
 </div>

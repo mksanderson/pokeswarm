@@ -1,10 +1,20 @@
 ﻿&-header{
-	left:0;padding:12px 24px;position:absolute;right:0;top:0;z-index:1;
+	@include theme($colors,_blue-lochmara);
+
+	position:relative;z-index:1;
 
 	// <children>
 	&-set{
 		align-items:center;display:flex;justify-content:space-between;
 		list-style:none;margin:0;padding:0;
+
+		// <children>
+
+		// </children>
+	}
+
+	&-view{
+		padding:10px 24px;
 	}
 	// </children>
 }

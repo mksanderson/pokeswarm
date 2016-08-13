@@ -14,6 +14,7 @@
     <meta content="width=device-width,initial-scale=1" name="viewport">
     <meta content="no" name="user-scalable">
     <meta content="on" http-equiv="cleartype">
+    <meta content="yes" name="mobile-web-app-capable">
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="PokeSwarm" name="apple-mobile-web-app-title">
@@ -53,7 +54,7 @@
     <meta content="PokeSwarm" property="og:site_name">
     <!-- </social>-->
     <!-- <resources>-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600,600italic,700,700italic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,700italic,500italic,400italic,300italic,100italic|Source+Sans+Pro:400,300,400italic,300italic,600,600italic,700,700italic" rel="stylesheet">
     <link href="/stylesheets/style.css" rel="stylesheet">
     <link data-ng-include="'/images/graphics/svg-symbols.svg'">
     <!-- </resources>-->
@@ -71,45 +72,75 @@
   </head>
   <body>
     <div class="application">
+      <header class="application-header">
+        <div class="utility extent">
+          <div class="application-header-view">
+            <ul class="application-header-set">
+              <li class="application-header-set-enclosure">
+                <div class="brand">
+                  <div class="brand-media"><img class="brand-media__object" alt="PokeSwarm" src="/images/brand/logo.png"></div>
+                  <!-- </media>-->
+                  <div class="brand-label">
+                    <h1 class="brand-label__title">PokeSwarm</h1>
+                  </div>
+                  <!-- </label>-->
+                </div>
+                <!-- </brand>-->
+              </li>
+              <!-- </enclosure>-->
+            </ul>
+            <!-- </set>-->
+          </div>
+          <!-- </view>-->
+        </div>
+        <!-- </extent>-->
+      </header>
+      <!-- </header>-->
       <main class="application-main" data-ng-view></main>
       <!-- </main>-->
       <div class="application-footer">
-        <div class="navigator">
-          <ul class="navigator-set">
-            <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/form')}" data-ng-href="/#/form">
-                <div class="navigator-action-media">
-                  <svg class="navigator-action-media__object graphic add">
-                    <use xlink:href="#add"></use>
-                  </svg>
-                </div>
-                <!-- </media>--></a>
-              <!-- </action>-->
-            </li>
-            <!-- </enclosure>-->
-            <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/map')}" data-ng-href="/#/map">
-                <div class="navigator-action-media">
-                  <svg class="navigator-action-media__object graphic pin">
-                    <use xlink:href="#pin"></use>
-                  </svg>
-                </div>
-                <!-- </media>--></a>
-              <!-- </action>-->
-            </li>
-            <!-- </enclosure>-->
-            <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/page')}" data-ng-href="/#/page">
-                <div class="navigator-action-media">
-                  <svg class="navigator-action-media__object graphic chevron">
-                    <use xlink:href="#chevron"></use>
-                  </svg>
-                </div>
-                <!-- </media>--></a>
-              <!-- </action>-->
-            </li>
-            <!-- </enclosure>-->
-          </ul>
-          <!-- </set>-->
+        <div class="utility extent">
+          <div class="application-footer-view">
+            <div class="navigator">
+              <ul class="navigator-set">
+                <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/form')}" data-ng-href="/#/form">
+                    <div class="navigator-action-media">
+                      <svg class="navigator-action-media__object graphic add">
+                        <use xlink:href="#add"></use>
+                      </svg>
+                    </div>
+                    <!-- </media>--></a>
+                  <!-- </action>-->
+                </li>
+                <!-- </enclosure>-->
+                <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/map')}" data-ng-href="/#/map">
+                    <div class="navigator-action-media">
+                      <svg class="navigator-action-media__object graphic pin">
+                        <use xlink:href="#pin"></use>
+                      </svg>
+                    </div>
+                    <!-- </media>--></a>
+                  <!-- </action>-->
+                </li>
+                <!-- </enclosure>-->
+                <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/page')}" data-ng-href="/#/page">
+                    <div class="navigator-action-media">
+                      <svg class="navigator-action-media__object graphic chevron">
+                        <use xlink:href="#chevron"></use>
+                      </svg>
+                    </div>
+                    <!-- </media>--></a>
+                  <!-- </action>-->
+                </li>
+                <!-- </enclosure>-->
+              </ul>
+              <!-- </set>-->
+            </div>
+            <!-- </navigator>-->
+          </div>
+          <!-- </view>-->
         </div>
-        <!-- </navigator>-->
+        <!-- </extent>-->
       </div>
       <!-- </footer>-->
     </div>

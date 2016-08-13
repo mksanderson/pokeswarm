@@ -4,16 +4,22 @@
 // or dark variant to keep it readable.
 // </summary>
 &.background{
-	// <nodes>
+	// <children>
 	&-color{
 		@each $color-name,$color-value in $colors{
-			// <nodes>
+			// <children>
+			*{
+				color:contrast($color-value,$dark,$light);
+				fill:contrast($color-value,$dark,$light);
+			}
+			
 			&-#{str-slice($color-name,2,str-length($color-name))}{
 				background:{color:$color-value;};
 				color:contrast($color-value,$dark,$light);
+				fill:contrast($color-value,$dark,$light);
 			}
-			// </nodes>
+			// </children>
 		}
 	}
-	// <nodes>
+	// <children>
 }

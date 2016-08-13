@@ -28,7 +28,7 @@ namespace Application {
 				MapService.createMap(document.getElementById('map'), response.coords.latitude, response.coords.longitude, 16).then((response) => {
 					this.loaded = response;
 				});
-				MapService.addGeoMarker(response);
+				MapService.addGeoMarker(false, response);
 			}).catch((reason) => {
 				MapService.createMap(document.getElementById('map'), 27, 153, 2);
 			}).then(() => {
@@ -62,7 +62,7 @@ namespace Application {
 		relocate(): void {
 			this.GeolocationService.get().then((response) => {
 				this.MapService.removeGeoMarkers();
-				this.MapService.addGeoMarker(response);
+				this.MapService.addGeoMarker(false, response);
 			});
 		}
 	}

@@ -46,6 +46,12 @@
 
 	&-main{
 		margin:{top:24px;};
+
+		// <instance>
+		&:first-child{
+			margin:{top:0;};
+		}
+		// </instance>
 	}
 
 	&-option{
@@ -55,7 +61,7 @@
 		&-label{
 			// <children>
 			&__title{
-				display:block;font:{size:rem(16px);weight:bold;};
+				display:block;font:{size:rem(18px);weight:normal;};
 			}
 			// </children>
 		}
@@ -79,7 +85,7 @@
 
 		// <children>
 		&-enclosure{
-			margin:{bottom:12px;};
+			margin:{bottom:24px;};
 
 			// <instance>
 			&:last-child{

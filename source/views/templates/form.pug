@@ -1,121 +1,104 @@
 .utility.extent
+	
+	.application-main-view
+		
+		form.form-sighting(data-ng-submit="Form.submit(Form.name);")
 
-	.application-view
+			.form-sighting-main
 
-		.application-view-header
+				ul.form-sighting-options
 
-			.application-brand
+					li.form-sighting-options-enclosure
 
-				.application-brand-media
-
-					img.application-brand-media__object(alt="PokeSwarm",src="/images/brand/logo.png")
-
-				// </media>
-
-			// </brand>
-
-		// </header>
-
-		.application-view-main
-
-			form.form-sighting(data-ng-submit="Form.submit(Form.name);")
-
-				.form-sighting-header
-
-					.form-sighting-header-label
-
-						.form-sighting-header-label__title
-							| Add a Pokemon sighting
-
-				.form-sighting-main
-
-					ul.form-sighting-options
-
-						li.form-sighting-options-enclosure
-
-							.form-sighting-option(data-ng-class="{'error':Form.error}")
-								
-								.form-sighting-option-label
-
-									label.form-sighting-option-label__title(for="sighting-name")
-										| Pokemon
-									
-									span.form-sighting-option-label__description
-										| The name of the sighted Pokemon
-
-								// </label>
-
-								.form-sighting-option-media
-
-									input.form-sighting__input.field#sighting-name(data-ng-focus="Form.error = ''",data-ng-model="Form.name",placeholder="Pokemon name...",type="text")
-
-						li.form-sighting-options-enclosure
-
-							.form-sighting-option
-
-								.form-sighting-option-label
-
-									label.form-sighting-option-label__title(for="sighting-location")
-										| Location
-									
-									span.form-sighting-option-label__description
-										| Drag the marker to where you saw the Pokemon
-
-								// </label>
-
-								.form-sighting-option-media
-
-									.form-sighting__input.map#location
+						.form-sighting-option(data-ng-class="{'error':Form.error}")
 							
-							// </option>
+							.form-sighting-option-label
+
+								label.form-sighting-option-label__title(for="sighting-name")
+									| Pokemon
+								
+								span.form-sighting-option-label__description
+									| The name of the sighted Pokemon
+
+							// </label>
+
+							.form-sighting-option-media
+
+								input.form-sighting__input.field#sighting-name(data-ng-focus="Form.error = ''",data-ng-model="Form.name",placeholder="Pokemon name...",type="text")
+							
+							// </media>
 						
 						// </option>
 					
-					// </options>
-				
-				// </main>
-			
-			// </form>
-				
-			.application-controls
-
-				ul.application-controls-set
-
-					li.application-controls-set-enclosure
-
-						.button-action.utility.background-color-black(data-ng-click="Form.relocate()")
-
-							.button-action-media
-
-								svg.button-action-media__object.graphic.pin-point
-									use(xlink:href="#pin-point")
-
-							// </media>
-
-						// </action>
-
 					// </enclosure>
+
+					li.form-sighting-options-enclosure
+
+						.form-sighting-option
+
+							.form-sighting-option-label
+
+								label.form-sighting-option-label__title(for="sighting-location")
+									| Location
+								
+								span.form-sighting-option-label__description
+									| Drag the marker to where you saw the Pokemon
+
+							// </label>
+
+							.form-sighting-option-media
+
+								.form-sighting__input.map#location
+							
+							// </media>
+						
+						// </option>
 					
-					li.application-controls-set-enclosure
-
-						button.button-action.utility.background-color-black(data-ng-click="Form.submit(Form.name);")
-
-							.button-action-media
-
-								svg.button-action-media__object.graphic.pin-point
-									use(xlink:href="#save")
-
-							// </media>
-
-						// </action>
-
-					// </enclosure>
-
-				// </set>
-
-			// </controls>
+					// </option>
+				
+				// </options>
+			
+			// </main>
 		
-		</main>
+		// </form>
+			
+		.application-controls
+
+			ul.application-controls-set
+
+				li.application-controls-set-enclosure
+
+					.button-action.utility.background-color-black(data-ng-click="Form.relocate()")
+
+						.button-action-media
+
+							svg.button-action-media__object.graphic.pin-point
+								use(xlink:href="#pin-point")
+
+						// </media>
+
+					// </action>
+
+				// </enclosure>
+				
+				li.application-controls-set-enclosure
+
+					button.button-action.utility.background-color-black(data-ng-click="Form.submit(Form.name);")
+
+						.button-action-media
+
+							svg.button-action-media__object.graphic.pin-point
+								use(xlink:href="#save")
+
+						// </media>
+
+					// </action>
+
+				// </enclosure>
+
+			// </set>
+
+		// </controls>
 	
 	// </view>
 

@@ -1,5 +1,4 @@
 ﻿html{
-	@include theme($colors,_black-mineshaft);
-	
+	background:{color:map-get($colors,_grey-porcelain);};
 	font:{family:map-get($fonts,common);};overflow-x:hidden;
 }

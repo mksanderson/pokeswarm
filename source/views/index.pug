@@ -10,13 +10,43 @@ html(class="no-js",data-ng-controller="ApplicationController as Application",ite
 		
 		.application
 
+			header.application-header
+
+				.utility.extent
+
+					.application-header-view
+					
+						ul.application-header-set
+
+							li.application-header-set-enclosure
+
+								include /partials/brand
+
+							// </enclosure>
+
+						// </set>
+					
+					// </view>
+				
+				// </extent>
+
+			// </header>
+
 			main.application-main(data-ng-view)
 
 			// </main>
 
 			.application-footer
 
-				include /partials/footer
+				.utility.extent
+
+					.application-footer-view
+					
+						include /partials/footer
+					
+					// </view>
+				
+				// </extent>
 
 			// </footer>
 			

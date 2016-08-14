@@ -32,7 +32,7 @@
           <li class="form-sighting-options-enclosure">
             <div class="form-sighting-option" data-ng-class="{'error':Form.error}">
               <div class="form-sighting-option-label">
-                <label class="form-sighting-option-label__title" for="sighting-name">Pokemon</label><span class="form-sighting-option-label__description">The name of the sighted Pokemon</span>
+                <label class="form-sighting-option-label__title" for="sighting-name">Pokemon</label>
               </div>
               <!-- </label>-->
               <div class="form-sighting-option-media">
@@ -51,13 +51,37 @@
               <!-- </label>-->
               <div class="form-sighting-option-media">
                 <div class="form-sighting__input">
-                  <div class="map">
-                    <div class="map-view">
-                      <div id="location"></div>
+                  <div class="map" data-ng-controller="MapController as Map">
+                    <div class="map-view" data-ng-class="{'fullscreen':Map.fullscreen}">
+                      <div class="map-view-instance" id="location"></div>
+                      <div class="map-controls">
+                        <ul class="map-controls-set">
+                          <li class="map-controls-set-enclosure"><a class="button-tool" data-ng-click="Map.relocate()">
+                              <div class="button-tool-media">
+                                <svg class="button-tool-media__object graphic pin-point">
+                                  <use xlink:href="#pin-point"></use>
+                                </svg>
+                              </div>
+                              <!-- </media>--></a>
+                            <!-- </tool>-->
+                          </li>
+                          <!-- </enclosure>-->
+                          <li class="map-controls-set-enclosure"><a class="button-tool" data-ng-click="Map.resize()">
+                              <div class="button-tool-media">
+                                <svg class="button-tool-media__object graphic chevron" data-ng-class="{'rotation up':!Map.fullscreen}">
+                                  <use xlink:href="#chevron"></use>
+                                </svg>
+                              </div>
+                              <!-- </media>--></a>
+                            <!-- </tool>-->
+                          </li>
+                          <!-- </enclosure>-->
+                        </ul>
+                        <!-- </set>-->
+                      </div>
+                      <!-- </controls>-->
                     </div>
                     <!-- </view>-->
-                    <div class="map-controls"></div>
-                    <!-- </controls>-->
                   </div>
                   <!-- </map>-->
                 </div>

@@ -8,7 +8,8 @@ namespace Application {
 		static $inject = [
 			'GeolocationService',
 			'FirebaseService',
-			'MapService'
+			'MapService',
+			'$timeout'
 		];
 
 		public error: boolean;
@@ -18,14 +19,17 @@ namespace Application {
 		constructor(
 			private GeolocationService: GeolocationService,
 			private FirebaseService: FirebaseService,
-			private MapService: MapService
+			private MapService: MapService,
+			private TimeoutService: ng.ITimeoutService
 		) {
-			GeolocationService.get().then((response) => {
-				MapService.createMap(document.getElementById('location'), response.coords.latitude, response.coords.longitude, 16).then((response) => {
-					
+			TimeoutService(() => {
+				GeolocationService.get().then((response) => {
+					MapService.createMap(document.getElementById('location'), response.coords.latitude, response.coords.longitude, 16).then((response) => {
+
+					});
+					MapService.addGeoMarker(true, response);
 				});
-				MapService.addGeoMarker(true, response);
-			});
+			}, 0)
 		}
 
 		/**

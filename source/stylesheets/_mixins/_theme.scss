@@ -1,6 +1,6 @@
 // Sets the background color and foreground colors for sub elements
-@mixin theme($map,$color-name,$darker:$dark,$lighter:$light){
-	background:{color:map-get($map,$color-name);};color:contrast(map-get($map,$color-name),$darker,$lighter);
+@mixin theme($map,$color-name,$opacity:1,$darker:$dark,$lighter:$light){
+	background:{color:rgba(map-get($map,$color-name),$opacity);};color:contrast(map-get($map,$color-name),$darker,$lighter);
 	fill:contrast(map-get($map,$color-name),$darker,$lighter);
 
 	// <children>

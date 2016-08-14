@@ -10,7 +10,8 @@ namespace Application {
 		static $inject = [
 			'$filter',
 			'$http',
-			'$q'
+			'$q',
+			'$timeout'
 		];
 
 		private active: google.maps.Marker;
@@ -32,7 +33,8 @@ namespace Application {
 		constructor(
 			private FilterService: ng.IFilterService,
 			private HttpService: ng.IHttpService,
-			private QService: ng.IQService
+			private QService: ng.IQService,
+			private TimeoutService: ng.ITimeoutService
 		) {
 
 		}
@@ -98,7 +100,7 @@ namespace Application {
 
 			this.geoMarkers.push(this.geoMarker);
 
-			if(draggable){
+			if (draggable) {
 				this.geoMarker.addListener('dragend', () => {
 					this.getGeoPosition(this.geoMarker);
 				})
@@ -155,6 +157,10 @@ namespace Application {
 
 			this.dom = dom;
 
+			this.TimeoutService(() => {
+
+			}, 0)
+
 			this.instance = new google.maps.Map(this.dom, {
 				center: new google.maps.LatLng(lat, lng),
 				disableDefaultUI: true,
@@ -162,6 +168,10 @@ namespace Application {
 				minZoom: 12,
 				styles: [{ "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#444444" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#f2f2f2" }] }, { "featureType": "poi", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "saturation": -100 }, { "lightness": 45 }] }, { "featureType": "road.highway", "elementType": "all", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#46bcec" }, { "visibility": "on" }] }],
 				zoom: zoom
+			});
+
+			google.maps.event.addDomListener(window, 'resize', () => {
+				this.instance.setCenter(new google.maps.LatLng(lat, lng));
 			});
 
 			// Check when the map is ready and return a promise
@@ -293,6 +303,13 @@ namespace Application {
 			for (var i = 0; i < this.markers.length; i++) {
 				this.markers[i].setVisible(true);
 			}
+		}
+
+		resize(): void {
+			this.TimeoutService(() => {
+				google.maps.event.trigger(this.instance, 'resize');
+				this.instance.setCenter(this.geoMarker.getPosition());
+			}, 0)
 		}
 	}
 

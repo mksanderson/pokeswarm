@@ -1,6 +1,53 @@
 .map{
-	position:relative;z-index:0;
+	// <children>
+	&-controls{
+		@include theme($colors,_blue-lochmara, 0.45);
+		
+		left:0;padding:12px;position:absolute;right:0;top:0;z-index:3;
 
+		// <children>
+		&-set{
+			align-items:center;display:flex;justify-content:flex-end;
+			list-style:none;margin:0;padding:0;
+
+			// <children>
+			&-enclosure{
+				margin:{right:12px;};
+
+				// <instance>
+				&:last-child{
+					margin:{right:0;};
+				}
+				// </instance>
+			}
+			// </children>
+		}
+		// </children>
+	}
+
+	&-view{
+		position:relative;
+
+		// <children>
+		&-instance{
+
+		}
+		// </children>
+
+		// <modifiers>
+		&.fullscreen{
+			position:static;
+		}
+
+		&.fullscreen &-instance{
+			bottom:0;left:0;height:100%!important;position:absolute!important;right:0;top:0;width:100%!important;
+			z-index:2;
+		}
+		// </modifiers>
+	}
+	// </children>
+
+	// <instance>
 	#map{
 		height:100vh;margin:{top:-106px;};width:100%;
 
@@ -14,5 +61,5 @@
 	#location{
 		height:300px;width:100%;
 	}
-	// </children>
+	// </instance>
 }

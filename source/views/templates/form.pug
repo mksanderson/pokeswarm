@@ -50,9 +50,6 @@
 
 								label.form-sighting-option-label__title(for="sighting-name")
 									| Pokemon
-								
-								span.form-sighting-option-label__description
-									| The name of the sighted Pokemon
 
 							// </label>
 
@@ -84,17 +81,51 @@
 								
 								.form-sighting__input
 									
-									.map
+									.map(data-ng-controller="MapController as Map")
 
-										.map-view
+										.map-view(data-ng-class="{'fullscreen':Map.fullscreen}")
 
-											#location
-										
+											#location.map-view-instance
+
+											.map-controls
+
+												ul.map-controls-set
+
+													li.map-controls-set-enclosure
+
+														a.button-tool(data-ng-click="Map.relocate()")
+															
+															.button-tool-media
+
+																svg.button-tool-media__object.graphic.pin-point
+																	use(xlink:href="#pin-point")
+
+															// </media>
+
+														// </tool>
+
+													// </enclosure>
+
+													li.map-controls-set-enclosure
+
+														a.button-tool(data-ng-click="Map.resize()")
+															
+															.button-tool-media
+
+																svg.button-tool-media__object.graphic.chevron(data-ng-class="{'rotation up':!Map.fullscreen}")
+																	use(xlink:href="#chevron")
+
+															// </media>
+
+														// </tool>
+
+													// </enclosure>
+
+												// </set>
+
+											// </controls>
+
 										// </view>
-
-										.map-controls
-
-										// </controls>
 									
 									// </map>
 								

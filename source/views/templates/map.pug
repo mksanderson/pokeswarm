@@ -15,7 +15,7 @@
 
 				li.application-view-header-tools-set-enclosure
 
-					button.button-tool(data-ng-click="Application.reload();")
+					a.button-tool(data-ng-click="Application.reload();")
 
 						.button-tool-media
 
@@ -32,7 +32,7 @@
 
 					button.button-tool(data-ng-click="Map.relocate();")
 
-						.button-tool-media
+						a.button-tool-media
 
 							svg.button-tool-media__object.graphic.pin-point
 								use(xlink:href="#pin-point")
@@ -55,7 +55,7 @@
 
 			.map-main
 				
-				#map
+				#map.map-instance
 
 				// </map>
 				

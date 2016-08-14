@@ -7,25 +7,21 @@
     <!-- </label>-->
     <div class="application-view-header-tools">
       <ul class="application-view-header-tools-set">
-        <li class="application-view-header-tools-set-enclosure">
-          <button class="button-tool" data-ng-click="Application.reload();">
+        <li class="application-view-header-tools-set-enclosure"><a class="button-tool" data-ng-click="Application.reload();">
             <div class="button-tool-media">
               <svg class="button-tool-media__object graphic reload">
                 <use xlink:href="#reload"></use>
               </svg>
             </div>
-            <!-- </media>-->
-          </button>
+            <!-- </media>--></a>
           <!-- </tool>-->
         </li>
         <!-- </enclosure>-->
         <li class="application-view-header-tools-set-enclosure">
-          <button class="button-tool" data-ng-click="Map.relocate();">
-            <div class="button-tool-media">
+          <button class="button-tool" data-ng-click="Map.relocate();"><a class="button-tool-media">
               <svg class="button-tool-media__object graphic pin-point">
                 <use xlink:href="#pin-point"></use>
-              </svg>
-            </div>
+              </svg></a>
             <!-- </media>-->
           </button>
           <!-- </tool>-->
@@ -40,7 +36,7 @@
   <div class="application-map">
     <div class="map">
       <div class="map-main">
-        <div id="map"></div>
+        <div class="map-instance" id="map"></div>
         <!-- </map>-->
       </div>
       <!-- </main>-->

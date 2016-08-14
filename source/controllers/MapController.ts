@@ -11,9 +11,11 @@ namespace Application {
 			'FirebaseService',
 			'GeolocationService',
 			'MapService',
+			'$timeout',
 			'$window'
 		];
 
+		public fullscreen: boolean;
 		public loaded: boolean;
 		public location: Position;
 		public message: string;
@@ -22,27 +24,30 @@ namespace Application {
 			private FirebaseService: FirebaseService,
 			private GeolocationService: GeolocationService,
 			private MapService: MapService,
+			private TimeoutService: ng.ITimeoutService,
 			private WindowService: ng.IWindowService
 		) {
-			GeolocationService.get().then((response) => {
-				MapService.createMap(document.getElementById('map'), response.coords.latitude, response.coords.longitude, 16).then((response) => {
-					this.loaded = response;
+			TimeoutService(() => {
+				GeolocationService.get().then((response) => {
+					MapService.createMap(document.getElementById('map'), response.coords.latitude, response.coords.longitude, 16).then((response) => {
+						this.loaded = response;
+					});
+					MapService.addGeoMarker(false, response);
+				}).catch((reason) => {
+					MapService.createMap(document.getElementById('map'), 27, 153, 2);
+				}).then(() => {
+					FirebaseService.get('/').then((response) => {
+						var markers = [];
+
+						for (var i = 0; i < response.length; i++) {
+							markers.push(response[i].val());
+						}
+
+						MapService.addMarkers(markers);
+						MapService.addHeatmap();
+					})
 				});
-				MapService.addGeoMarker(false, response);
-			}).catch((reason) => {
-				MapService.createMap(document.getElementById('map'), 27, 153, 2);
-			}).then(() => {
-				FirebaseService.get('/').then((response) => {
-					var markers = [];
-
-					for (var i = 0; i < response.length; i++) {
-						markers.push(response[i].val());
-					}
-
-					MapService.addMarkers(markers);
-					MapService.addHeatmap();
-				})
-			});
+			},0)
 		}
 
 		/**
@@ -54,6 +59,15 @@ namespace Application {
 			this.MapService.filterMarkers(search).then(() => {
 				this.MapService.filterHeatMap();
 			});
+		}
+
+
+		/**
+		 * Used for resizing the map, ie: making it full screen
+		 */
+		resize(): void {
+			this.fullscreen = !this.fullscreen;
+			this.MapService.resize();
 		}
 
 		/**

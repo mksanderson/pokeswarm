@@ -1,49 +1,66 @@
-.map
+.application-view
 
-	.map-main
-		
-		#map
+	.application-view-header
 
-		// </map>
+		.application-view-header-label
 
-		.application-controls
+			h2.application-view-header-label__title
+				| Sightings
 
-			ul.application-controls-set
+		// </label>
 
-				li.application-controls-set-enclosure
+		.application-view-header-tools
 
-					.button-action.utility.background-color-black(data-ng-click="Map.relocate()")
+			ul.application-view-header-tools-set
 
-						.button-action-media
+				li.application-view-header-tools-set-enclosure
 
-							svg.button-action-media__object.graphic.pin-point
-								use(xlink:href="#pin-point")
+					button.button-tool(data-ng-click="Application.reload();")
 
-						// </media>
+						.button-tool-media
 
-					// </action>
-
-				// </enclosure>
-
-				li.application-controls-set-enclosure
-
-					.button-action.utility.background-color-black(data-ng-click="Application.reload()")
-
-						.button-task-action-media
-
-							svg.button-action-media__object.graphic.reload
+							svg.button-tool-media__object.graphic.reload
 								use(xlink:href="#reload")
 
 						// </media>
 
-					// </action>
-
+					// </tool>
+				
 				// </enclosure>
 
+				li.application-view-header-tools-set-enclosure
+
+					button.button-tool(data-ng-click="Map.relocate();")
+
+						.button-tool-media
+
+							svg.button-tool-media__object.graphic.pin-point
+								use(xlink:href="#pin-point")
+
+						// </media>
+
+					// </tool>
+				
+				// </enclosure>
+			
 			// </set>
 
-		// </controls>
-		
-	// </main>
+		// </tools>
 
-// </map>
+	// </header>
+
+	.application-map
+
+		.map
+
+			.map-main
+				
+				#map
+
+				// </map>
+				
+			// </main>
+
+		// </map>
+	
+	// </map>

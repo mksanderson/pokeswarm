@@ -1,6 +1,31 @@
 
-<div class="utility extent">
-  <div class="application-main-view">
+<div class="application-view">
+  <div class="application-view-header">
+    <div class="application-view-header-label">
+      <h2 class="application-view-header-label__title">Add a sighting</h2>
+    </div>
+    <!-- </label>-->
+    <div class="application-view-header-tools">
+      <ul class="application-view-header-tools-set">
+        <li class="application-view-header-tools-set-enclosure">
+          <button class="button-tool" data-ng-click="Form.submit(Form.name);">
+            <div class="button-tool-media">
+              <svg class="button-tool-media__object graphic pin-point">
+                <use xlink:href="#save"></use>
+              </svg>
+            </div>
+            <!-- </media>-->
+          </button>
+          <!-- </tool>-->
+        </li>
+        <!-- </enclosure>-->
+      </ul>
+      <!-- </set>-->
+    </div>
+    <!-- </tools>-->
+  </div>
+  <!-- </header>-->
+  <div class="application-view-main">
     <form class="form-sighting" data-ng-submit="Form.submit(Form.name);">
       <div class="form-sighting-main">
         <ul class="form-sighting-options">
@@ -25,7 +50,18 @@
               </div>
               <!-- </label>-->
               <div class="form-sighting-option-media">
-                <div class="form-sighting__input map" id="location"></div>
+                <div class="form-sighting__input">
+                  <div class="map">
+                    <div class="map-view">
+                      <div id="location"></div>
+                    </div>
+                    <!-- </view>-->
+                    <div class="map-controls"></div>
+                    <!-- </controls>-->
+                  </div>
+                  <!-- </map>-->
+                </div>
+                <!-- </input>-->
               </div>
               <!-- </media>-->
             </div>
@@ -38,37 +74,7 @@
       <!-- </main>-->
     </form>
     <!-- </form>-->
-    <div class="application-controls">
-      <ul class="application-controls-set">
-        <li class="application-controls-set-enclosure">
-          <div class="button-action utility background-color-black" data-ng-click="Form.relocate()">
-            <div class="button-action-media">
-              <svg class="button-action-media__object graphic pin-point">
-                <use xlink:href="#pin-point"></use>
-              </svg>
-            </div>
-            <!-- </media>-->
-          </div>
-          <!-- </action>-->
-        </li>
-        <!-- </enclosure>-->
-        <li class="application-controls-set-enclosure">
-          <button class="button-action utility background-color-black" data-ng-click="Form.submit(Form.name);">
-            <div class="button-action-media">
-              <svg class="button-action-media__object graphic pin-point">
-                <use xlink:href="#save"></use>
-              </svg>
-            </div>
-            <!-- </media>-->
-          </button>
-          <!-- </action>-->
-        </li>
-        <!-- </enclosure>-->
-      </ul>
-      <!-- </set>-->
-    </div>
-    <!-- </controls>-->
   </div>
-  <!-- </view>-->
+  <!-- </main>-->
 </div>
-<!-- </extent>-->
+<!-- </view>-->

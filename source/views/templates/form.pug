@@ -1,7 +1,41 @@
-.utility.extent
-	
-	.application-main-view
-		
+.application-view
+
+	.application-view-header
+
+		.application-view-header-label
+
+			h2.application-view-header-label__title
+				| Add a sighting
+
+		// </label>
+
+		.application-view-header-tools
+
+			ul.application-view-header-tools-set
+
+				li.application-view-header-tools-set-enclosure
+
+					button.button-tool(data-ng-click="Form.submit(Form.name);")
+
+						.button-tool-media
+
+							svg.button-tool-media__object.graphic.pin-point
+								use(xlink:href="#save")
+
+						// </media>
+
+					// </tool>
+				
+				// </enclosure>
+			
+			// </set>
+
+		// </tools>
+
+	// </header>
+
+	.application-view-main
+
 		form.form-sighting(data-ng-submit="Form.submit(Form.name);")
 
 			.form-sighting-main
@@ -47,8 +81,24 @@
 							// </label>
 
 							.form-sighting-option-media
+								
+								.form-sighting__input
+									
+									.map
 
-								.form-sighting__input.map#location
+										.map-view
+
+											#location
+										
+										// </view>
+
+										.map-controls
+
+										// </controls>
+									
+									// </map>
+								
+								// </input>
 							
 							// </media>
 						
@@ -61,45 +111,7 @@
 			// </main>
 		
 		// </form>
-			
-		.application-controls
-
-			ul.application-controls-set
-
-				li.application-controls-set-enclosure
-
-					.button-action.utility.background-color-black(data-ng-click="Form.relocate()")
-
-						.button-action-media
-
-							svg.button-action-media__object.graphic.pin-point
-								use(xlink:href="#pin-point")
-
-						// </media>
-
-					// </action>
-
-				// </enclosure>
-				
-				li.application-controls-set-enclosure
-
-					button.button-action.utility.background-color-black(data-ng-click="Form.submit(Form.name);")
-
-						.button-action-media
-
-							svg.button-action-media__object.graphic.pin-point
-								use(xlink:href="#save")
-
-						// </media>
-
-					// </action>
-
-				// </enclosure>
-
-			// </set>
-
-		// </controls>
 	
-	// </view>
+	// </main>
 
-// </extent>
+// </view>

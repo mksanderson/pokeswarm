@@ -1,39 +1,51 @@
 
-<div class="map">
-  <div class="map-main">
-    <div id="map"></div>
-    <!-- </map>-->
-    <div class="application-controls">
-      <ul class="application-controls-set">
-        <li class="application-controls-set-enclosure">
-          <div class="button-action utility background-color-black" data-ng-click="Map.relocate()">
-            <div class="button-action-media">
-              <svg class="button-action-media__object graphic pin-point">
-                <use xlink:href="#pin-point"></use>
-              </svg>
-            </div>
-            <!-- </media>-->
-          </div>
-          <!-- </action>-->
-        </li>
-        <!-- </enclosure>-->
-        <li class="application-controls-set-enclosure">
-          <div class="button-action utility background-color-black" data-ng-click="Application.reload()">
-            <div class="button-task-action-media">
-              <svg class="button-action-media__object graphic reload">
+<div class="application-view">
+  <div class="application-view-header">
+    <div class="application-view-header-label">
+      <h2 class="application-view-header-label__title">Sightings</h2>
+    </div>
+    <!-- </label>-->
+    <div class="application-view-header-tools">
+      <ul class="application-view-header-tools-set">
+        <li class="application-view-header-tools-set-enclosure">
+          <button class="button-tool" data-ng-click="Application.reload();">
+            <div class="button-tool-media">
+              <svg class="button-tool-media__object graphic reload">
                 <use xlink:href="#reload"></use>
               </svg>
             </div>
             <!-- </media>-->
-          </div>
-          <!-- </action>-->
+          </button>
+          <!-- </tool>-->
+        </li>
+        <!-- </enclosure>-->
+        <li class="application-view-header-tools-set-enclosure">
+          <button class="button-tool" data-ng-click="Map.relocate();">
+            <div class="button-tool-media">
+              <svg class="button-tool-media__object graphic pin-point">
+                <use xlink:href="#pin-point"></use>
+              </svg>
+            </div>
+            <!-- </media>-->
+          </button>
+          <!-- </tool>-->
         </li>
         <!-- </enclosure>-->
       </ul>
       <!-- </set>-->
     </div>
-    <!-- </controls>-->
+    <!-- </tools>-->
   </div>
-  <!-- </main>-->
+  <!-- </header>-->
+  <div class="application-map">
+    <div class="map">
+      <div class="map-main">
+        <div id="map"></div>
+        <!-- </map>-->
+      </div>
+      <!-- </main>-->
+    </div>
+    <!-- </map>-->
+  </div>
+  <!-- </map>-->
 </div>
-<!-- </map>-->

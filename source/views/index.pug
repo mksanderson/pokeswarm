@@ -12,23 +12,26 @@ html(class="no-js",data-ng-controller="ApplicationController as Application",ite
 
 			header.application-header
 
-				.utility.extent
+				.application-header-logo
 
-					.application-header-view
-					
-						ul.application-header-set
+					.brand
 
-							li.application-header-set-enclosure
+						.brand-media
 
-								include /partials/brand
+							img.brand-media__object(alt="PokeSwarm",src="/images/brand/logo.png")
 
-							// </enclosure>
+						// </media>
 
-						// </set>
-					
-					// </view>
-				
-				// </extent>
+						.brand-label
+
+							h1.brand-label__title
+								| PokeSwarm
+
+						// </label>
+
+					// </brand>
+
+				// </logo>
 
 			// </header>
 
@@ -38,15 +41,7 @@ html(class="no-js",data-ng-controller="ApplicationController as Application",ite
 
 			.application-footer
 
-				.utility.extent
-
-					.application-footer-view
-					
-						include /partials/footer
-					
-					// </view>
-				
-				// </extent>
+				include /partials/footer
 
 			// </footer>
 			

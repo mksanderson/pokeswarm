@@ -73,81 +73,67 @@
   <body>
     <div class="application">
       <header class="application-header">
-        <div class="utility extent">
-          <div class="application-header-view">
-            <ul class="application-header-set">
-              <li class="application-header-set-enclosure">
-                <div class="brand">
-                  <div class="brand-media"><img class="brand-media__object" alt="PokeSwarm" src="/images/brand/logo.png"></div>
-                  <!-- </media>-->
-                  <div class="brand-label">
-                    <h1 class="brand-label__title">PokeSwarm</h1>
-                  </div>
-                  <!-- </label>-->
-                </div>
-                <!-- </brand>-->
-              </li>
-              <!-- </enclosure>-->
-            </ul>
-            <!-- </set>-->
+        <div class="application-header-logo">
+          <div class="brand">
+            <div class="brand-media"><img class="brand-media__object" alt="PokeSwarm" src="/images/brand/logo.png"></div>
+            <!-- </media>-->
+            <div class="brand-label">
+              <h1 class="brand-label__title">PokeSwarm</h1>
+            </div>
+            <!-- </label>-->
           </div>
-          <!-- </view>-->
+          <!-- </brand>-->
         </div>
-        <!-- </extent>-->
+        <!-- </logo>-->
       </header>
       <!-- </header>-->
       <main class="application-main" data-ng-view></main>
       <!-- </main>-->
       <div class="application-footer">
-        <div class="utility extent">
-          <div class="application-footer-view">
-            <div class="navigator">
-              <ul class="navigator-set">
-                <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/form')}" data-ng-href="/#/form">
-                    <div class="navigator-action-media">
-                      <svg class="navigator-action-media__object graphic add">
-                        <use xlink:href="#add"></use>
-                      </svg>
-                    </div>
-                    <!-- </media>--></a>
-                  <!-- </action>-->
-                </li>
-                <!-- </enclosure>-->
-                <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/map')}" data-ng-href="/#/map">
-                    <div class="navigator-action-media">
-                      <svg class="navigator-action-media__object graphic pin">
-                        <use xlink:href="#pin"></use>
-                      </svg>
-                    </div>
-                    <!-- </media>--></a>
-                  <!-- </action>-->
-                </li>
-                <!-- </enclosure>-->
-                <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/page')}" data-ng-href="/#/page">
-                    <div class="navigator-action-media">
-                      <svg class="navigator-action-media__object graphic chevron">
-                        <use xlink:href="#chevron"></use>
-                      </svg>
-                    </div>
-                    <!-- </media>--></a>
-                  <!-- </action>-->
-                </li>
-                <!-- </enclosure>-->
-              </ul>
-              <!-- </set>-->
-            </div>
-            <!-- </navigator>-->
-          </div>
-          <!-- </view>-->
+        <div class="navigator">
+          <ul class="navigator-set">
+            <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/form')}" data-ng-href="/#/form">
+                <div class="navigator-action-media">
+                  <svg class="navigator-action-media__object graphic add">
+                    <use xlink:href="#add"></use>
+                  </svg>
+                </div>
+                <!-- </media>--></a>
+              <!-- </action>-->
+            </li>
+            <!-- </enclosure>-->
+            <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/map')}" data-ng-href="/#/map">
+                <div class="navigator-action-media">
+                  <svg class="navigator-action-media__object graphic pin">
+                    <use xlink:href="#pin"></use>
+                  </svg>
+                </div>
+                <!-- </media>--></a>
+              <!-- </action>-->
+            </li>
+            <!-- </enclosure>-->
+            <li class="navigator-set-enclosure"><a class="navigator-action" data-ng-class="{'active':Application.currentRoute('/page')}" data-ng-href="/#/page">
+                <div class="navigator-action-media">
+                  <svg class="navigator-action-media__object graphic chevron">
+                    <use xlink:href="#chevron"></use>
+                  </svg>
+                </div>
+                <!-- </media>--></a>
+              <!-- </action>-->
+            </li>
+            <!-- </enclosure>-->
+          </ul>
+          <!-- </set>-->
         </div>
-        <!-- </extent>-->
+        <!-- </navigator>-->
       </div>
       <!-- </footer>-->
     </div>
     <!-- </application>-->
-    <script defer src="/bower_components/dependencies.js"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=visualization&amp;key=AIzaSyBmrsSwvhfGt_NOUC6Ht2GCkiI3VIuXP1g"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
-    <script defer src="/application.js"></script>
+    <script src="/bower_components/dependencies.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=visualization&amp;key=AIzaSyBmrsSwvhfGt_NOUC6Ht2GCkiI3VIuXP1g"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script src="/application.js"></script>
+    <script src="/plugins.js"></script>
   </body>
 </html>

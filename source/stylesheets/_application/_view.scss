@@ -1,0 +1,48 @@
+&-view{
+	// <children>
+	&-header{
+		@include theme($colors,_blue-lochmara);
+		
+		align-items:center;border:{top:2px solid map-get($colors,_blue-shakespeare);};display:flex;
+		justify-content:space-between;padding:12px 24px;position:relative;z-index:1;
+
+		// <children>
+		&-label{
+			// <children>
+			&__title{
+				display:block;font:{size:rem(16px);weight:normal;};line-height:1em;margin:0;
+			}
+			// </children>
+		}
+
+		&-tools{
+			// <children>
+			&-set{
+				align-items:center;display:flex;list-style:none;margin:0;padding:0;
+
+				// <children>
+				&-enclosure{
+					margin:{right:12px;};
+
+					// <instance>
+					&:last-child{
+						margin:{right:0;}
+					}
+					// </instance>
+				}
+				// </children>
+			}
+			// </children>
+		}
+		// </children>
+	}
+
+	&-main{
+		padding:12px 24px;
+	}
+
+	&-map{
+		
+	}
+	// </children>
+}

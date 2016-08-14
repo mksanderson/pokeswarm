@@ -84,6 +84,7 @@ var gulp = require('gulp'),
 		'watch:source:application:typescript',
 		'watch:source:bower:install',
 		'watch:source:components:pug',
+		'watch:source:configuration:copy',
 		'watch:source:dependencies:copy',
 		'watch:source:directives:pug',
 		'watch:source:images:image-min',
@@ -95,6 +96,7 @@ var gulp = require('gulp'),
 	gulp.task('watch:source:application:typescript', require('./tasks/watch/source/application/typescript')(gulp, plugins));
 	gulp.task('watch:source:bower:install', require('./tasks/watch/source/bower/install')(gulp, plugins));
 	gulp.task('watch:source:components:pug', require('./tasks/watch/source/components/pug')(gulp, plugins));
+	gulp.task('watch:source:configuration:copy', require('./tasks/watch/source/configuration/copy')(gulp, plugins));
 	gulp.task('watch:source:dependencies:copy', require('./tasks/watch/source/dependencies/copy')(gulp, plugins));
 	gulp.task('watch:source:directives:pug', require('./tasks/watch/source/directives/pug')(gulp, plugins));
 	gulp.task('watch:source:images:image-min', require('./tasks/watch/source/images/image-min')(gulp, plugins));

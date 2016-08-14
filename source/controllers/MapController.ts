@@ -61,7 +61,6 @@ namespace Application {
 			});
 		}
 
-
 		/**
 		 * Used for resizing the map, ie: making it full screen
 		 */
@@ -72,11 +71,13 @@ namespace Application {
 
 		/**
 		 * Relocate the user
+		 * 
+		 * @param {boolean} draggable (description)
 		 */
-		relocate(): void {
+		relocate(draggable: boolean): void {
 			this.GeolocationService.get().then((response) => {
 				this.MapService.removeGeoMarkers();
-				this.MapService.addGeoMarker(false, response);
+				this.MapService.addGeoMarker(draggable, response);
 			});
 		}
 	}

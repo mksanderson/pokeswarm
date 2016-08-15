@@ -33,9 +33,9 @@ namespace Application {
 		}
 
 		/**
-		 * (description)
+		 * Submit form data to database, reset map, notify user
 		 * 
-		 * @param {Sighting} record (description)
+		 * @param {string} name Name of the item being submitted
 		 */
 		submit(name: string) {
 			if (name) {
@@ -59,7 +59,7 @@ namespace Application {
 								markers.push(response[i].val());
 							}
 
-							this.MapService.addMarkers(markers);
+							this.MapService.setCenter(position.lat(),position.lng());
 
 							this.name = '';
 

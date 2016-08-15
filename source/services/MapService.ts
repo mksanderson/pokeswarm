@@ -305,11 +305,25 @@ namespace Application {
 			}
 		}
 
+
+		/**
+		 * Triggering resize events
+		 */
 		resize(): void {
 			this.TimeoutService(() => {
 				google.maps.event.trigger(this.instance, 'resize');
 				this.instance.setCenter(this.geoMarker.getPosition());
 			}, 0)
+		}
+		
+		/**
+		 * For setting the map to a center point
+		 * 
+		 * @param {number} latitude
+		 * @param {number} longitude
+		 */
+		setCenter(latitude: number, longitude: number): void {
+			this.instance.setCenter(new google.maps.LatLng(latitude, longitude));
 		}
 	}
 

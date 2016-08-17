@@ -185,6 +185,9 @@
 		"probability": 15
 	},
 	{
+		"name": "Pikachu"
+	},
+	{
 		"name": "Pidgey",
 		"attack": 45,
 		"defense": 40,

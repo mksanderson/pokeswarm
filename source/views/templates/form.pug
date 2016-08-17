@@ -61,11 +61,11 @@
 									
 										input.form-sighting__input.field#sighting-name(data-ng-focus="Form.error = ''",data-ng-model="Form.name",placeholder="Pokemon name...",type="text")
 									
-									.autocomplete-result(data-ng-show="Form.name.length > 2 && filtered.length")
+									.autocomplete-result(data-ng-show="Form.name.length && filtered.length")
 										
 										ul.autocomplete-result-list
 											
-											li.autocomplete-result-list-enclosure(data-ng-repeat="poker in Form.pokemon | limitTo: 10 | filter: Form.name as filtered")
+											li.autocomplete-result-list-enclosure(data-ng-repeat="poker in Form.pokemon | filter: {name: Form.name} as filtered")
 												
 												a.card-preview(data-ng-click="Form.autocomplete('name',poker)")
 

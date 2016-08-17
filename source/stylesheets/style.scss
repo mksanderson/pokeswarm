@@ -46,6 +46,13 @@
 	// </state>
 }
 
+// Cards
+.card{
+	// <modifiers>
+	@import '_cards/*.*';
+	// </modifiers>
+}
+
 // Individual forms
 .form{
 	// <modifiers>

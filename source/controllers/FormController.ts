@@ -9,27 +9,27 @@ namespace Application {
 			'GeolocationService',
 			'FirebaseService',
 			'MapService',
-			'$timeout'
+			'PokemonService'
 		];
 
 		public error: boolean;
 		public name: string;
+		public pokemon: Pokemon[];
 		public state: boolean;
 
 		constructor(
 			private GeolocationService: GeolocationService,
 			private FirebaseService: FirebaseService,
 			private MapService: MapService,
-			private TimeoutService: ng.ITimeoutService
+			private PokemonService: PokemonService
 		) {
-			TimeoutService(() => {
-				GeolocationService.get().then((response) => {
-					MapService.createMap(document.getElementById('location'), response.coords.latitude, response.coords.longitude, 16).then((response) => {
+			this.PokemonService.get('/api/pokemon/pokemon.json').then((response) => {
+				this.pokemon = response;
+			})
+		}
 
-					});
-					MapService.addGeoMarker(true, response);
-				});
-			}, 0)
+		autocomplete(model: string, pokemon: Pokemon){
+			this[model] = pokemon.name;
 		}
 
 		/**
@@ -59,7 +59,7 @@ namespace Application {
 								markers.push(response[i].val());
 							}
 
-							this.MapService.setCenter(position.lat(),position.lng());
+							this.MapService.setCenter(position.lat(), position.lng());
 
 							this.name = '';
 

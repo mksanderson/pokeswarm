@@ -1,0 +1,25 @@
+.autocomplete{
+	// <children>
+	&-result{
+		border:{top:1px solid map-get($colors,_grey-gallery);};padding:0 12px 8px;
+		
+		// <children>
+		&-list{
+			align-items:center;display:flex;flex-wrap:wrap;list-style:none;margin:0;padding:0;
+
+			// <children>
+			&-enclosure{
+				margin:{right:8px;top:8px;};
+
+				// <children>
+				&:last-child{
+					margin:{right:0;}
+				}
+				// </children>
+			}
+			// </children>
+		}
+		// </children>
+	}
+	// </children>
+}

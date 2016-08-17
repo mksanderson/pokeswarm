@@ -36,7 +36,7 @@
 
 	.application-view-main
 
-		form.form-sighting(data-ng-submit="Form.submit(Form.name);")
+		form.form-sighting(autocomplete="off",data-ng-submit="Form.submit(Form.name);")
 
 			.form-sighting-main
 
@@ -55,8 +55,41 @@
 
 							.form-sighting-option-media
 
-								input.form-sighting__input.field#sighting-name(data-ng-focus="Form.error = ''",data-ng-model="Form.name",placeholder="Pokemon name...",type="text")
-							
+								.autocomplete
+
+									.autocomplete-option
+									
+										input.form-sighting__input.field#sighting-name(data-ng-focus="Form.error = ''",data-ng-model="Form.name",placeholder="Pokemon name...",type="text")
+									
+									.autocomplete-result(data-ng-if="Form.name.length > 2 && filtered.length")
+
+										ul.autocomplete-result-list
+											
+											li.autocomplete-result-list-enclosure(data-ng-repeat="poker in Form.pokemon | filter: Form.name as filtered | limitTo: 10")
+												
+												a.card-preview(data-ng-click="Form.autocomplete('name',poker)")
+
+													.card-preview-media
+
+														img.card-preview-media__object(height="26",data-ng-src="/api/pokemon/icons/{{poker.name}}.ico",width="26")
+
+													// </media>
+
+													.card-preview-label
+
+														span.card-preview-label__title
+															| {{poker.name}}
+
+													// </label>
+
+												// </card>
+
+											// </enclosure>
+
+										// </list>
+
+									// </result>
+
 							// </media>
 						
 						// </option>
@@ -83,7 +116,7 @@
 									
 									.map(data-ng-controller="MapController as Map")
 
-										.map-view(data-ng-class="{'fullscreen':Map.fullscreen}")
+										.map-view(data-ng-class="{'fullscreen':Map.fullscreen}",data-ng-init="Map.initialize('location', true, true, true)")
 
 											#location.map-view-instance
 

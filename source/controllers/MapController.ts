@@ -11,7 +11,6 @@ namespace Application {
 			'FirebaseService',
 			'GeolocationService',
 			'MapService',
-			'$timeout',
 			'$window'
 		];
 
@@ -24,30 +23,9 @@ namespace Application {
 			private FirebaseService: FirebaseService,
 			private GeolocationService: GeolocationService,
 			private MapService: MapService,
-			private TimeoutService: ng.ITimeoutService,
 			private WindowService: ng.IWindowService
 		) {
-			TimeoutService(() => {
-				GeolocationService.get().then((response) => {
-					MapService.createMap(document.getElementById('map'), response.coords.latitude, response.coords.longitude, 16).then((response) => {
-						this.loaded = response;
-					});
-					MapService.addGeoMarker(false, response);
-				}).catch((reason) => {
-					MapService.createMap(document.getElementById('map'), 27, 153, 2);
-				}).then(() => {
-					FirebaseService.get('/').then((response) => {
-						var markers = [];
 
-						for (var i = 0; i < response.length; i++) {
-							markers.push(response[i].val());
-						}
-
-						MapService.addMarkers(markers);
-						MapService.addHeatmap();
-					})
-				});
-			},0)
 		}
 
 		/**
@@ -58,6 +36,33 @@ namespace Application {
 		filter(search?: string): void {
 			this.MapService.filterMarkers(search).then(() => {
 				this.MapService.filterHeatMap();
+			});
+		}
+
+		initialize(dom: string, geomarker: boolean, draggable: boolean, markers: boolean): void {
+			this.GeolocationService.get().then((response) => {
+				this.MapService.createMap(document.getElementById(dom), response.coords.latitude, response.coords.longitude, 16).then((response) => {
+					this.loaded = response;
+				});
+				if (geomarker) {
+					this.MapService.addGeoMarker(draggable, response);
+				}
+			}).catch((reason) => {
+				alert('Geolocation lookup has failed');
+				console.log(reason);
+			}).then(() => {
+				if (markers) {
+					this.FirebaseService.get('/').then((response) => {
+						var markers = [];
+
+						for (var i = 0; i < response.length; i++) {
+							markers.push(response[i].val());
+						}
+
+						this.MapService.addMarkers(markers);
+						this.MapService.addHeatmap();
+					})
+				}
 			});
 		}
 

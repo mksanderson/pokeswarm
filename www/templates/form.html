@@ -26,7 +26,7 @@
   </div>
   <!-- </header>-->
   <div class="application-view-main">
-    <form class="form-sighting" data-ng-submit="Form.submit(Form.name);">
+    <form class="form-sighting" autocomplete="off" data-ng-submit="Form.submit(Form.name);">
       <div class="form-sighting-main">
         <ul class="form-sighting-options">
           <li class="form-sighting-options-enclosure">
@@ -36,7 +36,25 @@
               </div>
               <!-- </label>-->
               <div class="form-sighting-option-media">
-                <input class="form-sighting__input field" id="sighting-name" data-ng-focus="Form.error = ''" data-ng-model="Form.name" placeholder="Pokemon name..." type="text"/>
+                <div class="autocomplete">
+                  <div class="autocomplete-option">
+                    <input class="form-sighting__input field" id="sighting-name" data-ng-focus="Form.error = ''" data-ng-model="Form.name" placeholder="Pokemon name..." type="text"/>
+                  </div>
+                  <div class="autocomplete-result" data-ng-if="Form.name.length &gt; 2 &amp;&amp; filtered.length">
+                    <ul class="autocomplete-result-list">
+                      <li class="autocomplete-result-list-enclosure" data-ng-repeat="poker in Form.pokemon | filter: Form.name as filtered | limitTo: 10"><a class="card-preview" data-ng-click="Form.autocomplete('name',poker)">
+                          <div class="card-preview-media"><img class="card-preview-media__object" height="26" data-ng-src="/api/pokemon/icons/{{poker.name}}.ico" width="26"/></div>
+                          <!-- </media>-->
+                          <div class="card-preview-label"><span class="card-preview-label__title">{{poker.name}}</span></div>
+                          <!-- </label>--></a>
+                        <!-- </card>-->
+                      </li>
+                      <!-- </enclosure>-->
+                    </ul>
+                    <!-- </list>-->
+                  </div>
+                  <!-- </result>-->
+                </div>
               </div>
               <!-- </media>-->
             </div>
@@ -52,7 +70,7 @@
               <div class="form-sighting-option-media">
                 <div class="form-sighting__input">
                   <div class="map" data-ng-controller="MapController as Map">
-                    <div class="map-view" data-ng-class="{'fullscreen':Map.fullscreen}">
+                    <div class="map-view" data-ng-class="{'fullscreen':Map.fullscreen}" data-ng-init="Map.initialize('location', true, true, true)">
                       <div class="map-view-instance" id="location"></div>
                       <div class="map-controls">
                         <ul class="map-controls-set">

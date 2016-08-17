@@ -1,0 +1,35 @@
+&-preview{
+	@include theme($colors,_blue-shakespeare);
+
+	align-items:stretch;cursor:pointer;display:flex;padding:4px;
+
+	// <children>
+	&-label{
+		align-items:center;display:flex;padding:{right:9px;};
+
+		// <children>
+		&__title{
+			color:$light!important;display:block;font:{size:rem(12px);};
+		}
+		// </children>
+	}
+
+	&-media{
+		// <instance>
+		&:first-child{
+			margin:{right:4px;};
+		}
+
+		&:last-child{
+			margin:{left:4px;};
+		}
+		// </instance>
+	}
+	// </children>
+
+	// <state>
+	&:focus &-label__title, &:hover &-label__title{
+		text-decoration:underline;
+	}
+	// </state>
+}

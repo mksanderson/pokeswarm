@@ -358,7 +358,24 @@
 		"curve": 1.6
 	},
 	{
-		"name": "Nidoran",
+		"name": "Nidoran (F)",
+		"attack": 47,
+		"defense": 52,
+		"evolveLevel": 16,
+		"evolveTo": "30",
+		"type": "poison",
+		"moves": [
+			"scratch"
+		],
+		"curve": 1.3,
+		"levels": [
+			5,
+			8
+		],
+		"probability": 15
+	},
+	{
+		"name": "Nidoran (M)",
 		"attack": 47,
 		"defense": 52,
 		"evolveLevel": 16,
@@ -386,23 +403,6 @@
 			"superpower"
 		],
 		"curve": 1.3
-	},
-	{
-		"name": "Nidoran",
-		"attack": 57,
-		"defense": 40,
-		"evolveLevel": 16,
-		"evolveTo": "33",
-		"type": "poison",
-		"moves": [
-			"peck"
-		],
-		"curve": 1.3,
-		"levels": [
-			5,
-			8
-		],
-		"probability": 15
 	},
 	{
 		"name": "Nidoking",

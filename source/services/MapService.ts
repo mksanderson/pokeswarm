@@ -10,6 +10,7 @@ namespace Application {
 		static $inject = [
 			'$filter',
 			'$http',
+			'PokemonService',
 			'$q',
 			'$timeout'
 		];
@@ -18,25 +19,40 @@ namespace Application {
 		private dom: Element;
 		private geoMarker: google.maps.Marker;
 		private geoCircle: google.maps.Circle;
-		private geoMarkers = new Array<google.maps.Marker>();
-		private geoCircles = new Array<google.maps.Circle>();
-		private heatmap = new google.maps.visualization.HeatmapLayer;
-		private heatmapPoints = new Array<google.maps.LatLng>();
+		private geoMarkers: google.maps.Marker[];
+		private geoCircles: google.maps.Circle[];
+		private heatmap: google.maps.visualization.HeatmapLayer;
+		private heatmapPoints: google.maps.LatLng[];
 		private instance: google.maps.Map;
 		private infoWindow: google.maps.InfoWindow;
-		private infoWindows = new Array<google.maps.InfoWindow>();
+		private infoWindows: google.maps.InfoWindow[];
 		private marker: google.maps.Marker;
 		private markerCircle: google.maps.Circle;
-		private markers = new Array<google.maps.Marker>();
-		private markerCircles = new Array<google.maps.Circle>();
+		private markers: google.maps.Marker[];
+		private markerCircles: google.maps.Circle[];
+		private pokemon: Pokemon[];
 
 		constructor(
 			private FilterService: ng.IFilterService,
 			private HttpService: ng.IHttpService,
+			private PokemonService: PokemonService,
 			private QService: ng.IQService,
 			private TimeoutService: ng.ITimeoutService
 		) {
-
+			this.active = new google.maps.Marker();
+			this.geoMarker = new google.maps.Marker();
+			this.geoCircle = new google.maps.Circle();
+			this.geoMarkers = new Array<google.maps.Marker>();
+			this.geoCircles = new Array<google.maps.Circle>();
+			this.heatmap = new google.maps.visualization.HeatmapLayer();
+			this.heatmapPoints = new Array<google.maps.LatLng>();
+			this.infoWindow = new google.maps.InfoWindow();
+			this.infoWindows = new Array<google.maps.InfoWindow>();
+			this.marker = new google.maps.Marker();
+			this.markerCircle = new google.maps.Circle();
+			this.markers = new Array<google.maps.Marker>();
+			this.markerCircles = new Array<google.maps.Circle>();
+			this.pokemon = new Array<Pokemon>();
 		}
 
 		/**
@@ -45,31 +61,40 @@ namespace Application {
 		 * @param {Array<Marker>} markers (description)
 		 */
 		addMarkers(markers: Array<Marker>): void {
-			for (var i = 0; i < markers.length; i++) {
-				this.marker = new google.maps.Marker({
-					icon: {
-						scaledSize: new google.maps.Size(60, 60),
-						url: '/api/pokemon/icons/' + markers[i].name + '.ico',
-					},
-					position: new google.maps.LatLng(
-						markers[i].position.coords.latitude,
-						markers[i].position.coords.longitude
-					),
-					map: this.instance,
-					title: markers[i].name,
-					zIndex: 1
-				});
+			this.PokemonService.get('/api/pokemon/pokemon.json').then((response) => {
+				this.pokemon = response;
 
-				this.infoWindow = new google.maps.InfoWindow({
-					content: markers[i].name + ' (Added ' + this.FilterService('date')(markers[i].position.timestamp) + ')'
-				})
+				for (var i = 0; i < markers.length; i++) {
+					angular.forEach(this.pokemon, (pokemon, pokemonID) => {
+						if (markers[i].name === pokemon.Name) {
+							this.marker = new google.maps.Marker({
+								icon: {
+									size: new google.maps.Size(40, 40, 'em', 'em'),
+									scaledSize: new google.maps.Size(40, 40, 'em,', 'em'),
+									url: '/api/pokemon/icons/' + pokemon.Number + '.svg',
+								},
+								position: new google.maps.LatLng(
+									markers[i].position.coords.latitude,
+									markers[i].position.coords.longitude
+								),
+								map: this.instance,
+								title: markers[i].name,
+								zIndex: 1
+							});
+						}
+					})
 
-				this.infoWindows.push(this.infoWindow);
+					this.infoWindow = new google.maps.InfoWindow({
+						content: markers[i].name + ' (Added ' + this.FilterService('date')(markers[i].position.timestamp) + ')'
+					})
 
-				this.markers.push(this.marker);
+					this.infoWindows.push(this.infoWindow);
 
-				this.openInfoWindow(this.marker, this.infoWindow);
-			}
+					this.markers.push(this.marker);
+
+					this.openInfoWindow(this.marker, this.infoWindow);
+				}
+			})
 		}
 
 		/**
@@ -310,7 +335,7 @@ namespace Application {
 				this.instance.setCenter(this.geoMarker.getPosition());
 			}, 0)
 		}
-		
+
 		/**
 		 * For setting the map to a center point
 		 * 

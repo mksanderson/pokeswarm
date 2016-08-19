@@ -29,7 +29,7 @@ namespace Application {
 		}
 
 		autocomplete(model: string, pokemon: Pokemon){
-			this[model] = pokemon.Name;
+			this[model] = pokemon;
 		}
 
 		/**

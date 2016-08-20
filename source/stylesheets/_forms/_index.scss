@@ -1,4 +1,4 @@
-&-sighting{
+&-index{
 	// <children>
 	&__input{
 		border:0;box-sizing:border-box;outline:none;
@@ -34,34 +34,18 @@
 		// </instance>
 	}
 
-	&-messages{
-		// <children>
-		&-list{
-			display:flex;flex-direction:column;list-style:none;margin:0;padding:0;
-		}
-		// </children>
-	}
-
 	&-option{
 		align-items:stretch;display:flex;flex-direction:column;
 
 		// <children>
 		&-label{
-			// <children>
-			&__description{
-				display:block;font:{size:rem(14px);weight:normal;};
-			}
-
-			&__title{
-				display:block;font:{size:rem(16px);weight:bold;};
-			}
-			// </children>
+			display:none;
 		}
 
 		&-media{
 			@include theme($colors,_white);
 			
-			border:1px solid map-get($colors,_grey-gallery);margin:{top:8px;};
+			margin:{top:8px;};
 		}
 		// </children>
 

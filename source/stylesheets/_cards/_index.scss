@@ -1,0 +1,41 @@
+&-index{
+	align-items:center;background:{color:rgba($light,0.5);};
+	border:1px solid $light;display:flex;flex-direction:column;padding:12px;
+	text-decoration:none;transition:background 0.5s ease;
+
+	// <children>
+	&-header{
+		margin:{top:12px;};
+
+		// <children>
+		&-label{
+			// <children>
+			&__title{
+				color:map-get($colors,_blue-lochmara);display:block;
+				font:{family:map-get($fonts,heading);size:rem(18px);weight:normal;};
+			}
+			// </children>
+		}
+		// </children>
+	}
+
+	&-media{
+		align-items:center;background:{color:map-get($colors,_blue-shakespeare);};
+		border:5px solid map-get($colors,_blue-lochmara);border-radius:50%;display:flex;
+		justify-content:center;height:100px;overflow:hidden;
+		width:100px;
+
+		// <children>
+		&__object{
+			max-width:100%;
+		}
+		// </children>
+	}
+	// </children>
+
+	// <state>
+	&:focus,&:hover{
+		background:{color:rgba($light,1);};
+	}
+	// </state>
+}

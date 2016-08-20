@@ -1,0 +1,91 @@
+
+<div class="application-view">
+  <div class="application-view-header">
+    <div class="application-view-header-label">
+      <h2 class="application-view-header-label__title">Index</h2>
+    </div>
+    <!-- </label>-->
+    <div class="application-view-header-tools">
+      <ul class="application-view-header-tools-set">
+        <li class="application-view-header-tools-set-enclosure"><a class="button-tool" data-ng-href="/#/index">
+            <div class="button-tool-media">
+              <svg class="button-tool-media__object graphic search">
+                <use xlink:href="#search"></use>
+              </svg>
+            </div>
+            <!-- </media>--></a>
+          <!-- </tool>-->
+        </li>
+        <!-- </enclosure>-->
+      </ul>
+      <!-- </set>-->
+    </div>
+    <!-- </tools>-->
+  </div>
+  <!-- </header>-->
+  <div class="application-view-main">
+    <div class="card-pokemon">
+      <div class="card-pokemon-media"><img class="card-pokemon-media__object" data-ng-src="/api/pokemon/icons/{{Index.current.Number}}.svg"/></div>
+      <!-- </media>-->
+      <div class="card-pokemon-header">
+        <div class="card-pokemon-header-label"><span class="card-pokemon-header-label__title">{{Index.current.Name}}</span></div>
+        <!-- </label>-->
+      </div>
+      <!-- </header>-->
+      <div class="card-pokemon-main">
+        <ul class="card-pokemon-main-list">
+          <li class="card-pokemon-main-list-enclosure">
+            <div class="card-pokemon-profile">
+              <div class="card-pokemon-profile-header">
+                <div class="card-pokemon-profile-header-label"><span class="card-pokemon-profile-header-label__title">Maximums</span></div>
+                <!-- </label>-->
+              </div>
+              <!-- </header>-->
+              <div class="card-pokemon-profile-main">
+                <ul class="card-pokemon-profile-list">
+                  <li class="card-pokemon-profile-list-enclosure">
+                    <div class="card-fact">
+                      <div class="card-fact-media"><span class="card-fact-media__object">Combat Power</span></div>
+                      <!-- </media>-->
+                      <div class="card-fact-label"><span class="card-fact-label__title">{{Index.current.MaxCP}}</span></div>
+                      <!-- </label>-->
+                    </div>
+                    <!-- </fact>-->
+                  </li>
+                  <!-- </enclosure>-->
+                  <li class="card-pokemon-profile-list-enclosure">
+                    <div class="card-fact">
+                      <div class="card-fact-media"><span class="card-fact-media__object">Health Points</span></div>
+                      <!-- </media>-->
+                      <div class="card-fact-label"><span class="card-fact-label__title">{{Index.current.MaxHP}}</span></div>
+                      <!-- </label>-->
+                    </div>
+                    <!-- </fact>-->
+                  </li>
+                  <!-- </enclosure>-->
+                  <li class="card-pokemon-profile-list-enclosure">
+                    <div class="card-fact">
+                      <div class="card-fact-media"><span class="card-fact-media__object">Flee Rate</span></div>
+                      <!-- </media>-->
+                      <div class="card-fact-label"><span class="card-fact-label__title">{{Index.current.FleeRate}}</span></div>
+                      <!-- </label>-->
+                    </div>
+                    <!-- </fact>-->
+                  </li>
+                  <!-- </enclosure>-->
+                </ul>
+                <!-- </list>-->
+              </div>
+              <!-- </main>-->
+            </div>
+            <!-- </profile>-->
+          </li>
+          <!-- </enclosure>-->
+        </ul>
+        <!-- </list>-->
+      </div>
+      <!-- </main>-->
+    </div>
+    <!-- </pokemon>-->
+  </div>
+</div>

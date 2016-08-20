@@ -12,26 +12,26 @@
 			@content;
 		}
 	}
-	@elseif($breakpoint-preset=='large'){
+	@elseif($breakpoint-preset=='desktop'){
 		$breakpoint-min-width:60em;
-		$breakpoint-name:'large';
+		$breakpoint-name:'desktop';
 
 		@media(min-width:$breakpoint-min-width){
 			@content;
 		}
 	}
-	@elseif($breakpoint-preset=='medium'){
+	@elseif($breakpoint-preset=='laptop'){
 		$breakpoint-max-width:60em;
 		$breakpoint-min-width:48em;
-		$breakpoint-name:'medium';
+		$breakpoint-name:'laptop';
 
 		@media(max-width:$breakpoint-max-width) and (min-width:$breakpoint-min-width){
 			@content;
 		}
 	}
-	@elseif($breakpoint-preset=='small'){
+	@elseif($breakpoint-preset=='mobile'){
 		$breakpoint-max-width:48em;
-		$breakpoint-name:'small';
+		$breakpoint-name:'mobile';
 
 		@media(max-width:$breakpoint-max-width){
 			@content;

@@ -1,0 +1,40 @@
+&-fact{
+	@include theme($colors,_blue-azure);
+
+	align-items:center;border-radius:4px;display:flex;justify-content:space-between;
+	padding:4px 4px 4px 12px;
+
+	// <children>
+	&-label{
+		@include theme($colors,_blue-lochmara);
+
+		align-items:center;border-radius:4px;display:flex;
+		justify-content:center;padding:8px 12px;
+
+		// <children>
+		&__title{
+			display:block;font:{size:rem(14px);weight:bold;};line-height:1em;
+		}
+		// </children>
+	}
+
+	&-media{
+		
+		// <children>
+		&__object{
+			font:{size:rem(14px);weight:normal;};line-height:1em;
+		}
+		// </children>
+
+		// <instance>
+		&:first-child{
+			margin:{right:9px;};
+		}
+
+		&:last-child{
+			margin:{left:9px;};
+		}
+		// </instance>
+	}
+	// </children>
+}

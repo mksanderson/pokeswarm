@@ -1,0 +1,126 @@
+.application-view
+
+	.application-view-header
+
+		.application-view-header-label
+
+			h2.application-view-header-label__title
+				| Index
+
+		// </label>
+
+		.application-view-header-tools
+
+			ul.application-view-header-tools-set
+
+				li.application-view-header-tools-set-enclosure
+
+					a.button-tool(data-ng-click="Application.reload();")
+
+						.button-tool-media
+
+							svg.button-tool-media__object.graphic.reload
+								use(xlink:href="#reload")
+
+						// </media>
+
+					// </tool>
+				
+				// </enclosure>
+			
+			// </set>
+
+		// </tools>
+
+	// </header>
+
+	.application-view-main
+
+		.index
+
+			.index-header
+
+				form.form-index
+
+					.form-index-main
+
+						ul.form-index-options
+
+							li.form-index-options-enclosure
+
+								.form-index-option
+									
+									.form-index-option-label
+
+										label.form-index-option-label__title(for="index-name")
+											| Pokemon
+
+									// </label>
+									
+									.form-index-option-media
+
+										input.form-sighting__input.field#index-name(data-ng-model="Index.formData.name",placeholder="Pokemon name...",type="text")
+
+									// </media>
+								
+								// </option>
+							
+							// </enclosure>
+						
+						// </options>
+					
+					// </main>
+				
+				// </form>
+
+			// </header>
+
+			.index-main
+				
+				.index-main-messages(data-ng-show="!filtered.length")
+
+					.index-main-messages-label
+
+						.index-main-messages-label__title
+							| No matching results for {{Index.formData.name}}
+
+					// </label>
+
+				// </messages>
+
+				ul.index-main-list(data-ng-show="filtered.length")
+
+					li.index-main-list-enclosure(data-ng-repeat="pokemon in Index.pokemon | filter: {Name: Index.formData.name} as filtered")
+
+						a.card-index(href="/#/index/{{pokemon.Number}}")
+
+							.card-index-media
+
+								img.card-index-media__object(data-ng-src="/api/pokemon/icons/{{pokemon.Number}}.svg")
+
+							// </media>
+
+							.card-index-header
+
+								.card-index-header-label
+									
+									span.card-index-header-label__title
+										| {{pokemon.Name}}
+
+								// </label>
+
+							// </header>
+
+						// </card>
+
+					// </enclosure>
+
+				// </list>
+
+			// </main>
+
+		// </index>
+
+	// </main>
+
+// </view>

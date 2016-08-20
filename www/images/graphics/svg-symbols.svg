@@ -2,6 +2,9 @@
     <symbol id="add" viewBox="0 0 42 42">
       <title>add</title><g id="Layer_2" data-name="Layer 2"><g id="Icons"><polygon points="42 18 24 18 24 0 18 0 18 18 0 18 0 24 18 24 18 42 24 42 24 24 42 24 42 18"/></g></g>
     </symbol>
+    <symbol id="back" viewBox="0 0 48 48">
+      <path d="M0 0h48v48h-48z" fill="none"/><path d="M40 22h-24.34l11.17-11.17-2.83-2.83-16 16 16 16 2.83-2.83-11.17-11.17h24.34v-4z"/>
+    </symbol>
     <symbol id="chevron" viewBox="0 0 24 14.83">
       <title>chevron</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M2.83,0,12,9.17,21.17,0,24,2.83l-12,12L0,2.83Z"/></g></g>
     </symbol>

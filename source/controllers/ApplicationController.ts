@@ -34,11 +34,11 @@ namespace Application {
 		 * @returns {boolean} (description)
 		 */
 		currentRoute(path: string): boolean{
-			if(path == this.LocationService.path()){
-				return true;
+			if(this.LocationService.path().search(path)){
+				return false;
 			}
 			else{
-				return false;
+				return true;
 			}
 		}
 	}

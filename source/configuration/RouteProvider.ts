@@ -4,15 +4,20 @@ namespace Application {
 			public RouteProvider: ng.route.IRouteProvider
 		){
 			RouteProvider
-				.when('/page', {
-					controller:'PageController',
-					controllerAs: 'Page',
-					templateUrl:'/templates/page.html'
-				})
 				.when('/form', {
 					controller:'FormController',
 					controllerAs: 'Form',
 					templateUrl:'/templates/form.html'
+				})
+				.when('/index', {
+					controller:'IndexController',
+					controllerAs: 'Index',
+					templateUrl:'/templates/index.html'
+				})
+				.when('/index/:id', {
+					controller:'IndexController',
+					controllerAs: 'Index',
+					templateUrl:'/templates/pokemon.html'
 				})
 				.when('/map', {
 					controller:'MapController',

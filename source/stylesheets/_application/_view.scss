@@ -1,4 +1,6 @@
 &-view{
+	margin:{bottom:60px;};
+
 	// <children>
 	&-header{
 		@include theme($colors,_blue-lochmara);
@@ -10,7 +12,7 @@
 		&-label{
 			// <children>
 			&__title{
-				display:block;font:{size:rem(16px);weight:normal;};line-height:1em;margin:0;
+				display:block;font:{size:rem(18px);weight:normal;};line-height:1em;margin:0;
 			}
 			// </children>
 		}

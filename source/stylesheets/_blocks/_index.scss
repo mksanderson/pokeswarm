@@ -1,0 +1,86 @@
+.index{
+	// <children>
+	&-main{
+		margin:{top:24px;};
+
+		// <children>
+		&-list{
+			align-items:stretch;display:flex;flex-wrap:wrap;list-style:none;
+			margin:0;padding:0;
+			
+			// <breakpoints>
+			@include breakpoint(mobile){
+				flex-direction:column;
+			}
+			// </breakpoints>
+
+			// <children>
+			&-enclosure{
+				// <breakpoints>
+				@include breakpoint(desktop){
+					margin:{right:1%;top:1%;};width:19.2%;
+
+					// <instance>
+					&:nth-child(-n+5){
+						margin:{top:0;};
+					}
+
+					&:nth-child(5n){
+						margin:{right:0;};
+					}
+
+					&:last-child{
+						margin:{right:0;};
+					}
+					// </instance>
+				}
+
+				@include breakpoint(laptop){
+					margin:{right:1%;top:1%;};width:24.2%;
+
+					// <instance>
+					&:nth-child(-n+4){
+						margin:{top:0;};
+					}
+
+					&:nth-child(4n){
+						margin:{right:0;};
+					}
+
+					&:last-child{
+						margin:{right:0;};
+					}
+					// </instance>
+				}
+
+				@include breakpoint(mobile){
+					margin:{top:5px;};width:auto;
+
+					// <instance>
+					&:first-child{
+						margin:{top:0;};
+					}
+					// </instance>
+				}
+				// </breakpoints>
+			}
+			// </children>
+		}
+
+		&-messages{
+			display:flex;justify-content:center;
+
+			// <children>
+			&-label{
+				// <children>
+				&__title{
+					display:block;font:{size:rem(24px);weight:normal;};line-height:1em;
+				}
+				// </children>
+			}
+			// </children>
+		}
+		// </children>
+	}
+	// </children>
+}

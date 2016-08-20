@@ -15,7 +15,7 @@
 
 				li.application-view-header-tools-set-enclosure
 
-					button.button-tool(data-ng-click="Form.submit(Form.name);")
+					button.button-tool(data-ng-click="Form.submit();")
 
 						.button-tool-media
 
@@ -36,7 +36,37 @@
 
 	.application-view-main
 
-		form.form-sighting(autocomplete="off",data-ng-submit="Form.submit(Form.name);")
+		form.form-sighting(autocomplete="off",data-ng-submit="Form.submit();")
+
+			.form-sighting-messages
+
+				ul.form-sighting-messages-list
+
+					li.form-sighting-messages-list-enclosure(data-ng-repeat="message in Form.formData.messages")
+
+						span.card-message
+
+							.card-message-media
+
+								svg.card-message-media__object.graphic.tick
+									use(xlink:href="#tick")
+
+							// </media>
+
+							.card-message-label
+
+								span.card-message-label__title
+									| {{message}}
+
+							// </label>
+
+						// </message>
+
+					// </enclosure>
+
+				// </list>
+
+			// </messages>
 
 			.form-sighting-main
 
@@ -44,7 +74,7 @@
 
 					li.form-sighting-options-enclosure
 
-						.form-sighting-option(data-ng-class="{'error':Form.error}")
+						.form-sighting-option
 							
 							.form-sighting-option-label
 
@@ -59,13 +89,13 @@
 
 									.autocomplete-option
 									
-										input.form-sighting__input.field#sighting-name(data-ng-focus="Form.error = ''",data-ng-model="Form.name",placeholder="Pokemon name...",type="text")
+										input.form-sighting__input.field#sighting-name(data-ng-focus="Form.formData.messages = []",data-ng-model="Form.formData.name",placeholder="Pokemon name...",type="text")
 									
-									.autocomplete-result(data-ng-show="Form.name.length && filtered.length")
+									.autocomplete-result(data-ng-show="Form.formData.name.length && filtered.length")
 										
 										ul.autocomplete-result-list
 											
-											li.autocomplete-result-list-enclosure(data-ng-repeat="poker in Form.pokemon | filter: {Name: Form.name} as filtered")
+											li.autocomplete-result-list-enclosure(data-ng-repeat="poker in Form.pokemon | filter: {Name: Form.formData.name} as filtered")
 												
 												a.card-preview(data-ng-click="Form.autocomplete('name',poker.Name)")
 
@@ -116,7 +146,7 @@
 									
 									.map(data-ng-controller="MapController as Map")
 
-										.map-view(data-ng-class="{'fullscreen':Map.fullscreen}",data-ng-init="Map.initialize('location', true, true, true)")
+										.map-view(data-ng-class="{'fullscreen':Map.fullscreen}",data-ng-init="Map.initialize('location', true, true, false)")
 
 											#location.map-view-instance
 

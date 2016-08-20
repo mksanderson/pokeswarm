@@ -12,8 +12,6 @@ namespace Application {
 			'$window'
 		];
 
-		public data: any;
-
 		constructor(
 			private FirebaseService: FirebaseService,
 			private LocationService: ng.ILocationService,

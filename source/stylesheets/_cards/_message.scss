@@ -1,0 +1,27 @@
+&-message{
+	background:{color:rgba(map-get($colors,_green-pastel),0.15);};align-items:center;
+	color:map-get($colors,_green-pastel);display:flex;fill:map-get($colors,_green-pastel);
+	padding:12px;
+
+	// <children>
+	&-label{
+		// <children>
+		&__title{
+			display:block;font:{size:rem(16px);weight:bold;};line-height:1em;
+		}
+		// </children>
+	}
+
+	&-media{
+		// <instance>
+		&:first-child{
+			margin:{right:9px;};
+		}
+
+		&:last-child{
+			margin:{left:9px;};
+		}
+		// </instance>
+	}
+	// </children>
+}

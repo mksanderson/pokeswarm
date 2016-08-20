@@ -34,6 +34,14 @@
 		// </instance>
 	}
 
+	&-messages{
+		// <children>
+		&-list{
+			display:flex;flex-direction:column;list-style:none;margin:0;padding:0;
+		}
+		// </children>
+	}
+
 	&-option{
 		align-items:stretch;display:flex;flex-direction:column;
 

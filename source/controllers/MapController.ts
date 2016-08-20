@@ -59,8 +59,10 @@ namespace Application {
 							markers.push(response[i].val());
 						}
 
-						this.MapService.addMarkers(markers);
-						this.MapService.addHeatmap();
+						if (markers) {
+							this.MapService.addMarkers(markers);
+							this.MapService.addHeatmap();
+						}
 					})
 				}
 			});

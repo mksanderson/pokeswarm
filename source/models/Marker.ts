@@ -1,6 +1,10 @@
 namespace Application {
-	export interface Marker {
-		position: Position;
-		name: string;
+	export class Marker {
+		public name: string;
+		public position: Position;
+
+		constructor(){
+			this.name = '';
+		}
 	}
 }

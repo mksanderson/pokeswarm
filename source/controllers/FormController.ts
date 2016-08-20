@@ -13,7 +13,7 @@ namespace Application {
 		];
 
 		public error: boolean;
-		public name: string;
+		public formData: FormData;
 		public pokemon: Pokemon[];
 		public state: boolean;
 
@@ -23,22 +23,28 @@ namespace Application {
 			private MapService: MapService,
 			private PokemonService: PokemonService
 		) {
+			this.formData = new FormData();
+			
 			this.PokemonService.get('/api/pokemon/pokemon.json').then((response) => {
 				this.pokemon = response;
 			})
 		}
 
-		autocomplete(model: string, pokemon: Pokemon){
-			this[model] = pokemon;
+		/**
+		 * (description)
+		 * 
+		 * @param {string} model (description)
+		 * @param {string} value (description)
+		 */
+		autocomplete(model: string, value: string){
+			this.formData[model] = value;
 		}
 
 		/**
 		 * Submit form data to database, reset map, notify user
-		 * 
-		 * @param {string} name Name of the item being submitted
 		 */
-		submit(name: string) {
-			if (name) {
+		submit() {
+			if (this.formData.name) {
 				this.MapService.getGeoPosition().then((response) => {
 					var position = response;
 
@@ -50,7 +56,7 @@ namespace Application {
 							},
 							'timestamp': Math.floor(Date.now())
 						},
-						'name': name
+						'name': this.formData.name
 					}).then((response) => {
 						this.FirebaseService.get('/').then((response) => {
 							var markers = [];
@@ -61,7 +67,10 @@ namespace Application {
 
 							this.MapService.setCenter(position.lat(), position.lng());
 
-							this.name = '';
+							this.formData.messages = new Array<string>();
+							this.formData.messages.push('Successfully added ' + this.formData.name);
+
+							this.formData.name = '';
 
 							this.toggle();
 						});

@@ -1,7 +1,7 @@
 module.exports = function (gulp, plugins) {
 	return function () {
 		gulp.watch([
-			'source/api/**/*.json',
+			'source/api/**/*',
 		], ['copy:www:api']);
 	};
 }

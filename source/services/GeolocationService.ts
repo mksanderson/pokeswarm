@@ -15,7 +15,7 @@ namespace Application {
 		constructor(private q: ng.IQService, private window: ng.IWindowService) {
 
 		}
-		
+
 		/**
 		 * (description)
 		 * 
@@ -31,7 +31,11 @@ namespace Application {
 					deferred.resolve(position);
 				}, function (error) {
 					deferred.reject(error);
-				});
+				}, {
+						maximumAge: 0,
+						timeout: 5000
+					}
+				);
 			}
 
 			return deferred.promise;

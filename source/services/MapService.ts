@@ -69,9 +69,9 @@ namespace Application {
 						if (markers[i].name === pokemon.Name) {
 							this.marker = new google.maps.Marker({
 								icon: {
-									size: new google.maps.Size(40, 40, 'em', 'em'),
-									scaledSize: new google.maps.Size(40, 40, 'em,', 'em'),
-									url: '/api/pokemon/icons/' + pokemon.Number + '.svg',
+									size: new google.maps.Size(80, 80, 'em', 'em'),
+									scaledSize: new google.maps.Size(80, 80, 'em,', 'em'),
+									url: '/api/pokemon/icons/' + pokemon.Number + '.ico',
 								},
 								position: new google.maps.LatLng(
 									markers[i].position.coords.latitude,

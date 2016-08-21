@@ -77,7 +77,7 @@
 
 			.index-main
 				
-				.index-main-messages(data-ng-show="!filtered.length")
+				.index-main-messages(data-ng-show="!filtered.length && Index.formData.name.length")
 
 					.index-main-messages-label
 
@@ -96,7 +96,7 @@
 
 							.card-index-media
 
-								img.card-index-media__object(data-ng-src="/api/pokemon/icons/{{pokemon.Number}}.svg")
+								img.card-index-media__object(data-ng-src="/api/pokemon/icons/{{pokemon.Number}}.ico")
 
 							// </media>
 

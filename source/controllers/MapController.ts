@@ -15,9 +15,6 @@ namespace Application {
 		];
 
 		public fullscreen: boolean;
-		public loaded: boolean;
-		public location: Position;
-		public message: string;
 
 		constructor(
 			private FirebaseService: FirebaseService,
@@ -25,7 +22,7 @@ namespace Application {
 			private MapService: MapService,
 			private WindowService: ng.IWindowService
 		) {
-
+			
 		}
 
 		/**
@@ -42,14 +39,24 @@ namespace Application {
 		initialize(dom: string, geomarker: boolean, draggable: boolean, markers: boolean): void {
 			this.GeolocationService.get().then((response) => {
 				this.MapService.createMap(document.getElementById(dom), response.coords.latitude, response.coords.longitude, 16).then((response) => {
-					this.loaded = response;
+
 				});
 				if (geomarker) {
 					this.MapService.addGeoMarker(draggable, response);
 				}
 			}).catch((reason) => {
-				alert('Geolocation lookup has failed');
-				console.log(reason);
+				this.GeolocationService.get().then((response) => {
+					this.MapService.createMap(document.getElementById(dom), response.coords.latitude, response.coords.longitude, 16).then((response) => {
+
+					});
+					if (geomarker) {
+						this.MapService.addGeoMarker(draggable, response);
+					}
+				}).catch((reason) => {
+					alert('Geolocation lookup has failed, the map has been set at default coordinates. Please enable location services to experience all features of PokeSwarm.');
+
+					this.MapService.createMap(document.getElementById(dom), 0, 0, 2);
+				})
 			}).then(() => {
 				if (markers) {
 					this.FirebaseService.get('/').then((response) => {

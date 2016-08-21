@@ -63,17 +63,6 @@
 
 						.card-pokemon-profile
 
-							.card-pokemon-profile-header
-
-								.card-pokemon-profile-header-label
-
-									span.card-pokemon-profile-header-label__title
-										| Maximums
-
-								// </label>
-
-							// </header>
-
 							.card-pokemon-profile-main
 
 								ul.card-pokemon-profile-list
@@ -85,7 +74,7 @@
 											.card-fact-media
 
 												span.card-fact-media__object
-													| Combat Power
+													| Max. Combat Power
 
 											// </media>
 
@@ -107,7 +96,7 @@
 											.card-fact-media
 
 												span.card-fact-media__object
-													| Health Points
+													| Max. Health Points
 
 											// </media>
 
@@ -136,7 +125,7 @@
 											.card-fact-label
 
 												span.card-fact-label__title
-													| {{Index.current.FleeRate}}
+													| {{Index.current.FleeRate * 100 + '%'}}
 
 											// </label>
 

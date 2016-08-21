@@ -36,16 +36,11 @@
         <ul class="card-pokemon-main-list">
           <li class="card-pokemon-main-list-enclosure">
             <div class="card-pokemon-profile">
-              <div class="card-pokemon-profile-header">
-                <div class="card-pokemon-profile-header-label"><span class="card-pokemon-profile-header-label__title">Maximums</span></div>
-                <!-- </label>-->
-              </div>
-              <!-- </header>-->
               <div class="card-pokemon-profile-main">
                 <ul class="card-pokemon-profile-list">
                   <li class="card-pokemon-profile-list-enclosure">
                     <div class="card-fact">
-                      <div class="card-fact-media"><span class="card-fact-media__object">Combat Power</span></div>
+                      <div class="card-fact-media"><span class="card-fact-media__object">Max. Combat Power</span></div>
                       <!-- </media>-->
                       <div class="card-fact-label"><span class="card-fact-label__title">{{Index.current.MaxCP}}</span></div>
                       <!-- </label>-->
@@ -55,7 +50,7 @@
                   <!-- </enclosure>-->
                   <li class="card-pokemon-profile-list-enclosure">
                     <div class="card-fact">
-                      <div class="card-fact-media"><span class="card-fact-media__object">Health Points</span></div>
+                      <div class="card-fact-media"><span class="card-fact-media__object">Max. Health Points</span></div>
                       <!-- </media>-->
                       <div class="card-fact-label"><span class="card-fact-label__title">{{Index.current.MaxHP}}</span></div>
                       <!-- </label>-->
@@ -67,7 +62,7 @@
                     <div class="card-fact">
                       <div class="card-fact-media"><span class="card-fact-media__object">Flee Rate</span></div>
                       <!-- </media>-->
-                      <div class="card-fact-label"><span class="card-fact-label__title">{{Index.current.FleeRate}}</span></div>
+                      <div class="card-fact-label"><span class="card-fact-label__title">{{Index.current.FleeRate * 100 + '%'}}</span></div>
                       <!-- </label>-->
                     </div>
                     <!-- </fact>-->

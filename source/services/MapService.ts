@@ -21,8 +21,6 @@ namespace Application {
 		private geoCircle: google.maps.Circle;
 		private geoMarkers: google.maps.Marker[];
 		private geoCircles: google.maps.Circle[];
-		private heatmap: google.maps.visualization.HeatmapLayer;
-		private heatmapPoints: google.maps.LatLng[];
 		private instance: google.maps.Map;
 		private infoWindow: google.maps.InfoWindow;
 		private infoWindows: google.maps.InfoWindow[];
@@ -44,8 +42,6 @@ namespace Application {
 			this.geoCircle = new google.maps.Circle();
 			this.geoMarkers = new Array<google.maps.Marker>();
 			this.geoCircles = new Array<google.maps.Circle>();
-			this.heatmap = new google.maps.visualization.HeatmapLayer();
-			this.heatmapPoints = new Array<google.maps.LatLng>();
 			this.infoWindow = new google.maps.InfoWindow();
 			this.infoWindows = new Array<google.maps.InfoWindow>();
 			this.marker = new google.maps.Marker();
@@ -154,25 +150,6 @@ namespace Application {
 		}
 
 		/**
-		 * Add a heatmap to the map instance by
-		 * passing in map points
-		 * 
-		 * @param {Array<Marker>} markers (description)
-		 */
-		addHeatmap(): void {
-			for (var i = 0; i < this.markers.length; i++) {
-				this.heatmapPoints.push(this.markers[i].getPosition());
-			}
-
-			this.heatmap = new google.maps.visualization.HeatmapLayer({
-				data: this.heatmapPoints,
-				radius: 50
-			});
-
-			this.heatmap.setMap(this.instance);
-		}
-
-		/**
 		 * (description)
 		 * 
 		 * @param {Element} dom (description)
@@ -239,26 +216,6 @@ namespace Application {
 
 			return deferred.promise;
 		}
-
-
-		/**
-		 * Useful when markers change to reflect those changes
-		 * in the heatmapping
-		 * 
-		 * @param {Array<google.maps.Marker>} markers (description)
-		 */
-		filterHeatMap(): void {
-			this.heatmapPoints.length = 0;
-
-			for (var i = 0; i < this.markers.length; i++) {
-				if (this.markers[i].getVisible()) {
-					this.heatmapPoints.push(this.markers[i].getPosition());
-				}
-			}
-
-			this.heatmap.setMap(this.instance);
-		}
-
 
 		/**
 		 * (description)
@@ -327,7 +284,6 @@ namespace Application {
 				this.markers[i].setVisible(true);
 			}
 		}
-
 
 		/**
 		 * Triggering resize events

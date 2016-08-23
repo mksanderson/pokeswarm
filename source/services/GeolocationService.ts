@@ -9,10 +9,14 @@ namespace Application {
 	export class GeolocationService {
 		static $inject = [
 			'$q',
+			'StorageService',
 			'$window'
 		];
 
-		constructor(private q: ng.IQService, private window: ng.IWindowService) {
+		constructor(
+			private QService: ng.IQService, 
+			private StorageService: StorageService,
+			private WindowService: ng.IWindowService) {
 
 		}
 
@@ -22,14 +26,22 @@ namespace Application {
 		 * @returns {ng.IPromise<Position>} (description)
 		 */
 		get(): ng.IPromise<Position> {
-			var deferred = this.q.defer();
+			var deferred = this.QService.defer();
 
-			if (!this.window.navigator.geolocation) {
+			if (!this.WindowService.navigator.geolocation) {
 				deferred.reject('Geolocation not supported.');
 			} else {
-				this.window.navigator.geolocation.getCurrentPosition(function (position) {
-					deferred.resolve(position);
-				}, function (error) {
+				this.WindowService.navigator.geolocation.getCurrentPosition((response) => {
+					var output = [];
+
+					deferred.resolve(response);
+
+					output.push(response.coords.latitude);
+					output.push(response.coords.longitude);
+
+					this.StorageService.set('geolocation', output);
+
+				}, (error) => {
 					deferred.reject(error);
 				}, {
 						maximumAge: 0,

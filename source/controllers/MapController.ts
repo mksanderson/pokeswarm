@@ -11,6 +11,7 @@ namespace Application {
 			'FirebaseService',
 			'GeolocationService',
 			'MapService',
+			'StorageService',
 			'$window'
 		];
 
@@ -20,20 +21,10 @@ namespace Application {
 			private FirebaseService: FirebaseService,
 			private GeolocationService: GeolocationService,
 			private MapService: MapService,
+			private StorageService: StorageService,
 			private WindowService: ng.IWindowService
 		) {
 
-		}
-
-		/**
-		 * Filter the map items based on the search model
-		 * 
-		 * @param {string} [search] (description)
-		 */
-		filter(search?: string): void {
-			this.MapService.filterMarkers(search).then(() => {
-				this.MapService.filterHeatMap();
-			});
 		}
 
 		initialize(dom: string, geomarker: boolean, draggable: boolean, markers: boolean): void {

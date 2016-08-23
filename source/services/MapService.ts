@@ -121,6 +121,9 @@ namespace Application {
 				map: this.instance
 			});
 
+
+			this.instance.setZoom(16);
+
 			this.geoMarker.setAnimation(google.maps.Animation.DROP);
 
 			this.geoMarkers.push(this.geoMarker);

@@ -1,6 +1,4 @@
 &-view{
-	margin:{bottom:48px;};
-
 	// <children>
 	&-header{
 		@include theme($colors,_blue-lochmara);
@@ -40,7 +38,7 @@
 	}
 
 	&-main{
-		padding:12px 24px;
+		
 	}
 
 	&-map{

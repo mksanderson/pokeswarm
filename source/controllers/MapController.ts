@@ -22,7 +22,7 @@ namespace Application {
 			private MapService: MapService,
 			private WindowService: ng.IWindowService
 		) {
-			
+
 		}
 
 		/**
@@ -37,27 +37,7 @@ namespace Application {
 		}
 
 		initialize(dom: string, geomarker: boolean, draggable: boolean, markers: boolean): void {
-			this.GeolocationService.get().then((response) => {
-				this.MapService.createMap(document.getElementById(dom), response.coords.latitude, response.coords.longitude, 16).then((response) => {
-
-				});
-				if (geomarker) {
-					this.MapService.addGeoMarker(draggable, response);
-				}
-			}).catch((reason) => {
-				this.GeolocationService.get().then((response) => {
-					this.MapService.createMap(document.getElementById(dom), response.coords.latitude, response.coords.longitude, 16).then((response) => {
-
-					});
-					if (geomarker) {
-						this.MapService.addGeoMarker(draggable, response);
-					}
-				}).catch((reason) => {
-					alert('Geolocation lookup has failed, the map has been set at default coordinates. Please enable location services to experience all features of PokeSwarm.');
-
-					this.MapService.createMap(document.getElementById(dom), 0, 0, 2);
-				})
-			}).then(() => {
+			this.MapService.createMap(document.getElementById(dom), 0, 0, 2).then((response) => {
 				if (markers) {
 					this.FirebaseService.get('/').then((response) => {
 						var markers = [];
@@ -68,7 +48,6 @@ namespace Application {
 
 						if (markers) {
 							this.MapService.addMarkers(markers);
-							this.MapService.addHeatmap();
 						}
 					})
 				}

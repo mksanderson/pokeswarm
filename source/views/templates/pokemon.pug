@@ -36,113 +36,121 @@
 
 	.application-view-main
 
-		.card-pokemon
+		.utility.extent.inset
 
-			.card-pokemon-media
+			.card-pokemon
 
-				img.card-pokemon-media__object(data-ng-src="/api/pokemon/icons/{{Index.current.Number}}.ico")
+				.card-pokemon-media
 
-			// </media>
-			
-			.card-pokemon-header
+					img.card-pokemon-media__object(data-ng-src="/api/pokemon/icons/{{Index.current.Number}}.ico")
 
-				.card-pokemon-header-label
+				// </media>
+				
+				.card-pokemon-header
 
-					span.card-pokemon-header-label__title
-						| {{Index.current.Name}}
+					.card-pokemon-header-label
 
-				// </label>
+						span.card-pokemon-header-label__title
+							| {{Index.current.Name}}
 
-			// </header>
+					// </label>
 
-			.card-pokemon-main
+				// </header>
 
-				ul.card-pokemon-main-list
+				.card-pokemon-main
 
-					li.card-pokemon-main-list-enclosure
+					ul.card-pokemon-main-list
 
-						.card-pokemon-profile
+						li.card-pokemon-main-list-enclosure
 
-							.card-pokemon-profile-main
+							.card-pokemon-profile
 
-								ul.card-pokemon-profile-list
+								.card-pokemon-profile-main
 
-									li.card-pokemon-profile-list-enclosure
+									ul.card-pokemon-profile-list
 
-										.card-fact
+										li.card-pokemon-profile-list-enclosure
 
-											.card-fact-media
+											.card-fact
 
-												span.card-fact-media__object
-													| Max. Combat Power
+												.card-fact-media
 
-											// </media>
+													span.card-fact-media__object
+														| Max. Combat Power
 
-											.card-fact-label
+												// </media>
 
-												span.card-fact-label__title
-													| {{Index.current.MaxCP}}
+												.card-fact-label
 
-											// </label>
+													span.card-fact-label__title
+														| {{Index.current.MaxCP}}
 
-										// </fact>
+												// </label>
 
-									// </enclosure>
+											// </fact>
 
-									li.card-pokemon-profile-list-enclosure
+										// </enclosure>
 
-										.card-fact
+										li.card-pokemon-profile-list-enclosure
 
-											.card-fact-media
+											.card-fact
 
-												span.card-fact-media__object
-													| Max. Health Points
+												.card-fact-media
 
-											// </media>
+													span.card-fact-media__object
+														| Max. Health Points
 
-											.card-fact-label
+												// </media>
 
-												span.card-fact-label__title
-													| {{Index.current.MaxHP}}
+												.card-fact-label
 
-											// </label>
+													span.card-fact-label__title
+														| {{Index.current.MaxHP}}
 
-										// </fact>
+												// </label>
 
-									// </enclosure>
+											// </fact>
 
-									li.card-pokemon-profile-list-enclosure
+										// </enclosure>
 
-										.card-fact
+										li.card-pokemon-profile-list-enclosure
 
-											.card-fact-media
+											.card-fact
 
-												span.card-fact-media__object
-													| Flee Rate
+												.card-fact-media
 
-											// </media>
+													span.card-fact-media__object
+														| Flee Rate
 
-											.card-fact-label
+												// </media>
 
-												span.card-fact-label__title
-													| {{Index.current.FleeRate * 100 | number: 2}}%
+												.card-fact-label
 
-											// </label>
+													span.card-fact-label__title
+														| {{Index.current.FleeRate * 100 | number: 2}}%
 
-										// </fact>
+												// </label>
 
-									// </enclosure>
+											// </fact>
 
-								// </list>
+										// </enclosure>
 
-							// </main>
+									// </list>
 
-						// </profile>
+								// </main>
 
-					// </enclosure>
+							// </profile>
 
-				// </list>
+						// </enclosure>
 
-			// </main>
+					// </list>
 
-		// </pokemon>
+				// </main>
+
+			// </pokemon>
+		
+		// </extent>
+	
+	//</main>
+
+// </view>

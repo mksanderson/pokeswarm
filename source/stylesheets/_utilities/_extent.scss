@@ -1,3 +1,9 @@
 &.extent{
 	margin:{left:auto;right:auto;};max-width:1024px;
+
+	// <modifiers>
+	&.inset{
+		margin:{bottom:48px;};padding:12px 24px;
+	}
+	// </modifiers>
 }

@@ -28,21 +28,44 @@ namespace Application {
 		}
 
 		initialize(dom: string, geomarker: boolean, draggable: boolean, markers: boolean): void {
-			this.MapService.createMap(document.getElementById(dom), 0, 0, 2).then((response) => {
-				if (markers) {
-					this.FirebaseService.get('/').then((response) => {
-						var markers = [];
+			if (GeolocationService.position) {
+				this.MapService.createMap(document.getElementById(dom), GeolocationService.position.coords.latitude, GeolocationService.position.coords.longitude, 2).then((response) => {
+					if (markers) {
+						this.FirebaseService.get('/').then((response) => {
+							var markers = [];
 
-						for (var i = 0; i < response.length; i++) {
-							markers.push(response[i].val());
-						}
+							for (var i = 0; i < response.length; i++) {
+								markers.push(response[i].val());
+							}
 
-						if (markers) {
-							this.MapService.addMarkers(markers);
-						}
-					})
-				}
-			});
+							if (markers) {
+								this.MapService.addMarkers(markers);
+							}
+						})
+					}
+
+					if(geomarker){
+						this.MapService.addGeoMarker(draggable, GeolocationService.position);
+					}
+				});
+			}
+			else {
+				this.MapService.createMap(document.getElementById(dom), 0, 0, 2).then((response) => {
+					if (markers) {
+						this.FirebaseService.get('/').then((response) => {
+							var markers = [];
+
+							for (var i = 0; i < response.length; i++) {
+								markers.push(response[i].val());
+							}
+
+							if (markers) {
+								this.MapService.addMarkers(markers);
+							}
+						})
+					}
+				});
+			}
 		}
 
 		/**

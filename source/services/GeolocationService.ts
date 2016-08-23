@@ -13,6 +13,8 @@ namespace Application {
 			'$window'
 		];
 
+		public static position: Position;
+
 		constructor(
 			private QService: ng.IQService, 
 			private StorageService: StorageService,
@@ -36,10 +38,7 @@ namespace Application {
 
 					deferred.resolve(response);
 
-					output.push(response.coords.latitude);
-					output.push(response.coords.longitude);
-
-					this.StorageService.set('geolocation', output);
+					GeolocationService.position = response;
 
 				}, (error) => {
 					deferred.reject(error);

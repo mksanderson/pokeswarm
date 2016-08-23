@@ -78,6 +78,17 @@
 				// </header>
 
 				.index-main
+
+					.index-main-loading(data-ng-hide="filtered.length")
+
+						.index-main-loading-media
+
+							svg.index-main-loading-media__object.graphic.reload.size--large
+								use(xlink:href="#reload")
+
+						// </media>
+
+					// </loading>
 					
 					.index-main-messages(data-ng-show="!filtered.length && Index.formData.name.length")
 

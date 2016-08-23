@@ -53,6 +53,15 @@
         </div>
         <!-- </header>-->
         <div class="index-main">
+          <div class="index-main-loading" data-ng-hide="filtered.length">
+            <div class="index-main-loading-media">
+              <svg class="index-main-loading-media__object graphic reload size--large">
+                <use xlink:href="#reload"></use>
+              </svg>
+            </div>
+            <!-- </media>-->
+          </div>
+          <!-- </loading>-->
           <div class="index-main-messages" data-ng-show="!filtered.length &amp;&amp; Index.formData.name.length">
             <div class="index-main-messages-label">
               <div class="index-main-messages-label__title">No matching results for {{Index.formData.name}}</div>

@@ -3,6 +3,7 @@ module.exports = function(gulp, plugins) {
 		return gulp.src(
 			[
 				'www/bower_components/angular/angular.min.js',
+				'www/bower_components/angular-aria/angular-aria.min.js',
 				'www/bower_components/angular-route/angular-route.min.js',
 				'www/bower_components/angular-off-click/dist/angular-off-click.min.js',
 				'www/bower_components/jquery/dist/jquery.min.js'

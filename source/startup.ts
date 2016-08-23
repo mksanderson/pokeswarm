@@ -1,7 +1,8 @@
 /// <reference path="../typings/index.d.ts"/>
 namespace Application {
-	angular.module('Client', 
+	angular.module('Client',
 		[
+			'ngAria',
 			'ngRoute',
 			'offClick'
 		]);

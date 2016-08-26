@@ -148,9 +148,9 @@
 										
 										.map(data-ng-controller="MapController as Map")
 
-											.map-view(data-ng-class="{'fullscreen':Map.fullscreen}",data-ng-init="Map.initialize('location', true, true, false)")
+											.map-view(data-ng-class="{'fullscreen':Map.fullscreen}")
 
-												#location.map-view-instance
+												#map.map-view-instance
 
 												.map-controls
 
@@ -158,27 +158,12 @@
 
 														li.map-controls-set-enclosure
 
-															a.button-tool(data-ng-click="Map.relocate(true)")
+															a.button-tool(data-ng-click="Map.locate()")
 																
 																.button-tool-media
 
 																	svg.button-tool-media__object.graphic.pin-point
 																		use(xlink:href="#pin-point")
-
-																// </media>
-
-															// </tool>
-
-														// </enclosure>
-
-														li.map-controls-set-enclosure
-
-															a.button-tool(data-ng-click="Map.resize()")
-																
-																.button-tool-media
-
-																	svg.button-tool-media__object.graphic.chevron(data-ng-class="{'rotation up':!Map.fullscreen}")
-																		use(xlink:href="#chevron")
 
 																// </media>
 

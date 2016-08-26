@@ -18,7 +18,7 @@
         </li>
         <!-- </enclosure>-->
         <li class="application-view-header-tools-set-enclosure">
-          <button class="button-tool" data-ng-click="Map.relocate(false);"><a class="button-tool-media">
+          <button class="button-tool" data-ng-click="Map.locate();"><a class="button-tool-media">
               <svg class="button-tool-media__object graphic pin-point">
                 <use xlink:href="#pin-point"></use>
               </svg></a>
@@ -35,7 +35,7 @@
   <!-- </header>-->
   <div class="application-view-main">
     <div class="application-map">
-      <div class="map" data-ng-init="Map.initialize('map', true, false, true)">
+      <div class="map">
         <div class="map-main">
           <div class="map-instance" id="map"></div>
           <!-- </map>-->

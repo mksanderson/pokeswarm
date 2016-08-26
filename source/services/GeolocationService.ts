@@ -13,10 +13,8 @@ namespace Application {
 			'$window'
 		];
 
-		public static position: Position;
-
 		constructor(
-			private QService: ng.IQService, 
+			private QService: ng.IQService,
 			private StorageService: StorageService,
 			private WindowService: ng.IWindowService) {
 
@@ -38,12 +36,21 @@ namespace Application {
 
 					deferred.resolve(response);
 
-					GeolocationService.position = response;
-
 				}, (error) => {
-					deferred.reject(error);
+					this.WindowService.navigator.geolocation.getCurrentPosition((response) => {
+						var output = [];
+
+						deferred.resolve(response);
+					}, (error) => {
+
+					}, {
+						enableHighAccuracy: true,
+						maximumAge: 60000,
+						timeout: 5000,
+					})
 				}, {
-						maximumAge: 0,
+						enableHighAccuracy: true,
+						maximumAge: 60000,
 						timeout: 5000
 					}
 				);

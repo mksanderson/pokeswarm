@@ -6,7 +6,9 @@ module.exports = function(gulp, plugins) {
 				'www/bower_components/angular-aria/angular-aria.min.js',
 				'www/bower_components/angular-route/angular-route.min.js',
 				'www/bower_components/angular-off-click/dist/angular-off-click.min.js',
-				'www/bower_components/jquery/dist/jquery.min.js'
+				'www/bower_components/jquery/dist/jquery.min.js',
+				'www/bower_components/leaflet/dist/leaflet.js',
+				'www/bower_components/mapbox.js/mapbox.js'
 			])
 			.pipe(plugins.concat('dependencies.js'))
 				.pipe(plugins.plumber())

@@ -18,14 +18,14 @@ namespace Application {
 		public state: boolean;
 
 		constructor(
-			private GeolocationService: GeolocationService,
-			private FirebaseService: FirebaseService,
-			private MapService: MapService,
-			private PokemonService: PokemonService
+			private geolocationService: GeolocationService,
+			private firebaseService: FirebaseService,
+			private mapService: MapService,
+			private pokemonService: PokemonService
 		) {
 			this.formData = new FormData();
 			
-			this.PokemonService.get('/api/pokemon/pokemon.json').then((response) => {
+			this.pokemonService.get('/api/pokemon/pokemon.json').then((response) => {
 				this.pokemon = response;
 			})
 		}
@@ -45,27 +45,25 @@ namespace Application {
 		 */
 		submit() {
 			if (this.formData.name) {
-				this.MapService.getGeoPosition().then((response) => {
+				this.mapService.position().then((response) => {
 					var position = response;
 
-					this.FirebaseService.push({
+					this.firebaseService.push({
 						'position': {
 							'coords': {
-								'latitude': position.lat(),
-								'longitude': position.lng()
+								'latitude': position.lat,
+								'longitude': position.lng
 							},
 							'timestamp': Math.floor(Date.now())
 						},
 						'name': this.formData.name
 					}).then((response) => {
-						this.FirebaseService.get('/').then((response) => {
+						this.firebaseService.get('/').then((response) => {
 							var markers = [];
 
 							for (var i = 0; i < response.length; i++) {
 								markers.push(response[i].val());
 							}
-
-							this.MapService.setCenter(position.lat(), position.lng());
 
 							this.formData.messages = new Array<string>();
 							this.formData.messages.push('Successfully added ' + this.formData.name);

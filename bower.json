@@ -11,6 +11,8 @@
     "angular-route": "1.5.8",
     "kds-google-maps-utility-library-v3": "*",
     "angular-off-click": "1.0.5",
-    "angular-aria": "^1.5.8"
+    "angular-aria": "^1.5.8",
+    "leaflet": "^0.7.7",
+    "mapbox.js": "^2.4.0"
   }
 }

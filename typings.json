@@ -1,8 +1,11 @@
 {
 	"globalDependencies": {
 		"angular": "registry:dt/angular#1.5.0+20160509150441",
+		"geojson": "registry:dt/geojson#0.0.0+20160619034323",
 		"google-maps": "registry:dt/google-maps#3.1.0+20151203174025",
 		"google.maps": "registry:dt/google.maps#3.20.0+20160626235650",
-		"jquery": "registry:dt/jquery#1.10.0+20160417213236"
+		"jquery": "registry:dt/jquery#1.10.0+20160417213236",
+		"leaflet": "registry:dt/leaflet#1.0.0+20160630180443",
+		"mapbox": "registry:dt/mapbox#1.6.3+20160317120654"
 	}
 }

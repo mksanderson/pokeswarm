@@ -13,18 +13,18 @@ namespace Application {
 		];
 
 		constructor(
-			private FirebaseService: FirebaseService,
-			private LocationService: ng.ILocationService,
-			private WindowService: ng.IWindowService
+			private firebaseService: FirebaseService,
+			private locationService: ng.ILocationService,
+			private windowService: ng.IWindowService
 		) {
-			FirebaseService.configure();
+			firebaseService.configure();
 		}
 
 		/**
-		 * Reload the entire map to check for updates
+		 * Reload the entire application to check for updates
 		 */
 		reload(): void {
-			this.WindowService.location.reload();
+			this.windowService.location.reload();
 		}
 
 		/**
@@ -34,7 +34,7 @@ namespace Application {
 		 * @returns {boolean} (description)
 		 */
 		currentRoute(path: string): boolean{
-			if(this.LocationService.path().search(path)){
+			if(this.locationService.path().search(path)){
 				return false;
 			}
 			else{

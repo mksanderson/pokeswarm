@@ -10,15 +10,15 @@ namespace Application {
 		public pokemon: Pokemon[];
 
 		constructor(
-			private PokemonService: PokemonService,
-			private RouteService: ng.route.IRouteService
+			private pokemonService: PokemonService,
+			private routeService: ng.route.IRouteService
 		) {
 			this.parameters = new Object();
 
-			PokemonService.get('/api/pokemon/pokemon.json').then((response) => {
+			pokemonService.get('/api/pokemon/pokemon.json').then((response) => {
 				this.pokemon = response;
 
-				this.parameters = RouteService.current.params;
+				this.parameters = routeService.current.params;
 
 				this.active(this.parameters['id']);
 			});

@@ -30,7 +30,7 @@
 
 				li.application-view-header-tools-set-enclosure
 
-					button.button-tool(data-ng-click="Map.relocate(false);")
+					button.button-tool(data-ng-click="Map.locate();")
 
 						a.button-tool-media
 
@@ -49,12 +49,11 @@
 
 	// </header>
 
-
 	.application-view-main
 		
 		.application-map
 
-			.map(data-ng-init="Map.initialize('map', true, false, true)")
+			.map
 
 				.map-main
 					

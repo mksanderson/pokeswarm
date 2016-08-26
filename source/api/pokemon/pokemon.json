@@ -1953,7 +1953,7 @@
 	},
 	{
 		"Number": "29",
-		"Name": "Nidoran ♀",
+		"Name": "Nidoran (F)",
 		"Classification": "Poison Pin Pokèmon",
 		"Types": [
 			"Poison"
@@ -2174,7 +2174,7 @@
 	},
 	{
 		"Number": "32",
-		"Name": "Nidoran ♂",
+		"Name": "Nidoran (M)",
 		"Classification": "Poison Pin Pokèmon",
 		"Types": [
 			"Poison"

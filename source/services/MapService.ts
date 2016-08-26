@@ -73,10 +73,9 @@ namespace Application {
 
 				this.location = L.marker(response['latlng'], {
 					draggable: true,
-					icon: L.icon({
+					icon: L.divIcon({
 						className:'location',
-						iconSize:[32,32],
-						iconUrl:'/images/graphics/pin-point.svg'
+						iconSize:[32,32]
 					}),
 					title: 'Your location'
 				});

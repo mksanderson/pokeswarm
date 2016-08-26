@@ -1,9 +1,57 @@
 .map{
+	// <ancestors>
+	.leaflet-control-container{
+		// <ancestors>
+		.leaflet-control{
+			// <children>
+			&-zoom-in{
+				height:26px;width:26px;
+			}
+
+			&-zoom-out{
+				height:26px;width:26px;
+			}
+			// </children>
+		}
+
+		.leaflet-bottom{
+			z-index:1;
+
+			// <modifiers>
+			&.leaflet-right{
+
+			}
+			// </modifiers>
+		}
+		// </ancestors>
+	}
+	.leaflet-marker-icon{
+		// <modifiers>
+		&.location{
+			position:relative;
+
+			// <children>
+			&:before{
+				background:map-get($colors,_blue-lochmara);border-radius:50%;bottom:0;content:'';display:block;left:0;
+				position:absolute;right:0;top:0;z-index:1;
+			}
+
+			&:after{
+				animation:pulse 2s infinite;background:{color:rgba(map-get($colors,_blue-lochmara),0.5)};
+				border-radius:50%;bottom:0;content:'';display:block;left:0;position:absolute;
+				right:0;top:0;z-index:0;
+			}
+			// </children>
+		}
+		// </modifiers>
+	}
+	// </ancestors>
+	
 	// <children>
 	&-controls{
 		@include theme($colors,_blue-lochmara, 0.45);
 		
-		left:0;padding:12px;position:absolute;right:0;top:0;z-index:3;
+		left:0;padding:12px;right:0;top:0;z-index:3;
 
 		// <children>
 		&-set{
@@ -30,7 +78,7 @@
 
 		// <children>
 		&-instance{
-
+			
 		}
 		// </children>
 

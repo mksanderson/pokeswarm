@@ -1,0 +1,95 @@
+
+<div class="application-view">
+  <div class="application-view-header">
+    <div class="application-view-header-label">
+      <h2 class="application-view-header-label__title">Index</h2>
+    </div>
+    <!-- </label>-->
+    <div class="application-view-header-tools">
+      <ul class="application-view-header-tools-set">
+        <li class="application-view-header-tools-set-enclosure"><a class="button-tool" data-ng-click="Application.reload();">
+            <div class="button-tool-media">
+              <svg class="button-tool-media__object graphic reload">
+                <use xlink:href="#reload"></use>
+              </svg>
+            </div>
+            <!-- </media>--></a>
+          <!-- </tool>-->
+        </li>
+        <!-- </enclosure>-->
+      </ul>
+      <!-- </set>-->
+    </div>
+    <!-- </tools>-->
+  </div>
+  <!-- </header>-->
+  <div class="application-view-main">
+    <div class="utility extent inset">
+      <div class="index">
+        <div class="index-header">
+          <form class="form-index">
+            <div class="form-index-main">
+              <ul class="form-index-options">
+                <li class="form-index-options-enclosure">
+                  <div class="form-index-option">
+                    <div class="form-index-option-label">
+                      <label class="form-index-option-label__title" for="index-name">Pokemon</label>
+                    </div>
+                    <!-- </label>-->
+                    <div class="form-index-option-media">
+                      <input class="form-sighting__input field" id="index-name" data-ng-model="Index.formData.name" placeholder="Pokemon name..." type="text"/>
+                    </div>
+                    <!-- </media>-->
+                  </div>
+                  <!-- </option>-->
+                </li>
+                <!-- </enclosure>-->
+              </ul>
+              <!-- </options>-->
+            </div>
+            <!-- </main>-->
+          </form>
+          <!-- </form>-->
+        </div>
+        <!-- </header>-->
+        <div class="index-main">
+          <div class="index-main-loading" data-ng-hide="filtered.length">
+            <div class="index-main-loading-media">
+              <svg class="index-main-loading-media__object graphic reload size--large">
+                <use xlink:href="#reload"></use>
+              </svg>
+            </div>
+            <!-- </media>-->
+          </div>
+          <!-- </loading>-->
+          <div class="index-main-messages" data-ng-show="!filtered.length &amp;&amp; Index.formData.name.length">
+            <div class="index-main-messages-label">
+              <div class="index-main-messages-label__title">No matching results for {{Index.formData.name}}</div>
+            </div>
+            <!-- </label>-->
+          </div>
+          <!-- </messages>-->
+          <ul class="index-main-list" data-ng-show="filtered.length">
+            <li class="index-main-list-enclosure" data-ng-repeat="pokemon in Index.pokemon | filter: {Name: Index.formData.name} as filtered"><a class="card-index" href="/#/index/{{pokemon.Number}}">
+                <div class="card-index-media"><img class="card-index-media__object" data-ng-src="/api/pokemon/icons/{{pokemon.Number}}.ico"/></div>
+                <!-- </media>-->
+                <div class="card-index-header">
+                  <div class="card-index-header-label"><span class="card-index-header-label__title">{{pokemon.Name}}</span></div>
+                  <!-- </label>-->
+                </div>
+                <!-- </header>--></a>
+              <!-- </card>-->
+            </li>
+            <!-- </enclosure>-->
+          </ul>
+          <!-- </list>-->
+        </div>
+        <!-- </main>-->
+      </div>
+      <!-- </index>-->
+    </div>
+    <!-- </extent>-->
+  </div>
+  <!-- </main>-->
+</div>
+<!-- </view>-->

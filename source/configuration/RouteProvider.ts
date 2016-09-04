@@ -7,27 +7,27 @@ namespace Application {
 				.when('/form/', {
 					controller:'FormController',
 					controllerAs: 'Form',
-					templateUrl:'/templates/form.html'
+					templateUrl:'/templates/form/name.html'
 				})
 				.when('/form/location', {
 					controller:'FormController',
 					controllerAs: 'Form',
-					templateUrl:'/templates/location.html'
+					templateUrl:'/templates/form/location.html'
 				})
 				.when('/form/success', {
 					controller:'FormController',
 					controllerAs: 'Form',
-					templateUrl:'/templates/success.html'
+					templateUrl:'/templates/form/success.html'
 				})
 				.when('/index', {
 					controller:'IndexController',
 					controllerAs: 'Index',
-					templateUrl:'/templates/index.html'
+					templateUrl:'/templates/index/index.html'
 				})
 				.when('/index/:id', {
 					controller:'IndexController',
 					controllerAs: 'Index',
-					templateUrl:'/templates/pokemon.html'
+					templateUrl:'/templates/index/pokemon.html'
 				})
 				.when('/map', {
 					controller:'MapController',

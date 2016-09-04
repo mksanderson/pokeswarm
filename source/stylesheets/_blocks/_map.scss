@@ -4,6 +4,10 @@
 		// <ancestors>
 		.leaflet-control{
 			// <children>
+			&-zoom{
+				display:none;top:110px;
+			}
+
 			&-zoom-in{
 				height:26px;width:26px;
 			}
@@ -97,7 +101,7 @@
 
 	// <instance>
 	#map{
-		height:77.5vh;width:100%;
+		height:100vh;margin:{top:-110px;};width:100%;
 
 		// <children>
 		.gm-style-iw{

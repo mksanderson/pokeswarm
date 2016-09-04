@@ -47,7 +47,7 @@ namespace Application {
 
 			this.locate();
 
-			L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWtzYW5kZXJzb24iLCJhIjoiRTI5SUlZQSJ9.WUx-mVx949iRWfG-s7YZvA', {
+			L.tileLayer('https://api.mapbox.com/styles/v1/mksanderson/cisohlaqg000f2xpbetshz7jv/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWtzYW5kZXJzb24iLCJhIjoiRTI5SUlZQSJ9.WUx-mVx949iRWfG-s7YZvA', {
 				maxZoom: 19,
 				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 			}).addTo(this.map);

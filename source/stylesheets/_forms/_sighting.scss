@@ -24,6 +24,10 @@
 		// </modifiers>
 	}
 
+	&-footer{
+		display:flex;justify-content:flex-end;margin:{top:12px;};
+	}
+
 	&-main{
 		margin:{top:24px;};
 

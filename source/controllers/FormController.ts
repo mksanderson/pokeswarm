@@ -9,7 +9,9 @@ namespace Application {
 			'GeolocationService',
 			'FirebaseService',
 			'MapService',
-			'PokemonService'
+			'PokemonService',
+			'StorageService',
+			'$window'
 		];
 
 		public error: boolean;
@@ -21,10 +23,12 @@ namespace Application {
 			private geolocationService: GeolocationService,
 			private firebaseService: FirebaseService,
 			private mapService: MapService,
-			private pokemonService: PokemonService
+			private pokemonService: PokemonService,
+			private storageService: StorageService,
+			private windowService: ng.IWindowService
 		) {
 			this.formData = new FormData();
-			
+
 			this.pokemonService.get('/api/pokemon/pokemon.json').then((response) => {
 				this.pokemon = response;
 			})
@@ -36,14 +40,45 @@ namespace Application {
 		 * @param {string} model (description)
 		 * @param {string} value (description)
 		 */
-		autocomplete(model: string, value: string){
+		autocomplete(model: string, value: string) {
 			this.formData[model] = value;
+		}
+
+		/**
+		 * (description)
+		 * 
+		 * @param {string} field (description)
+		 * @param {string} path (description)
+		 */
+		record(field: string, path: string): void {
+			var input = [];
+
+			angular.forEach(this.formData, (value, key) => {
+				if (angular.isArray(value)) {
+					for (var i = 0; i < value.length; i++) {
+						input.push(value[i]);
+					}
+				}
+				else {
+					input.push(value);
+				}
+			})
+
+			this.storageService.set('form', input);
+
+			this.windowService.open(path, '_self');
 		}
 
 		/**
 		 * Submit form data to database, reset map, notify user
 		 */
 		submit() {
+			this.storageService.get<string>('form').then((response) => {
+				this.formData.name = response;
+			});
+
+			this.storageService.empty('form');
+
 			if (this.formData.name) {
 				this.mapService.position().then((response) => {
 					var position = response;
@@ -71,6 +106,8 @@ namespace Application {
 							this.formData.name = '';
 
 							this.toggle();
+
+							this.windowService.open('/#/form/success', '_self');
 						});
 					});
 				})

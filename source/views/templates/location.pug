@@ -1,0 +1,108 @@
+.application-view
+
+	.application-view-header
+
+		.application-view-header-label
+
+			h2.application-view-header-label__title
+				| Add a sighting
+
+		// </label>
+
+	// </header>
+
+	.application-view-main
+
+		.utility.extent.inset
+			
+			form.form-sighting(autocomplete="off",data-ng-submit="Form.submit();")
+
+				.form-sighting-main
+
+					ul.form-sighting-options
+
+						li.form-sighting-options-enclosure
+
+							.form-sighting-option
+
+								.form-sighting-option-label
+
+									label.form-sighting-option-label__title(for="sighting-location")
+										| Location
+									
+									span.form-sighting-option-label__description
+										| Drag the marker to where you saw the Pokemon
+
+								// </label>
+
+								.form-sighting-option-media
+									
+									.form-sighting__input
+										
+										.map(data-ng-controller="MapController as Map")
+
+											.map-view(data-ng-class="{'fullscreen':Map.fullscreen}")
+
+												.map-controls
+
+													ul.map-controls-set
+
+														li.map-controls-set-enclosure
+
+															a.button-tool(data-ng-click="Map.locate()")
+																
+																.button-tool-media
+
+																	svg.button-tool-media__object.graphic.pin-point
+																		use(xlink:href="#pin-point")
+
+																// </media>
+
+															// </tool>
+
+														// </enclosure>
+
+													// </set>
+
+												// </controls>
+												
+												#map.map-view-instance
+
+											// </view>
+										
+										// </map>
+									
+									// </input>
+								
+								// </media>
+							
+							// </option>
+
+						// </option>
+					
+					// </options>
+				
+				// </main>
+
+				.form-sighting-footer
+
+					button.button-outline.utility.foreground-color-blue-lochmara(data-ng-click="Form.submit()")
+
+						.button-outline-label
+
+							span.button-outline-label__title
+								| Submit
+
+						// </label>
+
+					// </outline>
+
+				// </footer>
+			
+			// </form>
+		
+		// </extent>
+	
+	// </main>
+
+// </view>

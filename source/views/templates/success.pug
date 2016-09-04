@@ -1,0 +1,71 @@
+.application-view
+
+	.application-view-header
+
+		.application-view-header-label
+
+			h2.application-view-header-label__title
+				| Add a sighting
+
+		// </label>
+
+	// </header>
+
+	.application-view-main
+
+		.utility.extent.inset
+			
+			form.form-sighting(autocomplete="off")
+
+				.form-sighting-messages
+
+					ul.form-sighting-messages-list
+
+						li.form-sighting-messages-list-enclosure
+
+							span.card-message
+
+								.card-message-media
+
+									svg.card-message-media__object.graphic.tick
+										use(xlink:href="#tick")
+
+								// </media>
+
+								.card-message-label
+
+									span.card-message-label__title
+										| Successfully added Pokemon to the PokeSwarm map
+
+								// </label>
+
+							// </message>
+
+						// </enclosure>
+
+					// </list>
+
+				// </messages>
+
+				.form-sighting-footer
+
+					a.button-outline.utility.foreground-color-blue-lochmara(data-ng-href="/#/form/")
+
+						.button-outline-label
+
+							span.button-outline-label__title
+								| Add another
+
+						// </label>
+
+					// </outline>
+
+				// </footer>
+			
+			// </form>
+		
+		// </extent>
+	
+	// </main>
+
+// </view>

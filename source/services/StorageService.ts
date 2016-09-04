@@ -13,6 +13,16 @@ namespace Application {
 		}
 		
 		/**
+		 * Clear an item in storage
+		 * 
+		 * @template T
+		 * @param {string} key (description)
+		 */
+		empty<T>(key: string): void{
+			this.WindowService.sessionStorage.removeItem(key);
+		}
+
+		/**
 		 * Fetch item by key from session storage. Compare to source
 		 * data and build an output array that contains full versions
 		 * and not just the id field of each stored item.
@@ -21,7 +31,7 @@ namespace Application {
 		 * @param {string} key (description)
 		 * @returns {ng.IPromise<Array<T>>} (description)
 		 */
-		get<T>(key: string): ng.IPromise<Array<T>> {
+		get<T>(key: string): ng.IPromise<T> {
 			var defer = this.QService.defer(),
 				output,
 				response,
@@ -30,10 +40,15 @@ namespace Application {
 			response = this.WindowService.sessionStorage.getItem(key);
 
 			if (response != null) {
-				if (response.length) {
-					result = JSON.parse(response);
+				if (angular.isArray(response)) {
+					if (response.length) {
+						result = JSON.parse(response);
 
-					defer.resolve(result);
+						defer.resolve(result);
+					}
+				}
+				else {
+					defer.resolve(response);
 				}
 			}
 			else {
@@ -42,7 +57,7 @@ namespace Application {
 
 			return defer.promise;
 		}
-		
+
 		/**
 		 * Set a field from a data set to a string value in session storage
 		 * 
@@ -51,10 +66,15 @@ namespace Application {
 		 * @param {Array<T>} values (description)
 		 * @param {string} [field] (description)
 		 */
-		set<T>(key: string, values: Array<T>, field?: string): void {
+		set<T>(key: string, values: T[], field?: string): void {
 			var input;
 
-			input = values.join(',');
+			if (angular.isArray(values)) {
+				input = values.join(',');
+			}
+			else{
+				input = values;
+			}
 
 			this.WindowService.sessionStorage.setItem(key, input);
 		}

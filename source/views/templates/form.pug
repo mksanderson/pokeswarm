@@ -9,66 +9,13 @@
 
 		// </label>
 
-		.application-view-header-tools
-
-			ul.application-view-header-tools-set
-
-				li.application-view-header-tools-set-enclosure
-
-					button.button-tool(data-ng-click="Form.submit();")
-
-						.button-tool-media
-
-							svg.button-tool-media__object.graphic.pin-point
-								use(xlink:href="#save")
-
-						// </media>
-
-					// </tool>
-				
-				// </enclosure>
-			
-			// </set>
-
-		// </tools>
-
 	// </header>
 
 	.application-view-main
 
 		.utility.extent.inset
 			
-			form.form-sighting(autocomplete="off",data-ng-submit="Form.submit();")
-
-				.form-sighting-messages
-
-					ul.form-sighting-messages-list
-
-						li.form-sighting-messages-list-enclosure(data-ng-repeat="message in Form.formData.messages")
-
-							span.card-message
-
-								.card-message-media
-
-									svg.card-message-media__object.graphic.tick
-										use(xlink:href="#tick")
-
-								// </media>
-
-								.card-message-label
-
-									span.card-message-label__title
-										| {{message}}
-
-								// </label>
-
-							// </message>
-
-						// </enclosure>
-
-					// </list>
-
-				// </messages>
+			form.form-sighting(autocomplete="off",data-ng-submit="Form.record('name', '#/form/location');")
 
 				.form-sighting-main
 
@@ -121,75 +68,33 @@
 											// </list>
 
 										// </result>
+									
+									// </autocomplete>
 
 								// </media>
 							
 							// </option>
 						
 						// </enclosure>
-
-						li.form-sighting-options-enclosure
-
-							.form-sighting-option
-
-								.form-sighting-option-label
-
-									label.form-sighting-option-label__title(for="sighting-location")
-										| Location
-									
-									span.form-sighting-option-label__description
-										| Drag the marker to where you saw the Pokemon
-
-								// </label>
-
-								.form-sighting-option-media
-									
-									.form-sighting__input
-										
-										.map(data-ng-controller="MapController as Map")
-
-											.map-view(data-ng-class="{'fullscreen':Map.fullscreen}")
-
-												.map-controls
-
-													ul.map-controls-set
-
-														li.map-controls-set-enclosure
-
-															a.button-tool(data-ng-click="Map.locate()")
-																
-																.button-tool-media
-
-																	svg.button-tool-media__object.graphic.pin-point
-																		use(xlink:href="#pin-point")
-
-																// </media>
-
-															// </tool>
-
-														// </enclosure>
-
-													// </set>
-
-												// </controls>
-												
-												#map.map-view-instance
-
-											// </view>
-										
-										// </map>
-									
-									// </input>
-								
-								// </media>
-							
-							// </option>
-						
-						// </option>
 					
 					// </options>
 				
 				// </main>
+
+				.form-sighting-footer
+
+					button.button-outline.utility.foreground-color-blue-lochmara(data-ng-click="Form.record('name', '#/form/location');")
+
+						.button-outline-label
+
+							span.button-outline-label__title
+								| Next
+
+						// </label>
+
+					// </outline>
+
+				// </footer>
 			
 			// </form>
 		

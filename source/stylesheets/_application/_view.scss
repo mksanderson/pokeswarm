@@ -1,5 +1,23 @@
 &-view{
 	// <children>
+	&-footer{
+		@include theme($colors,_blue-shakespeare, 0.8);
+
+		bottom:48px;display:flex;justify-content:center;
+		left:0;opacity:0;padding:8px 24px;position:fixed;
+		right:0;transform:scale(0);
+		transition:opacity 0.5s ease, transform 0s 0.5s, z-index 0s 0.5s;
+		z-index:0;
+
+		// <state>
+		&.active{
+			opacity:1;transform:scale(1);
+			transition:opacity 0.5s ease, transform 0s, z-index 0s;
+			z-index:5;
+		}
+		// </state>
+	}
+
 	&-header{
 		@include theme($colors,_blue-lochmara);
 		

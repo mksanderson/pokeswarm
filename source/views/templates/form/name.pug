@@ -38,7 +38,7 @@
 
 										.autocomplete-option
 										
-											input.form-sighting__input.field#sighting-name(data-ng-focus="Form.formData.messages = []",data-ng-model="Form.formData.name",placeholder="Pokemon name...",type="text")
+											input.form-sighting__input.field#sighting-name(data-ng-model="Form.formData.name",placeholder="Pokemon name...",type="text")
 										
 										.autocomplete-result(data-ng-show="Form.formData.name.length && filtered.length")
 											
@@ -80,26 +80,26 @@
 					// </options>
 				
 				// </main>
-
-				.form-sighting-footer
-
-					button.button-outline.utility.foreground-color-blue-lochmara(data-ng-click="Form.record('name', '#/form/location');")
-
-						.button-outline-label
-
-							span.button-outline-label__title
-								| Next
-
-						// </label>
-
-					// </outline>
-
-				// </footer>
 			
 			// </form>
 		
 		// </extent>
 	
 	// </main>
+
+	.application-view-footer(data-ng-class="{'active':Form.formData.name}")
+
+		button.button-outline.utility.foreground-color-white(data-ng-click="Form.record('name', '#/form/location');")
+
+			.button-outline-label
+
+				span.button-outline-label__title
+					| Add location
+
+			// </label>
+
+		// </outline>
+
+	// </footer>
 
 // </view>

@@ -8,66 +8,99 @@
   </div>
   <!-- </header>-->
   <div class="application-view-main">
-    <div class="utility extent inset">
-      <form class="form-sighting" autocomplete="off" data-ng-submit="Form.submit();">
-        <div class="form-sighting-main">
-          <ul class="form-sighting-options">
-            <li class="form-sighting-options-enclosure">
-              <div class="form-sighting-option">
-                <div class="form-sighting-option-label">
-                  <label class="form-sighting-option-label__title" for="sighting-location">Location</label><span class="form-sighting-option-label__description">Drag the marker to where you saw the Pokemon</span>
-                </div>
-                <!-- </label>-->
-                <div class="form-sighting-option-media">
-                  <div class="form-sighting__input">
-                    <div class="map" data-ng-controller="MapController as Map">
-                      <div class="map-view" data-ng-class="{'fullscreen':Map.fullscreen}">
-                        <div class="map-controls">
-                          <ul class="map-controls-set">
-                            <li class="map-controls-set-enclosure"><a class="button-tool" data-ng-click="Map.locate()">
-                                <div class="button-tool-media">
-                                  <svg class="button-tool-media__object graphic pin-point">
-                                    <use xlink:href="#pin-point"></use>
-                                  </svg>
-                                </div>
-                                <!-- </media>--></a>
-                              <!-- </tool>-->
-                            </li>
-                            <!-- </enclosure>-->
-                          </ul>
-                          <!-- </set>-->
-                        </div>
-                        <!-- </controls>-->
-                        <div class="map-view-instance" id="map" style="height:500px;margin:0"></div>
-                      </div>
-                      <!-- </view>-->
-                    </div>
-                    <!-- </map>-->
-                  </div>
-                  <!-- </input>-->
-                </div>
-                <!-- </media>-->
-              </div>
-              <!-- </option>-->
+    <form class="form-sighting" autocomplete="off">
+      <div class="form-sighting-messages" data-ng-class="{'active':Form.state}">
+        <div class="form-sighting-messages-header">
+          <div class="form-sighting-messages-header-media"><img class="form-sighting-messages-header-media__object" data-ng-src="/api/pokemon/icons/{{Form.formData.record.Number}}.ico"/></div>
+        </div>
+        <!-- </media>-->
+        <div class="form-sighting-messages-main">
+          <div class="form-sighting-messages-main-label"><span class="form-sighting-messages-main-label__title">{{Form.formData.record.Name}}</span><span class="form-sighting-messages-main-label__title sub">has been added to the map</span></div>
+        </div>
+        <!-- </label>-->
+        <div class="form-sighting-messages-footer">
+          <ul class="form-sighting-messages-footer-list">
+            <li class="form-sighting-messages-footer-list-enclosure"><a class="button-outline utility foreground-color-white" href="/#/map">
+                <div class="button-outline-label"><span class="button-outline-label__title">Go to map</span></div>
+                <!-- </label>--></a>
+              <!-- </outline>-->
             </li>
-            <!-- </option>-->
+            <!-- </enclosure>-->
+            <li class="form-sighting-messages-footer-list-enclosure"><a class="button-outline utility foreground-color-white" href="/#/form/">
+                <div class="button-outline-label"><span class="button-outline-label__title">Add another sighting</span></div>
+                <!-- </label>--></a>
+              <!-- </outline>-->
+            </li>
+            <!-- </enclosure>-->
           </ul>
-          <!-- </options>-->
+          <!-- </list>-->
+        </div>
+        <!-- </action>-->
+      </div>
+      <!-- </messages>-->
+      <div class="form-sighting-main">
+        <ul class="form-sighting-options">
+          <li class="form-sighting-options-enclosure">
+            <div class="form-sighting-option">
+              <div class="form-sighting-option-media">
+                <div class="form-sighting__input">
+                  <div class="map" data-ng-controller="MapController as Map">
+                    <div class="map-view">
+                      <div class="map-controls">
+                        <ul class="map-controls-set">
+                          <li class="map-controls-set-enclosure"><a class="button-tool" data-ng-click="Map.locate()">
+                              <div class="button-tool-media">
+                                <svg class="button-tool-media__object graphic pin-point">
+                                  <use xlink:href="#pin-point"></use>
+                                </svg>
+                              </div>
+                              <!-- </media>--></a>
+                            <!-- </tool>-->
+                          </li>
+                          <!-- </enclosure>-->
+                        </ul>
+                        <!-- </set>-->
+                      </div>
+                      <!-- </controls>-->
+                      <div class="map-view-instance" id="map"></div>
+                    </div>
+                    <!-- </view>-->
+                  </div>
+                  <!-- </map>-->
+                </div>
+                <!-- </input>-->
+              </div>
+              <!-- </media>-->
+            </div>
+            <!-- </option>-->
+          </li>
+          <!-- </option>-->
+        </ul>
+        <!-- </options>-->
+      </div>
+      <!-- </main>-->
+    </form>
+    <!-- </form>-->
+    <div class="application-map">
+      <div class="map">
+        <div class="map-main">
+          <div class="map-instance" id="map"></div>
+          <!-- </map>-->
         </div>
         <!-- </main>-->
-        <div class="form-sighting-footer">
-          <button class="button-outline utility foreground-color-blue-lochmara" data-ng-click="Form.submit()">
-            <div class="button-outline-label"><span class="button-outline-label__title">Submit</span></div>
-            <!-- </label>-->
-          </button>
-          <!-- </outline>-->
-        </div>
-        <!-- </footer>-->
-      </form>
-      <!-- </form>-->
+      </div>
+      <!-- </map>-->
     </div>
-    <!-- </extent>-->
+    <!-- </map>-->
   </div>
   <!-- </main>-->
+  <div class="application-view-footer active">
+    <button class="button-outline utility foreground-color-white" data-ng-click="Form.submit()">
+      <div class="button-outline-label"><span class="button-outline-label__title">Submit</span></div>
+      <!-- </label>-->
+    </button>
+    <!-- </outline>-->
+  </div>
+  <!-- </footer>-->
 </div>
 <!-- </view>-->

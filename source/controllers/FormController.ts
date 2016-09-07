@@ -28,6 +28,7 @@ namespace Application {
 			private windowService: ng.IWindowService
 		) {
 			this.formData = new FormData();
+			this.state = false;
 
 			this.pokemonService.get('/api/pokemon/pokemon.json').then((response) => {
 				this.pokemon = response;
@@ -53,16 +54,7 @@ namespace Application {
 		record(field: string, path: string): void {
 			var input = [];
 
-			angular.forEach(this.formData, (value, key) => {
-				if (angular.isArray(value)) {
-					for (var i = 0; i < value.length; i++) {
-						input.push(value[i]);
-					}
-				}
-				else {
-					input.push(value);
-				}
-			})
+			input.push(this.formData.name)
 
 			this.storageService.set('form', input);
 
@@ -75,53 +67,44 @@ namespace Application {
 		submit() {
 			this.storageService.get<string>('form').then((response) => {
 				this.formData.name = response;
-			});
+			}).then(() => {
+				this.storageService.empty('form');
 
-			this.storageService.empty('form');
+				if (this.formData.name) {
+					this.mapService.position().then((response) => {
+						var position = response;
 
-			if (this.formData.name) {
-				this.mapService.position().then((response) => {
-					var position = response;
-
-					this.firebaseService.push({
-						'position': {
-							'coords': {
-								'latitude': position.lat,
-								'longitude': position.lng
+						this.firebaseService.push({
+							'position': {
+								'coords': {
+									'latitude': position.lat,
+									'longitude': position.lng
+								},
+								'timestamp': Math.floor(Date.now())
 							},
-							'timestamp': Math.floor(Date.now())
-						},
-						'name': this.formData.name
-					}).then((response) => {
-						this.firebaseService.get('/').then((response) => {
-							var markers = [];
+							'name': this.formData.name
+						}).then((response) => {
+							this.firebaseService.get('/').then((response) => {
+								var markers = [];
 
-							for (var i = 0; i < response.length; i++) {
-								markers.push(response[i].val());
-							}
+								for (var i = 0; i < response.length; i++) {
+									markers.push(response[i].val());
+								}
+								
+								this.pokemonService.match(this.formData.name, this.pokemon).then((response) => {
+									this.formData.record = response;
+								})
 
-							this.formData.messages = new Array<string>();
-							this.formData.messages.push('Successfully added ' + this.formData.name);
-
-							this.formData.name = '';
-
-							this.toggle();
-
-							this.windowService.open('/#/form/success', '_self');
+								this.state = true;
+							});
 						});
-					});
-				})
-			}
-			else {
-				this.error = true;
-			}
-		}
-
-		/**
-		 * (description)
-		 */
-		toggle(): void {
-			this.state = !this.state;
+					})
+				}
+				else {
+					this.error = true;
+					this.state = false;
+				}
+			})
 		}
 	}
 

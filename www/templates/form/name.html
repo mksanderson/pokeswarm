@@ -21,7 +21,7 @@
                 <div class="form-sighting-option-media">
                   <div class="autocomplete">
                     <div class="autocomplete-option">
-                      <input class="form-sighting__input field" id="sighting-name" data-ng-focus="Form.formData.messages = []" data-ng-model="Form.formData.name" placeholder="Pokemon name..." type="text"/>
+                      <input class="form-sighting__input field" id="sighting-name" data-ng-model="Form.formData.name" placeholder="Pokemon name..." type="text"/>
                     </div>
                     <div class="autocomplete-result" data-ng-show="Form.formData.name.length &amp;&amp; filtered.length">
                       <ul class="autocomplete-result-list">
@@ -49,19 +49,19 @@
           <!-- </options>-->
         </div>
         <!-- </main>-->
-        <div class="form-sighting-footer">
-          <button class="button-outline utility foreground-color-blue-lochmara" data-ng-click="Form.record('name', '#/form/location');">
-            <div class="button-outline-label"><span class="button-outline-label__title">Next</span></div>
-            <!-- </label>-->
-          </button>
-          <!-- </outline>-->
-        </div>
-        <!-- </footer>-->
       </form>
       <!-- </form>-->
     </div>
     <!-- </extent>-->
   </div>
   <!-- </main>-->
+  <div class="application-view-footer" data-ng-class="{'active':Form.formData.name}">
+    <button class="button-outline utility foreground-color-white" data-ng-click="Form.record('name', '#/form/location');">
+      <div class="button-outline-label"><span class="button-outline-label__title">Add location</span></div>
+      <!-- </label>-->
+    </button>
+    <!-- </outline>-->
+  </div>
+  <!-- </footer>-->
 </div>
 <!-- </view>-->

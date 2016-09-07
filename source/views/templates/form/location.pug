@@ -12,97 +12,161 @@
 	// </header>
 
 	.application-view-main
-
-		.utility.extent.inset
 			
-			form.form-sighting(autocomplete="off",data-ng-submit="Form.submit();")
+		form.form-sighting(autocomplete="off")
 
-				.form-sighting-main
+			.form-sighting-messages(data-ng-class="{'active':Form.state}")
 
-					ul.form-sighting-options
+				.form-sighting-messages-header
 
-						li.form-sighting-options-enclosure
+					.form-sighting-messages-header-media
 
-							.form-sighting-option
+						img.form-sighting-messages-header-media__object(data-ng-src="/api/pokemon/icons/{{Form.formData.record.Number}}.ico")
 
-								.form-sighting-option-label
+				// </media>
 
-									label.form-sighting-option-label__title(for="sighting-location")
-										| Location
-									
-									span.form-sighting-option-label__description
-										| Drag the marker to where you saw the Pokemon
+				.form-sighting-messages-main
+
+					.form-sighting-messages-main-label
+						
+						span.form-sighting-messages-main-label__title
+							| {{Form.formData.record.Name}}
+						
+						span.form-sighting-messages-main-label__title.sub
+							| has been added to the map
+
+				// </label>
+
+				.form-sighting-messages-footer
+
+					ul.form-sighting-messages-footer-list
+
+						li.form-sighting-messages-footer-list-enclosure
+
+							a.button-outline.utility.foreground-color-white(href="/#/map")
+
+								.button-outline-label
+
+									span.button-outline-label__title
+										| Go to map
 
 								// </label>
 
-								.form-sighting-option-media
-									
-									.form-sighting__input
-										
-										.map(data-ng-controller="MapController as Map")
+							// </outline>
+						
+						// </enclosure>
 
-											.map-view(data-ng-class="{'fullscreen':Map.fullscreen}")
+						li.form-sighting-messages-footer-list-enclosure
 
-												.map-controls
+							a.button-outline.utility.foreground-color-white(href="/#/form/")
 
-													ul.map-controls-set
+								.button-outline-label
 
-														li.map-controls-set-enclosure
+									span.button-outline-label__title
+										| Add another sighting
 
-															a.button-tool(data-ng-click="Map.locate()")
-																
-																.button-tool-media
+								// </label>
 
-																	svg.button-tool-media__object.graphic.pin-point
-																		use(xlink:href="#pin-point")
-
-																// </media>
-
-															// </tool>
-
-														// </enclosure>
-
-													// </set>
-
-												// </controls>
-												
-												#map.map-view-instance(style="height:500px;margin:0;")
-
-											// </view>
-										
-										// </map>
-									
-									// </input>
-								
-								// </media>
-							
-							// </option>
-
-						// </option>
+							// </outline>
+						
+						// </enclosure>
 					
-					// </options>
+					// </list>
+
+				// </action>
+
+			// </messages>
+
+			.form-sighting-main
+
+				ul.form-sighting-options
+
+					li.form-sighting-options-enclosure
+
+						.form-sighting-option
+
+							.form-sighting-option-media
+								
+								.form-sighting__input
+									
+									.map(data-ng-controller="MapController as Map")
+
+										.map-view
+
+											.map-controls
+
+												ul.map-controls-set
+
+													li.map-controls-set-enclosure
+
+														a.button-tool(data-ng-click="Map.locate()")
+															
+															.button-tool-media
+
+																svg.button-tool-media__object.graphic.pin-point
+																	use(xlink:href="#pin-point")
+
+															// </media>
+
+														// </tool>
+
+													// </enclosure>
+
+												// </set>
+
+											// </controls>
+											
+											#map.map-view-instance
+
+										// </view>
+									
+									// </map>
+								
+								// </input>
+							
+							// </media>
+						
+						// </option>
+
+					// </option>
 				
+				// </options>
+			
+			// </main>
+		
+		// </form>
+
+		.application-map
+
+			.map
+
+				.map-main
+					
+					#map.map-instance
+
+					// </map>
+					
 				// </main>
 
-				.form-sighting-footer
-
-					button.button-outline.utility.foreground-color-blue-lochmara(data-ng-click="Form.submit()")
-
-						.button-outline-label
-
-							span.button-outline-label__title
-								| Submit
-
-						// </label>
-
-					// </outline>
-
-				// </footer>
-			
-			// </form>
+			// </map>
 		
-		// </extent>
+		// </map>
 	
 	// </main>
+
+	.application-view-footer.active
+
+		button.button-outline.utility.foreground-color-white(data-ng-click="Form.submit()")
+
+			.button-outline-label
+
+				span.button-outline-label__title
+					| Submit
+
+			// </label>
+
+		// </outline>
+
+	// </footer>
 
 // </view>
